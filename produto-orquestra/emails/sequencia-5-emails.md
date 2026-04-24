@@ -25,7 +25,7 @@
 ```
 Oi [nome],
 
-Link do seu material: [LINK_LEAD_MAGNET]
+Link do seu material: https://dozeroaosaas.com.br/guia-gratis
 
 Baixa e volta. Vou ser rápido.
 
@@ -46,7 +46,7 @@ instrumento entra, em que intensidade, por quanto tempo.
 Em 2026, IA não é falta mais. Tem de sobra. O que falta
 é método pra orquestrar.
 
-Esse é o [LEAD_MAGNET] que você acabou de baixar — um
+Esse é o Guia Prático: Do Zero ao SaaS que você acabou de baixar — um
 recorte disso. Nos próximos dias, vou mandar mais alguns
 emails aprofundando cada parte do método.
 
@@ -254,7 +254,7 @@ Isso inclui:
 
 Quando as 50 vagas esgotarem, o preço volta pra R$ 147.
 
-👉 [LINK_CHECKOUT]
+👉 https://pay.kiwify.com.br/bpadvLg
 
 ---
 
@@ -262,7 +262,7 @@ Amanhã te mando mais um email com respostas pras 3
 objeções mais comuns que chegaram até aqui. Se já
 tiver decidido, pega a vaga enquanto tá com desconto:
 
-[LINK_CHECKOUT]
+https://pay.kiwify.com.br/bpadvLg
 
 Até,
 Equipe Do Zero ao SaaS
@@ -367,7 +367,7 @@ esse email. Leio tudo.
 Lembrete: 50 vagas no lote pioneiro a R$ 97. Quando
 esgotar, volta pra R$ 147.
 
-👉 [LINK_CHECKOUT]
+👉 https://pay.kiwify.com.br/bpadvLg
 
 Amanhã é o último email dessa sequência. Aviso antes
 que o carrinho vai fechar (ou as vagas do desconto
@@ -451,7 +451,7 @@ R$ 147 no carrinho padrão (que continua aberto).
 A diferença: R$ 50 e alguns dias de prioridade no
 suporte pra quem pegou no pioneiro.
 
-👉 [LINK_CHECKOUT]
+👉 https://pay.kiwify.com.br/bpadvLg
 
 Se for comprar, pega agora e começa amanhã. Se não
 for, fecha o email sem culpa. Respeitei seu tempo
@@ -512,7 +512,7 @@ testa, se não for pra você, me avisa que devolvo.
 Se a pessoa comprar em qualquer email, PARAR a sequência e mover pra lista "aluno ativo". Não mandar mais emails de venda pra quem já comprou.
 
 ### Links a trackar:
-- `[LINK_CHECKOUT]` → UTM source/medium/campaign pra identificar qual email converteu
+- `https://pay.kiwify.com.br/bpadvLg` → UTM source/medium/campaign pra identificar qual email converteu
 - Exemplo: `https://seudominio.com.br/comprar?utm_source=email&utm_campaign=launch-v1&utm_content=email-3`
 
 ---
