@@ -1,4 +1,4 @@
-# 📋 Planejamento de Publicação — Orquestra IA
+# 📋 Planejamento de Publicação — Do Zero ao SaaS
 
 > **Do ZIP baixado à primeira venda real.**
 > Siga fase por fase. Marque cada checkbox conforme for completando.
@@ -28,10 +28,10 @@
 
 - [ ] Baixar o ZIP no computador (pasta Downloads).
 - [ ] Descompactar o arquivo (duplo-clique no Mac, botão direito → Extract no Windows).
-- [ ] Mover a pasta `produto-orquestra/` pra um lugar permanente. Sugestão: `~/Documentos/produtos/orquestra-ia/`
+- [ ] Mover a pasta `produto-orquestra/` pra um lugar permanente. Sugestão: `~/Documentos/produtos/do-zero-ao-saas/`
 - [ ] Abrir a pasta inteira no Cursor, VS Code ou editor de texto — será seu ambiente de trabalho.
 - [ ] Fazer backup no Google Drive (subir a pasta inteira).
-- [ ] Fazer backup no GitHub (criar repo privado `orquestra-ia-produto`).
+- [ ] Fazer backup no GitHub (criar repo privado `do-zero-ao-saas-produto`).
 
 > **Por que isso importa:** perder esses arquivos agora é perder 5 sessões de trabalho. Backup não é neurose, é higiene.
 
@@ -43,7 +43,7 @@
 
 - [ ] Ler o `README-pacote-completo.md` de ponta a ponta (20 min)
 - [ ] Ler o ebook completo — as 6 partes, na ordem (90-120 min)
-- [ ] Abrir `dashboard-orquestra-ia.html` no navegador e navegar como comprador (20 min)
+- [ ] Abrir `dashboard-do-zero-ao-saas.html` no navegador e navegar como comprador (20 min)
 - [ ] Passar pelos 8 templates, mesmo que em diagonal (30 min)
 
 **Enquanto lê, anote num arquivo separado:**
@@ -62,8 +62,8 @@
 ### 3.1 Decisões iniciais
 
 - [ ] Escolher email de suporte: `contato@seudominio.com.br` OU `suporte@seudominio.com.br`
-- [ ] Confirmar disponibilidade do domínio `orquestraia.com.br` em Registro.br
-- [ ] Decidir se mantém o nome "Orquestra IA" ou muda (recomendação: manter)
+- [x] Domínio `dozeroaosaas.com.br` comprado em Registro.br ✅
+- [x] Nome decidido: **Do Zero ao SaaS** (rebrand feito 2026-04-24) ✅
 
 ### 3.2 Placeholders em `landing/index.html`
 
@@ -94,7 +94,7 @@
 
 ### 3.6 Se decidir mudar o nome do produto
 
-- [ ] Fazer "Find & Replace" global pra trocar "Orquestra IA" pelo novo nome
+- [x] Find & Replace global feito ("Orquestra IA" → "Do Zero ao SaaS") ✅
 - [ ] Trocar o favicon (letra "O" no SVG inline) pela nova letra
 - [ ] Revisar se o tom e copy ainda fazem sentido com novo nome
 
@@ -106,7 +106,7 @@
 
 ### 4.1 Domínio (15 minutos)
 
-- [ ] Comprar `orquestraia.com.br` (ou outro escolhido) em Registro.br
+- [x] Comprar `dozeroaosaas.com.br` em Registro.br ✅
 - [ ] Confirmar que recebeu o email de ativação
 - [ ] Acessar o painel DNS do Registro.br (vai precisar depois)
 
@@ -115,7 +115,7 @@
 - [ ] Criar conta em **kiwify.com.br**
 - [ ] Completar cadastro completo (CPF/CNPJ + dados bancários)
 - [ ] Aguardar aprovação da conta (pode levar 1-2 dias)
-- [ ] Criar produto novo: "Orquestra IA"
+- [x] Criar produto novo: "Do Zero ao SaaS" ✅ (em modo rascunho, aguardando CNAE)
 - [ ] Configurar preço: R$ 147 (venda única, sem recorrência)
 - [ ] Habilitar Pix à vista
 - [ ] Habilitar cartão em até 12x
@@ -148,26 +148,26 @@ Na aba "Conteúdo" do produto no Kiwify, criar módulos nesta ordem:
 
 ### 4.5 Dashboard hospedado (30 minutos)
 
-- [ ] Criar repositório privado no GitHub: `orquestra-ia-dashboard`
-- [ ] Subir `dashboard-orquestra-ia.html` renomeado pra `index.html`
+- [ ] Criar repositório privado no GitHub: `do-zero-ao-saas-dashboard` (ou usar `deploy-dashboard/` do repo Ebook-IA)
+- [ ] Subir `dashboard-do-zero-ao-saas.html` renomeado pra `index.html`
 - [ ] Subir `vercel.json` (da pasta raiz do outputs)
 - [ ] Criar conta no Vercel (se ainda não tem)
 - [ ] Importar o repo no Vercel
 - [ ] Fazer deploy
-- [ ] Copiar a URL gerada (tipo `orquestra-ia-dashboard.vercel.app`)
+- [ ] Copiar a URL gerada (tipo `do-zero-ao-saas-dashboard.vercel.app`)
 - [ ] Cola essa URL no Módulo 3 da área de membros Kiwify
 - [ ] Cola no placeholder `[LINK_DASHBOARD]` da página obrigado.html
 
 ### 4.6 Landing publicada (30 minutos)
 
-- [ ] Criar repo `orquestra-ia-landing`
+- [ ] Criar repo `do-zero-ao-saas-landing` (ou usar `deploy-landing/` do repo Ebook-IA)
 - [ ] Subir `landing/index.html` como `index.html`
 - [ ] Subir `landing/obrigado.html` como `obrigado.html`
 - [ ] Deploy no Vercel
-- [ ] Apontar domínio `orquestraia.com.br` nas configurações do Vercel
+- [ ] Apontar domínio `dozeroaosaas.com.br` nas configurações do Vercel
 - [ ] No painel Registro.br, adicionar os registros DNS que o Vercel pediu
 - [ ] Aguardar propagação (pode levar algumas horas)
-- [ ] Testar acesso via `https://orquestraia.com.br`
+- [ ] Testar acesso via `https://dozeroaosaas.com.br`
 - [ ] Confirmar que SSL está ativo (cadeado verde)
 
 ---
@@ -201,7 +201,7 @@ Na aba "Conteúdo" do produto no Kiwify, criar módulos nesta ordem:
 
 - [ ] Escolher 1 capítulo do ebook pra virar lead magnet (sugestão: o "Pulo do Gato #2")
 - [ ] Gerar PDF de 5-10 páginas desse trecho
-- [ ] Publicar página de captura em `orquestraia.com.br/guia-gratis`
+- [ ] Publicar página de captura em `dozeroaosaas.com.br/guia-gratis`
 - [ ] Configurar captura de email antes do download
 - [ ] Conectar captura à sequência de 5 emails
 
@@ -257,7 +257,7 @@ Na aba "Conteúdo" do produto no Kiwify, criar módulos nesta ordem:
 
 ### 6.4 Validação final
 
-- [ ] Visitar `orquestraia.com.br` como se fosse visitante em ambiente anônimo
+- [ ] Visitar `dozeroaosaas.com.br` como se fosse visitante em ambiente anônimo
 - [ ] Ler a landing em 5 segundos — a promessa tá clara?
 - [ ] Clicar em CTA e fazer fluxo inteiro de compra simulada
 - [ ] Se algo parecer estranho, ajustar antes de lançar
@@ -397,4 +397,49 @@ Nos próximos dias, volte a este arquivo e siga a FASE 2.
 
 ---
 
-*Planejamento de Publicação · Orquestra IA · v1.0*
+*Planejamento de Publicação · Do Zero ao SaaS · v1.0*
+
+---
+
+## 📌 Apêndice — Avaliação pré-lançamento (2026-04-24)
+
+Revisão de produto feita antes da Fase 7. Decidir antes de abrir o carrinho se essas ações entram no escopo do 1º lançamento ou ficam pro 2º.
+
+### Público-alvo confirmado
+- **Persona:** profissional de outra área (direito, marketing, engenharia, financeiro) com ideia de SaaS travada há ≥3 meses, já frustrou com Lovable/Cursor, consegue 1–2h/dia por 30 dias.
+- **Nível:** iniciante absoluto em programação, usuário intermediário de computador. Não sabe git/função/HTTP; sabe copiar/colar e seguir tutorial.
+- **Capacidade financeira:** consegue bancar ~USD 40–80/mês em ferramentas de IA.
+- **NÃO é pra:** dev sênior (raso), quem quer aprender programação a fundo, quem larga no 1º obstáculo, quem acredita em "milhão em 30 dias".
+
+### 4 pontos que reduzem conversão no 1º lançamento
+
+- [ ] **1. Zero prova social.** É primeiro lançamento — sem depoimento, case, print de aluno publicado.
+  **Solução:** beta grátis pra 5–10 pessoas (2 semanas) em troca de depoimento + print do SaaS publicado. **Ação pendente: decidir se faz beta antes do lançamento.**
+
+- [ ] **2. Sem vídeo na landing.** Mercado de infoproduto consome vídeo; landing 100% textual converte menos.
+  **Solução:** gravar vídeo curto (60–90s) no celular explicando a promessa e colocar no hero. Autenticidade > produção.
+
+- [ ] **3. Autoria genérica.** Prefácio assina "Equipe Do Zero ao SaaS". Pessoa compra pessoa, não marca.
+  **Solução:** assinar como **Helvys Xavier** (nome real) com uma linha de credencial no ebook e landing.
+
+- [ ] **4. Promessa "30 dias" pode ser agressiva.** Pra iniciante absoluto, pode gerar reembolso alto.
+  **Solução:** suavizar copy pra "30 a 60 dias dedicando 1–2h/dia". Reduz reembolso sem perder gatilho de urgência.
+
+### Expectativa realista de 1º lançamento
+
+**15–40 unidades** se houver rede mínima (LinkedIn + WhatsApp + 1 canal). Conversão baixa é normal pela falta de prova social. O 2º lançamento (60–90 dias depois, com cases reais) é onde o produto **escala**.
+
+### Audiobook — adiado pro 2º lançamento (decisão 2026-04-24)
+
+Tentamos com **edge-tts (Microsoft, grátis)** e as 3 vozes pt-BR (Francisca, Antonio, Thalita Multilingual) — todas soaram robóticas/GPS, inclusive com roteiro reescrito em tom conversacional.
+
+Conclusão honesta: **não existe TTS pt-BR grátis com qualidade publicável**. As alternativas eram:
+- ElevenLabs ($5/mês, premium) — recusado por não querer custo agora
+- Voice cloning local — sem GPU
+- Voice cloning via Colab — risco de complexidade/instabilidade
+- Gravar de verdade — 4-6h de trabalho da autora, exige ambiente silencioso
+
+Decisão: **não inclui audiobook no 1º lançamento**. Produto vai com PDF + dashboard + templates + prompts + chat IA bônus — já é pacote completo. Audiobook entra no 2º lançamento (60-90 dias) usando ElevenLabs (~R$ 90 pra 3 meses cobre o ebook inteiro).
+
+Toda a infra de geração ficou pronta em [audiobook-build/](audiobook-build/) — script Python, dicionário de pronúncia, roteiro do prefácio. Reaproveitável pro 2º lançamento, basta trocar a engine TTS.
+

@@ -1,0 +1,2582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do Zero ao SaaS — Do zero ao SaaS faturando em 30 dias</title>
+<meta name="description" content="Trilha prática para construir seu primeiro SaaS com IA em 30 dias. Claude, Gemini, GPT, Lovable e Manus orquestrados — sem saber programar.">
+<meta name="keywords" content="vibe coding, SaaS com IA, curso programar com IA, Claude, Lovable, Supabase, no code">
+<meta name="author" content="Do Zero ao SaaS">
+<meta name="theme-color" content="#0B0B0F">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Do Zero ao SaaS — Do zero ao SaaS faturando em 30 dias">
+<meta property="og:description" content="Trilha prática para construir seu primeiro SaaS com IA em 30 dias. Sem saber programar.">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Do Zero ao SaaS — Do zero ao SaaS faturando em 30 dias">
+<meta name="twitter:description" content="5 ferramentas de IA orquestradas, 7 fases, checkpoints concretos.">
+
+<!-- Favicon inline (amber O) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%23E8B84A'/%3E%3Ctext x='50' y='70' font-family='Georgia,serif' font-size='72' font-weight='600' text-anchor='middle' fill='%230B0B0F' font-style='italic'%3EO%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0B0B0F;
+    --bg-elev: #131318;
+    --bg-hi: #1A1A22;
+    --ink: #F5F1E8;
+    --ink-mute: #8A8577;
+    --ink-fade: #5A5850;
+    --line: #22222C;
+    --accent: #E8B84A;
+    --accent-deep: #5C4A1F;
+    --accent-soft: #2D2518;
+    --danger: #E86B4A;
+    --success: #7DA663;
+    --claude: #D97757;
+    --gemini: #4A90E2;
+    --gpt: #10A37F;
+    --lovable: #FF6B9D;
+    --cc: #C19BFF;
+    --manus: #3FBFA6;
+    --skill: #E8B84A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(232, 184, 74, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(74, 144, 226, 0.04) 0%, transparent 35%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+  /* HEADER */
+  header {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11, 11, 15, 0.88);
+    backdrop-filter: blur(16px);
+  }
+  .header-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo {
+    width: 32px; height: 32px;
+    background: var(--accent);
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bg);
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: italic;
+  }
+  .brand-name {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .brand-name em { font-style: italic; color: var(--accent); font-weight: 300; }
+  .brand-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-mute);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-left: 8px;
+    padding-left: 12px;
+    border-left: 1px solid var(--line);
+  }
+  .nav { display: flex; gap: 28px; }
+  .nav a {
+    color: var(--ink-mute);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.2s;
+  }
+  .nav a:hover { color: var(--ink); }
+  .nav a.active { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    padding: 80px 0 60px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .hero-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-meta::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--accent);
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 0.98;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    max-width: 900px;
+    margin-bottom: 28px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .hero p {
+    font-size: 18px;
+    color: var(--ink-mute);
+    max-width: 620px;
+    line-height: 1.5;
+  }
+
+  /* TOOLS OVERVIEW */
+  .section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 40px; gap: 24px; flex-wrap: wrap; }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-fade);
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+  .section-sub { color: var(--ink-mute); max-width: 480px; font-size: 14px; }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .tool-card {
+    background: var(--bg-elev);
+    padding: 28px 24px;
+    position: relative;
+    transition: background 0.2s;
+    cursor: default;
+  }
+  .tool-card:hover { background: var(--bg-hi); }
+  .tool-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  .tool-card[data-tool=claude] .tool-dot { background: var(--claude); }
+  .tool-card[data-tool=gemini] .tool-dot { background: var(--gemini); }
+  .tool-card[data-tool=gpt] .tool-dot { background: var(--gpt); }
+  .tool-card[data-tool=lovable] .tool-dot { background: var(--lovable); }
+  .tool-card[data-tool=manus] .tool-dot { background: var(--manus); }
+  .tool-name {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 2px;
+  }
+  .tool-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+  }
+  .tool-desc { font-size: 13px; color: var(--ink-mute); line-height: 1.55; }
+
+  /* DECISION FINDER */
+  .finder-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .search-box {
+    flex: 1;
+    min-width: 280px;
+    position: relative;
+  }
+  .search-box input {
+    width: 100%;
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 14px 18px 14px 44px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-box input::placeholder { color: var(--ink-fade); }
+  .search-box input:focus { border-color: var(--accent); }
+  .search-box::before {
+    content: '';
+    position: absolute;
+    left: 18px; top: 50%;
+    transform: translateY(-50%);
+    width: 14px; height: 14px;
+    border: 1.5px solid var(--ink-fade);
+    border-radius: 50%;
+    box-shadow: 8px 8px 0 -6px var(--ink-fade);
+  }
+
+  .cat-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .pill {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    color: var(--ink-mute);
+    padding: 8px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .pill:hover { color: var(--ink); border-color: var(--ink-fade); }
+  .pill.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+  .tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .task-card {
+    background: var(--bg-elev);
+    padding: 22px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 160px;
+  }
+  .task-card:hover { background: var(--bg-hi); }
+  .task-card .badge-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .tool-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+  }
+  .tool-badge .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+  }
+  .tool-badge[data-tool=claude] .dot { background: var(--claude); }
+  .tool-badge[data-tool=gemini] .dot { background: var(--gemini); }
+  .tool-badge[data-tool=gpt] .dot { background: var(--gpt); }
+  .tool-badge[data-tool=lovable] .dot { background: var(--lovable); }
+  .tool-badge[data-tool=claude-code] .dot { background: var(--cc); }
+  .tool-badge[data-tool=manus] .dot { background: var(--manus); }
+  .tool-badge[data-tool=skill] .dot { background: var(--skill); }
+
+  .cat-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-fade);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-left: auto;
+  }
+  .task-title {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    flex: 1;
+  }
+  .task-hint {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-fade);
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .task-hint::after {
+    content: '→';
+    margin-left: 4px;
+    transition: transform 0.2s;
+  }
+  .task-card:hover .task-hint::after { transform: translateX(4px); color: var(--accent); }
+
+  .no-results {
+    padding: 60px;
+    text-align: center;
+    color: var(--ink-fade);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px dashed var(--line);
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(11, 11, 15, 0.82);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px 24px;
+    z-index: 100;
+    overflow-y: auto;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    max-width: 780px;
+    width: 100%;
+    position: relative;
+  }
+  .modal-head {
+    padding: 32px 36px 24px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: 1px solid var(--line);
+    color: var(--ink-mute);
+    width: 32px; height: 32px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  .modal-close:hover { color: var(--ink); border-color: var(--ink-fade); }
+
+  .modal-tool-row { display: flex; gap: 10px; margin-bottom: 18px; align-items: center; }
+  .modal-title {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .modal-rationale {
+    color: var(--ink-mute);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .modal-body { padding: 28px 36px 36px; }
+
+  .block { margin-bottom: 32px; }
+  .block:last-child { margin-bottom: 0; }
+  .block-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .block-label::before {
+    content: '';
+    width: 20px; height: 1px;
+    background: var(--accent);
+  }
+
+  .prompt-box {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .prompt-content {
+    padding: 20px 20px 20px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--ink);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt-copy {
+    position: absolute; top: 12px; right: 12px;
+    background: var(--bg-hi);
+    border: 1px solid var(--line);
+    color: var(--ink-mute);
+    padding: 6px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .prompt-copy:hover { color: var(--accent); border-color: var(--accent-deep); }
+  .prompt-copy.copied { color: var(--success); border-color: var(--success); }
+
+  .steps { list-style: none; counter-reset: step; }
+  .steps li {
+    counter-increment: step;
+    padding: 14px 0 14px 44px;
+    position: relative;
+    border-bottom: 1px dashed var(--line);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 0; top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .pitfalls { list-style: none; }
+  .pitfalls li {
+    padding: 10px 0 10px 26px;
+    position: relative;
+    font-size: 13px;
+    color: var(--ink-mute);
+    line-height: 1.5;
+  }
+  .pitfalls li::before {
+    content: '!';
+    position: absolute;
+    left: 0; top: 10px;
+    width: 16px; height: 16px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* CALCULATOR */
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .calc-inputs {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    padding: 28px;
+  }
+  .calc-field { margin-bottom: 24px; }
+  .calc-field:last-child { margin-bottom: 0; }
+  .calc-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .calc-input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 12px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    outline: none;
+  }
+  .calc-input:focus { border-color: var(--accent); }
+
+  .calc-slider-wrap { padding: 8px 0; }
+  .calc-slider {
+    width: 100%;
+    appearance: none;
+    height: 2px;
+    background: var(--line);
+    outline: none;
+    cursor: pointer;
+  }
+  .calc-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px; height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid var(--bg);
+  }
+  .calc-slider::-moz-range-thumb {
+    width: 16px; height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid var(--bg);
+  }
+  .calc-val {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--accent);
+    margin-top: 8px;
+  }
+
+  .calc-output {
+    border: 1px solid var(--line);
+    background: var(--bg-elev);
+  }
+  .calc-scenario {
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  .calc-scenario:last-child { border-bottom: none; }
+  .calc-scenario.bad {
+    background: linear-gradient(135deg, rgba(232, 107, 74, 0.06), transparent 60%);
+  }
+  .calc-scenario.good {
+    background: linear-gradient(135deg, rgba(125, 166, 99, 0.08), transparent 60%);
+  }
+  .scenario-head {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-mute);
+    margin-bottom: 10px;
+  }
+  .scenario-head.bad { color: var(--danger); }
+  .scenario-head.good { color: var(--success); }
+  .scenario-cost {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .scenario-note {
+    font-size: 12px;
+    color: var(--ink-fade);
+  }
+  .calc-savings {
+    padding: 24px 28px;
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .savings-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .savings-val {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 60px 0 80px;
+    color: var(--ink-fade);
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.08em;
+  }
+  .foot-row { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1000px) {
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 800px) {
+    .wrap { padding: 0 20px; }
+    .nav { display: none; }
+    .tools-grid { grid-template-columns: 1fr 1fr; }
+    .calc-grid { grid-template-columns: 1fr; }
+    .hero { padding: 56px 0 40px; }
+    .section { padding: 56px 0; }
+    .modal-head { padding: 24px 24px 20px; }
+    .modal-body { padding: 20px 24px 28px; }
+    .modal-title { font-size: 24px; }
+    .scenario-cost { font-size: 28px; }
+    .savings-val { font-size: 32px; }
+  }
+  @media (max-width: 520px) {
+    .tools-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .modal { animation: fadeUp 0.25s ease-out; }
+
+  /* TRILHA */
+  .trail-intro {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+    align-items: end;
+  }
+  .trail-promise {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.1;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+  .trail-promise em { color: var(--accent); font-style: italic; }
+  .trail-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .trail-stat {
+    border-left: 2px solid var(--accent);
+    padding-left: 14px;
+  }
+  .trail-stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .trail-stat-lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 6px;
+  }
+
+  .week-group { margin-bottom: 48px; }
+  .week-group:last-child { margin-bottom: 0; }
+  .week-label {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .week-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .week-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .week-subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-fade);
+    margin-left: auto;
+    letter-spacing: 0.08em;
+  }
+
+  .phase {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    margin-bottom: 1px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .phase.open { border-color: var(--accent-deep); }
+  .phase-head {
+    padding: 22px 24px;
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s;
+  }
+  .phase-head:hover { background: var(--bg-hi); }
+  .phase-num {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--accent);
+    line-height: 0.9;
+  }
+  .phase-meta { }
+  .phase-name-row {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+  .phase-name {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .phase-days {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border: 1px solid var(--line);
+  }
+  .phase-goal {
+    font-size: 13px;
+    color: var(--ink-mute);
+    line-height: 1.5;
+    max-width: 560px;
+  }
+  .phase-toggle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-fade);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .phase-toggle::after {
+    content: '+';
+    font-size: 18px;
+    width: 24px; height: 24px;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .phase.open .phase-toggle::after {
+    content: '−';
+    transform: rotate(180deg);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .phase-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .phase.open .phase-body { max-height: 2000px; transition: max-height 0.5s ease-in; }
+  .phase-body-inner {
+    padding: 4px 24px 24px 108px;
+    border-top: 1px dashed var(--line);
+    margin-top: 0;
+  }
+
+  .checkpoint-box {
+    background: linear-gradient(135deg, rgba(232, 184, 74, 0.06), transparent 70%);
+    border: 1px solid var(--accent-deep);
+    padding: 18px 20px;
+    margin: 20px 0 24px;
+  }
+  .checkpoint-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .checkpoint-label::before {
+    content: '◆';
+    font-size: 9px;
+  }
+  .checkpoint-text {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  .phase-tasks-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-fade);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .phase-tasks {
+    display: grid;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .phase-task {
+    background: var(--bg);
+    padding: 16px 18px;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
+    align-items: center;
+    transition: background 0.15s;
+  }
+  .phase-task:hover { background: var(--bg-hi); }
+  .phase-task-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-fade);
+    letter-spacing: 0.08em;
+  }
+  .phase-task-title {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .phase-task-arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-fade);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .phase-task:hover .phase-task-arrow { color: var(--accent); }
+
+  .phase.bonus {
+    border: 1px dashed var(--accent-deep);
+    margin-top: 16px;
+    background: linear-gradient(135deg, rgba(232, 184, 74, 0.03), transparent 60%);
+  }
+  .phase.bonus .phase-num { font-size: 28px; }
+
+  /* SKILLS DENTRO DA FASE */
+  .skills-block {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--line);
+  }
+  .skills-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-fade);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .skills-label::before {
+    content: '▲';
+    font-size: 8px;
+    color: var(--accent);
+  }
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .skill-item {
+    background: var(--bg);
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: background 0.15s;
+    position: relative;
+  }
+  .skill-item:hover { background: var(--bg-hi); }
+  .skill-item::after {
+    content: '↗';
+    position: absolute;
+    top: 12px; right: 14px;
+    font-size: 12px;
+    color: var(--ink-fade);
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .skill-item:hover::after { color: var(--accent); }
+  .skill-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink);
+    letter-spacing: 0;
+    padding-right: 20px;
+    line-height: 1.3;
+  }
+  .skill-desc {
+    font-size: 11px;
+    color: var(--ink-mute);
+    line-height: 1.4;
+  }
+  .skills-install-tip {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+  }
+  .skills-install-tip .cmd {
+    color: var(--accent);
+  }
+  .skills-install-tip::before {
+    content: '$';
+    color: var(--ink-fade);
+  }
+
+  /* Biblioteca intro */
+  .library-intro {
+    color: var(--ink-mute);
+    font-size: 14px;
+    margin-bottom: 28px;
+    padding: 16px 20px;
+    border-left: 2px solid var(--ink-fade);
+    background: var(--bg-elev);
+  }
+
+  @media (max-width: 800px) {
+    .trail-intro { grid-template-columns: 1fr; }
+    .phase-head { grid-template-columns: 48px 1fr auto; gap: 14px; padding: 18px 18px; }
+    .phase-num { font-size: 30px; }
+    .phase-body-inner { padding: 4px 18px 20px 18px; }
+    .phase-toggle span { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <div class="brand">
+      <div class="logo">O</div>
+      <div>
+        <span class="brand-name">Do Zero ao SaaS</span>
+        <span class="brand-tag">v1.0</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#metodo">Método</a>
+      <a href="#trilha" class="active">Trilha 30d</a>
+      <a href="#biblioteca">Biblioteca</a>
+      <a href="#calculadora">Calculadora</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-meta">O Método / Trilha de 30 Dias</div>
+  <h1>Do zero ao primeiro <em>SaaS faturando.</em><br>Em <em>30 dias.</em> Sem saber programar.</h1>
+  <p>Uma trilha de 7 fases com 4 marcos semanais. Você começa sem nada e termina com um SaaS real no ar, com assinatura Stripe ativa e primeira venda. Cada passo tem a ferramenta certa, o prompt exato e o checkpoint que prova que você avançou.</p>
+</section>
+
+<!-- TOOLS -->
+<section class="section" id="metodo">
+  <div class="section-head">
+    <div>
+      <div class="section-num">01 / O MÉTODO</div>
+      <h2 class="section-title">Cinco <em>ferramentas</em>, cinco papéis.</h2>
+    </div>
+    <p class="section-sub">Quatro assistentes que você usa e um agente que você <em>delega</em>. O método não é usar todas — é saber <em>quando</em> chamar cada uma.</p>
+  </div>
+  <div class="tools-grid">
+    <div class="tool-card" data-tool="claude">
+      <div class="tool-dot"></div>
+      <div class="tool-name">Claude</div>
+      <div class="tool-role">Arquiteto</div>
+      <div class="tool-desc">Planeja, escreve PRD, desenha schema, audita código, resolve problema complexo. O cérebro da operação.</div>
+    </div>
+    <div class="tool-card" data-tool="gemini">
+      <div class="tool-dot"></div>
+      <div class="tool-name">Gemini</div>
+      <div class="tool-role">Tutor & Leitor</div>
+      <div class="tool-desc">Lê print de tela, interpreta erro, guia você passo a passo. Multimodal, didático, paciente. O professor particular que nunca se irrita.</div>
+    </div>
+    <div class="tool-card" data-tool="gpt">
+      <div class="tool-dot"></div>
+      <div class="tool-name">GPT</div>
+      <div class="tool-role">Sparring Criativo</div>
+      <div class="tool-desc">Brainstorm rápido, copy, naming, ads, imagem com DALL-E. O criativo ágil que te destrava em ideia.</div>
+    </div>
+    <div class="tool-card" data-tool="lovable">
+      <div class="tool-dot"></div>
+      <div class="tool-name">Lovable</div>
+      <div class="tool-role">Executor Visual</div>
+      <div class="tool-desc">Scaffold do MVP em minutos e preview imediato. Use só para o início e para visualizar — edite fora.</div>
+    </div>
+    <div class="tool-card" data-tool="manus">
+      <div class="tool-dot"></div>
+      <div class="tool-name">Manus</div>
+      <div class="tool-role">Operário Autônomo</div>
+      <div class="tool-desc">Você não prompta, você <em>delega</em>. Agente que executa pesquisas, relatórios e tarefas de horas em minutos, entregando o resultado pronto.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRILHA -->
+<section class="section" id="trilha">
+  <div class="section-head">
+    <div>
+      <div class="section-num">02 / A TRILHA</div>
+      <h2 class="section-title">30 dias, 7 <em>fases</em>, um produto no ar.</h2>
+    </div>
+    <p class="section-sub">Cada fase tem um checkpoint concreto. Quando você destravar o checkpoint, pode avançar pra próxima. Sem pular etapas.</p>
+  </div>
+
+  <div class="trail-intro">
+    <div class="trail-promise">No dia <em>30</em>, você terá uma URL pública, login funcionando, Stripe aceitando pagamento e o primeiro cliente real.</div>
+    <div class="trail-stats">
+      <div class="trail-stat">
+        <div class="trail-stat-num">30</div>
+        <div class="trail-stat-lbl">Dias</div>
+      </div>
+      <div class="trail-stat">
+        <div class="trail-stat-num">07</div>
+        <div class="trail-stat-lbl">Fases</div>
+      </div>
+      <div class="trail-stat">
+        <div class="trail-stat-num">04</div>
+        <div class="trail-stat-lbl">Marcos semanais</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="trail-container"></div>
+</section>
+
+<!-- BIBLIOTECA (antiga seção Decidir) -->
+<section class="section" id="biblioteca">
+  <div class="section-head">
+    <div>
+      <div class="section-num">03 / BIBLIOTECA</div>
+      <h2 class="section-title">Todas as tarefas, <em>sem ordem.</em></h2>
+    </div>
+    <p class="section-sub">Já fez a trilha uma vez? Agora volte aqui como referência rápida — busque pelo problema e copie o prompt certo.</p>
+  </div>
+
+  <div class="library-intro">
+    Se é sua primeira vez construindo algo, siga a <strong>Trilha</strong> acima na ordem. Use esta biblioteca depois, como consulta pontual quando precisar resolver uma tarefa específica fora do fluxo.
+  </div>
+
+  <div class="finder-controls">
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Busque: supabase, PRD, deploy, copy, webhook...">
+    </div>
+    <div class="cat-pills" id="pills">
+      <button class="pill active" data-cat="all">Tudo</button>
+      <button class="pill" data-cat="planejar">Planejar</button>
+      <button class="pill" data-cat="construir">Construir</button>
+      <button class="pill" data-cat="configurar">Configurar</button>
+      <button class="pill" data-cat="delegar">Delegar</button>
+      <button class="pill" data-cat="especializar">Especializar</button>
+      <button class="pill" data-cat="auditar">Auditar</button>
+      <button class="pill" data-cat="vender">Vender</button>
+    </div>
+  </div>
+
+  <div class="tasks-grid" id="tasks"></div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="section" id="calculadora">
+  <div class="section-head">
+    <div>
+      <div class="section-num">04 / CALCULADORA</div>
+      <h2 class="section-title">Quanto o Lovable está <em>custando</em> a mais?</h2>
+    </div>
+    <p class="section-sub">Estimativa em dólares do seu projeto no fluxo errado (Lovable puro) vs. no método (Lovable só para scaffold, Claude Code no resto).</p>
+  </div>
+
+  <div class="calc-grid">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label class="calc-label">Tamanho do projeto</label>
+        <div class="calc-slider-wrap">
+          <input type="range" min="20" max="300" value="80" class="calc-slider" id="editsRange">
+          <div class="calc-val"><span id="editsVal">80</span> <span style="font-size:13px;color:var(--ink-mute);font-family:'JetBrains Mono',monospace;">edições estimadas</span></div>
+        </div>
+      </div>
+      <div class="calc-field">
+        <label class="calc-label">Custo médio por prompt no Lovable (USD)</label>
+        <input type="number" class="calc-input" id="costPer" value="0.25" step="0.05" min="0.05">
+      </div>
+      <div class="calc-field">
+        <label class="calc-label">Assinatura mensal Claude Code (USD)</label>
+        <input type="number" class="calc-input" id="ccCost" value="20" step="5" min="0">
+      </div>
+    </div>
+
+    <div class="calc-output">
+      <div class="calc-scenario bad">
+        <div class="scenario-head bad">Fluxo errado</div>
+        <div class="scenario-cost" id="badCost">USD 20,00</div>
+        <div class="scenario-note">Lovable puro do scaffold até a última edição.</div>
+      </div>
+      <div class="calc-scenario good">
+        <div class="scenario-head good">Método Do Zero ao SaaS</div>
+        <div class="scenario-cost" id="goodCost">USD 20,75</div>
+        <div class="scenario-note">3 prompts no Lovable para scaffold + Claude Code no resto.</div>
+      </div>
+      <div class="calc-savings">
+        <div class="savings-label">Sua economia</div>
+        <div class="savings-val" id="savingsVal">USD 0,00</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-head">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
+      <div class="modal-tool-row" id="modalToolRow"></div>
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <p class="modal-rationale" id="modalRationale"></p>
+    </div>
+    <div class="modal-body">
+      <div class="block">
+        <div class="block-label">Prompt pronto — copie e adapte</div>
+        <div class="prompt-box">
+          <button class="prompt-copy" id="copyBtn">Copiar</button>
+          <div class="prompt-content" id="modalPrompt"></div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="block-label">Passos recomendados</div>
+        <ol class="steps" id="modalSteps"></ol>
+      </div>
+      <div class="block">
+        <div class="block-label">Erros comuns a evitar</div>
+        <ul class="pitfalls" id="modalPitfalls"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>DO ZERO AO SAAS · DASHBOARD v1.0 · PT-BR</span>
+    <span>© Método Do Zero ao SaaS</span>
+  </div>
+</footer>
+
+<script>
+const TASKS = [
+  // PLANEJAR
+  {
+    id: 'validar-ideia',
+    title: 'Validar uma ideia de produto antes de construir',
+    cat: 'planejar',
+    tool: 'claude',
+    toolLabel: 'Claude',
+    rationale: 'Claude raciocina estruturadamente e sabe questionar premissas. Ideal para pressionar sua ideia antes de investir tempo construindo.',
+    prompt: `Vou descrever uma ideia de produto. Aja como um investidor cético e rigoroso.
+
+IDEIA: [descreva em 2-3 frases]
+PÚBLICO: [quem usaria]
+MODELO: [como ganharia dinheiro]
+
+Tarefas:
+1. Liste os 5 maiores riscos em ordem de gravidade.
+2. Aponte 3 suposições não validadas que eu estou assumindo como verdade.
+3. Sugira o menor experimento possível para validar a #1 mais crítica.
+4. Se a ideia for fraca, diga sem rodeios.`,
+    steps: [
+      'Preencha o template com sua ideia real (não edite demais — seja direto).',
+      'Cole no Claude em uma conversa nova, sem contexto prévio.',
+      'Anote no Notion as 3 suposições que ele apontou.',
+      'Valide a suposição #1 com 5 conversas de 15min antes de continuar.'
+    ],
+    pitfalls: [
+      'Descrever a ideia com linguagem de marketing — Claude adere ao otimismo. Descreva como se estivesse reclamando do problema.',
+      'Pedir validação ao invés de pressão. Seu prompt precisa autorizar o "no".'
+    ]
+  },
+  {
+    id: 'escrever-prd',
+    title: 'Escrever o PRD completo do projeto',
+    cat: 'planejar',
+    tool: 'claude',
+    toolLabel: 'Claude',
+    rationale: 'PRDs exigem estrutura, contexto longo e clareza técnica. Claude entrega isso melhor que qualquer outra ferramenta.',
+    prompt: `Atue como um Product Manager experiente. Gere um PRD completo para o seguinte projeto.
+
+PROJETO: [nome e 1 parágrafo do que faz]
+PROBLEMA: [a dor que resolve]
+USUÁRIO-ALVO: [persona principal]
+STACK: Lovable (frontend React/TS) + Supabase (backend) + Resend (email)
+
+Estrutura do PRD:
+1. Visão e objetivo
+2. Problema e contexto
+3. Público-alvo com personas
+4. Proposta de valor e diferenciais
+5. Escopo do MVP (o que ENTRA e o que FICA DE FORA)
+6. Fluxos principais de usuário
+7. Schema de banco (tabelas e relações)
+8. Requisitos de autenticação e segurança (RLS)
+9. Integrações externas
+10. Métricas de sucesso
+11. Riscos e mitigações
+
+Seja específico. Prefira listas a parágrafos. Quando houver decisão a tomar, proponha UMA escolha recomendada e justifique em 1 frase.`,
+    steps: [
+      'Prepare o briefing básico (problema, usuário, stack) em bullet points.',
+      'Abra um Projeto novo no Claude (não conversa solta) — você vai voltar nele.',
+      'Cole o prompt com o briefing preenchido.',
+      'Salve a saída como PRD.md no Notion e no GitHub.',
+      'Use esse mesmo PRD como contexto base para o prompt de scaffold do Lovable.'
+    ],
+    pitfalls: [
+      'Briefing vago gera PRD vago. Invista 15min no briefing antes de mandar.',
+      'Não deixe o PRD ficar perfeito. Ele é um documento vivo — vai mudar na semana 1.'
+    ]
+  },
+  {
+    id: 'pesquisar-concorrencia',
+    title: 'Pesquisar concorrentes e inspirações',
+    cat: 'planejar',
+    tool: 'gemini',
+    toolLabel: 'Gemini',
+    rationale: 'Gemini tem contexto longo e integração nativa com busca. Perfeito para varredura de mercado em um só lugar.',
+    prompt: `Preciso mapear o mercado para o seguinte produto: [descreva em 1-2 frases].
+
+Tarefas:
+1. Liste os 10 principais concorrentes diretos e indiretos (Brasil e global).
+2. Para cada um: proposta de valor em 1 frase, modelo de preço, pontos fortes e fracos.
+3. Identifique 3 lacunas de mercado que nenhum deles cobre bem.
+4. Sugira 3 ângulos de posicionamento diferenciado que eu poderia usar.
+5. Liste 5 produtos adjacentes que eu poderia aprender em termos de UX.
+
+Formato: tabela markdown.`,
+    steps: [
+      'Rode o prompt no Gemini com busca ativada.',
+      'Peça links reais das fontes para evitar alucinação.',
+      'Valide 3 dos concorrentes manualmente antes de confiar no resto.',
+      'Salve a tabela como referência no seu PRD.'
+    ],
+    pitfalls: [
+      'Gemini às vezes inventa concorrentes. Sempre peça URL e valide os top 3.',
+      'Não confie no "preço" que ele traz — vá no site e confirme.'
+    ]
+  },
+  {
+    id: 'brainstorm-nome',
+    title: 'Fazer brainstorm de nome e branding',
+    cat: 'planejar',
+    tool: 'gpt',
+    toolLabel: 'GPT',
+    rationale: 'GPT é mais criativo, rápido e solto em naming. Gera mais opções por unidade de tempo do que Claude.',
+    prompt: `Preciso de 30 opções de nome para um produto.
+
+PRODUTO: [descreva em 1 frase]
+PÚBLICO: [quem usa]
+SENSAÇÃO DESEJADA: [tecnológica / acessível / premium / jovem / sóbria...]
+
+Divida em 5 categorias (6 nomes cada):
+1. Nomes inventados (tipo Uber, Kavak, Stripe)
+2. Combinações de palavras (tipo DigitalOcean, FreshBooks)
+3. Metáforas poéticas (tipo Orbit, Linear, Arc)
+4. Nomes em português que não soam brega
+5. Siglas ou abreviações curtas
+
+Para cada nome, marque se o domínio .com provavelmente está disponível (base em raridade).`,
+    steps: [
+      'Rode o prompt no GPT.',
+      'Peça para ele re-gerar a categoria que mais te agradou com outras 10 opções.',
+      'Teste os 5 favoritos no registro.br e domain search.',
+      'Valide os 3 finalistas com 10 pessoas do seu público.'
+    ],
+    pitfalls: [
+      'Apegar-se ao primeiro nome que parece bom. Deixe decantar 48h antes de comprar domínio.',
+      'Ignorar a fonética em português — fale o nome em voz alta antes de registrar.'
+    ]
+  },
+
+  // CONSTRUIR
+  {
+    id: 'scaffold-mvp',
+    title: 'Gerar o scaffold inicial do MVP',
+    cat: 'construir',
+    tool: 'lovable',
+    toolLabel: 'Lovable',
+    rationale: 'Lovable tira o MVP do zero em minutos. Use SÓ para o scaffold — 1 a 3 prompts no máximo, depois saia para editar fora.',
+    prompt: `Crie um aplicativo web com as seguintes especificações.
+
+NOME: [nome do app]
+DESCRIÇÃO: [1 frase do que faz]
+STACK: React + TypeScript + Tailwind + shadcn/ui + Supabase
+
+TELAS OBRIGATÓRIAS:
+1. Landing page pública (hero, features, pricing, footer)
+2. Login / Signup via Supabase Auth (email + Google)
+3. Dashboard protegido (rota /app)
+4. [adicione as 2-3 telas principais do seu produto]
+
+SCHEMA SUPABASE INICIAL:
+[cole o schema que o Claude te deu]
+
+ESTÉTICA: dark minimal, tipografia sóbria, sem gradientes roxo-rosa. Inspiração: Linear, Arc.
+
+Quero o scaffold completo funcional. Configure Supabase Auth, proteja as rotas, e faça deploy preview. DEPOIS disso eu vou editar fora do Lovable via GitHub.`,
+    steps: [
+      'Antes de abrir o Lovable, tenha o PRD e o schema Supabase prontos (use Claude para gerar os dois).',
+      'Abra um projeto novo no Lovable e cole o prompt acima já preenchido.',
+      'Ajuste APENAS o mínimo no Lovable (1-2 prompts de refinamento).',
+      'Ative a integração com GitHub e faça o primeiro push.',
+      'Clone o repo localmente e abra no Claude Code. A partir daqui, Lovable vira só visualizador.'
+    ],
+    pitfalls: [
+      'Pedir tudo pronto no primeiro prompt economiza crédito. Múltiplos prompts curtos queimam mais.',
+      'Iterar UI dentro do Lovable depois do scaffold é a armadilha que esvazia a conta. Saia para o Claude Code.'
+    ]
+  },
+  {
+    id: 'editar-codigo',
+    title: 'Editar o código do projeto (sem gastar crédito no Lovable)',
+    cat: 'construir',
+    tool: 'claude-code',
+    toolLabel: 'Claude Code',
+    rationale: 'Claude Code custa uma fração do Lovable por edição e mantém o contexto do projeto inteiro. Este é o pulo do gato #2.',
+    prompt: `Contexto: este é um projeto em React/TypeScript que foi scaffold-ado no Lovable e agora está no GitHub. Quero fazer as seguintes alterações:
+
+1. [descreva a alteração 1]
+2. [descreva a alteração 2]
+3. [descreva a alteração 3]
+
+Antes de editar:
+- Liste os arquivos que você vai mexer e por quê.
+- Aponte qualquer efeito colateral possível.
+- Pergunte se eu quero prosseguir arquivo por arquivo ou tudo de uma vez.
+
+Depois de editar:
+- Faça um commit com mensagem clara para cada alteração.`,
+    steps: [
+      'No terminal, vá até a pasta do projeto (cd ~/projetos/seu-projeto).',
+      'Rode "claude" no terminal para abrir o Claude Code.',
+      'Cole o prompt acima, preenchido com suas alterações.',
+      'Aprove arquivo por arquivo (mais seguro no início).',
+      'Faça git push — o Lovable sincroniza automaticamente e você vê a mudança no preview.'
+    ],
+    pitfalls: [
+      'Pedir 10 alterações diferentes de uma vez. Divida em lotes de 3.',
+      'Aprovar sem ler o diff. Mesmo iniciante consegue identificar edições estranhas.',
+      'Esquecer o git push — sem push, o Lovable não vê.'
+    ]
+  },
+  {
+    id: 'gerar-imagens',
+    title: 'Gerar imagens e assets visuais',
+    cat: 'construir',
+    tool: 'gpt',
+    toolLabel: 'GPT',
+    rationale: 'GPT com DALL-E entrega imagens decentes e rápidas direto no chat. Para ícones, ilustrações de landing e mockups é suficiente.',
+    prompt: `Gere uma imagem com as seguintes características:
+
+ESTILO: [minimalista / ilustração / foto realista / 3D / isométrico]
+ASSUNTO: [o que aparece na cena]
+PALETA: [cores principais]
+USO: [landing page hero / ícone / thumbnail / background]
+DIMENSÃO: [16:9 / 1:1 / 9:16]
+
+Referência de inspiração: [cite 1-2 marcas/estilos que você gosta]
+Evite: [textos dentro da imagem, clichês, rostos]`,
+    steps: [
+      'Descreva a imagem com referência visual clara (cite marcas que você gosta).',
+      'Gere 4-6 variações e escolha 1.',
+      'Refine com edit instructions ("mude a cor do fundo para bege", etc).',
+      'Baixe em alta resolução e otimize com TinyPNG antes de subir.'
+    ],
+    pitfalls: [
+      'Pedir "estilo profissional" — vago demais. Cite referências concretas.',
+      'Pedir texto dentro da imagem — DALL-E quase sempre erra. Adicione o texto por fora em Figma/Canva.'
+    ]
+  },
+
+  // CONFIGURAR (PULO DO GATO #1 - Gemini como tutor)
+  {
+    id: 'configurar-supabase',
+    title: 'Configurar Supabase do zero (auth + database + RLS)',
+    cat: 'configurar',
+    tool: 'gemini',
+    toolLabel: 'Gemini',
+    rationale: 'Gemini é o melhor tutor passo a passo. Aceita screenshot do painel e te guia sem assumir conhecimento prévio.',
+    prompt: `Sou iniciante em Supabase. Preciso configurar um projeto do zero com:
+1. Banco Postgres com as tabelas [listar tabelas]
+2. Supabase Auth com email/senha e Google OAuth
+3. Row Level Security (RLS) configurado para que cada usuário só veja seus próprios dados
+
+Me guie passo a passo. Regras:
+- Pergunte antes de assumir.
+- Valide cada etapa comigo antes de passar para a próxima.
+- Quando eu tiver dúvida, vou mandar print — me explique o que aparece na tela.
+- Se eu errar algo, me diga como desfazer.
+- Evite jargão. Se usar termo técnico, defina em 1 frase.
+
+Vamos começar pela etapa 1.`,
+    steps: [
+      'Abra uma conversa nova no Gemini (contexto limpo).',
+      'Cole o prompt acima com as tabelas do seu projeto.',
+      'Faça login no Supabase e siga o que ele pedir, screen por screen.',
+      'Quando travar, tire print da tela inteira e cole na conversa.',
+      'Ao final, peça para ele gerar um "resumo do que foi configurado" para você salvar.'
+    ],
+    pitfalls: [
+      'Pular etapas "porque parece óbvio". O RLS mal configurado vira brecha de segurança.',
+      'Não salvar as credenciais de serviço em um gerenciador de senhas (1Password, Bitwarden).'
+    ]
+  },
+  {
+    id: 'configurar-dns',
+    title: 'Apontar domínio e configurar DNS',
+    cat: 'configurar',
+    tool: 'gemini',
+    toolLabel: 'Gemini',
+    rationale: 'DNS assusta todo iniciante. Gemini explica com paciência e lê os prints do painel do Registro.br ou Cloudflare.',
+    prompt: `Comprei um domínio em [Registro.br / GoDaddy / Namecheap] e preciso apontar para um site hospedado em [Vercel / Netlify / Lovable Deploy].
+
+Sou iniciante. Me guie passo a passo.
+
+Regras:
+- Explique o que é cada registro DNS (A, CNAME, MX, TXT) com 1 frase antes de usar.
+- Pergunte antes de assumir.
+- Vou mandar print do painel quando travar.
+- Me avise sobre tempo de propagação e como verificar se funcionou.
+- Se eu precisar migrar o DNS para a Cloudflare, me diga por quê antes.`,
+    steps: [
+      'Deixe aberto: painel do registrador (aba 1) + Gemini (aba 2).',
+      'Cole o prompt preenchido e siga o passo a passo.',
+      'Tire print do painel ANTES de fazer qualquer mudança (para desfazer se precisar).',
+      'Use dnschecker.org para validar a propagação em vários países.',
+      'Espere até 24h em casos extremos antes de desesperar.'
+    ],
+    pitfalls: [
+      'Mexer em vários registros ao mesmo tempo. Altere um, verifique, depois o próximo.',
+      'Apagar registros existentes sem printar antes. Sempre printe o estado inicial.'
+    ]
+  },
+  {
+    id: 'configurar-stripe',
+    title: 'Configurar Stripe (checkout + webhook) em produção',
+    cat: 'configurar',
+    tool: 'gemini',
+    toolLabel: 'Gemini',
+    rationale: 'Stripe é o padrão global para pagamentos em SaaS. Gemini lê a doc inteira, entende o fluxo de Checkout Session + Webhook e te guia do zero sem você virar engenheiro de pagamento.',
+    prompt: `Preciso configurar Stripe do zero para um SaaS em produção (assinatura mensal).
+
+Stack: Supabase Edge Functions (endpoint de webhook), React/TS no frontend, Stripe Checkout hospedado.
+
+Me guie passo a passo:
+1. Criar conta Stripe, ativar modo teste e localizar chaves (publishable + secret).
+2. Criar produto e preço recorrente (mensal) no painel Stripe.
+3. Criar Checkout Session via Edge Function do Supabase (código completo).
+4. Redirecionar usuário ao Checkout e tratar success_url / cancel_url.
+5. Criar endpoint de webhook (checkout.session.completed, customer.subscription.updated, customer.subscription.deleted).
+6. Validar a assinatura do webhook com stripe-signature (CRÍTICO — sem isso qualquer um manda requisição falsa).
+7. Sincronizar status da assinatura no Supabase (tabela subscriptions).
+8. Testar em modo test com cartão 4242 4242 4242 4242.
+9. Checklist de ativação em produção (ativar conta, mudar chaves, atualizar webhook endpoint).
+
+Regras:
+- Explique como se eu nunca tivesse mexido com Stripe.
+- Para cada etapa, me dê o código completo + onde colocar.
+- Valide cada etapa antes da próxima.
+- Se eu mandar print de erro, me explique o que aparece.`,
+    steps: [
+      'Crie a conta Stripe e complete o cadastro da empresa (pode demorar 1-2 dias pra ativar em produção no Brasil).',
+      'Siga as etapas 1-5 no Claude Code (edição da Edge Function fora do Lovable).',
+      'Teste em modo test com o cartão 4242 4242 4242 4242 antes de qualquer coisa.',
+      'Faça 3 assinaturas de teste completas (assinar, cancelar, reativar) para cobrir os webhooks.',
+      'Só então mude para chaves live e atualize o endpoint de webhook em produção.',
+      'Monitore o painel Events do Stripe na primeira semana — todo webhook entregue deve ter status 2xx.'
+    ],
+    pitfalls: [
+      'Pular a validação da assinatura com stripe-signature. Endpoint sem validação aceita pagamentos falsos.',
+      'Testar direto em produção com cartão real. Stripe tem modo test completo — use sempre.',
+      'Esquecer de atualizar o webhook endpoint ao migrar test → live. Os eventos vão pro lugar errado.',
+      'Não armazenar o stripe_customer_id no Supabase. Sem ele você não consegue gerenciar a assinatura depois.',
+      'Confiar no frontend para atualizar status de assinatura. SEMPRE via webhook, nunca via JS do cliente.'
+    ]
+  },
+  {
+    id: 'configurar-oauth',
+    title: 'Configurar login com Google (OAuth)',
+    cat: 'configurar',
+    tool: 'gemini',
+    toolLabel: 'Gemini',
+    rationale: 'O painel do Google Cloud Console é labiríntico. Gemini lê o print e te guia sem você se perder.',
+    prompt: `Preciso configurar "Sign in with Google" no meu app.
+
+Stack: Supabase Auth (ou equivalente), React frontend, domínio [seudominio.com].
+
+Me guie passo a passo:
+1. Criar projeto no Google Cloud Console.
+2. Habilitar OAuth consent screen.
+3. Criar credenciais OAuth (Web application).
+4. Configurar os URIs de redirect (preciso de dev + produção).
+5. Integrar as credenciais no Supabase.
+6. Testar login em desenvolvimento.
+7. Publicar o consent screen para usuários externos.
+
+Regras:
+- Explique cada campo antes de eu preencher.
+- Me avise sobre as armadilhas de redirect URI (é onde todo mundo erra).
+- Vou mandar print quando travar.`,
+    steps: [
+      'Abra dois navegadores: um logado no Google Cloud, outro no Supabase.',
+      'Siga as etapas 1-4 no Google Cloud.',
+      'Siga as etapas 5-6 no Supabase.',
+      'Teste o login em localhost antes de qualquer coisa.',
+      'Publique o consent screen apenas quando estiver 100% em produção.'
+    ],
+    pitfalls: [
+      'Esquecer "http://localhost:3000" nos redirect URIs autorizados — o login em dev não funciona.',
+      'Não publicar o consent screen — só as contas internas conseguem logar.'
+    ]
+  },
+  {
+    id: 'escolher-hospedagem',
+    title: 'Entender o que é hospedagem e escolher a sua',
+    cat: 'configurar',
+    tool: 'claude',
+    toolLabel: 'Claude',
+    rationale: 'Antes de "fazer deploy", você precisa entender O QUÊ é hospedagem e POR QUÊ precisa dela. Claude explica sem jargão e te ajuda a decidir com base no seu caso real.',
+    prompt: `Sou iniciante absoluto. Não sei o que é hospedagem, servidor, deploy. Já vi esses termos e travei.
+
+Me explique em português simples, como se você estivesse conversando:
+
+1. O que é uma hospedagem web e por que eu preciso de uma?
+2. Qual a diferença entre "Lovable Deploy" (já vem junto) e hospedar em Vercel / Netlify / outro?
+3. Quando o Lovable Deploy basta e quando eu PRECISO migrar para algo como Vercel?
+4. Para cada opção (Lovable, Vercel, Netlify, Railway), me diga em 1 parágrafo: pra quem é, custo mensal real, quão fácil é usar.
+5. Recomende UMA delas para o meu caso com base no que eu vou te contar:
+   - Tipo de projeto: [SaaS / landing / app interno / e-commerce]
+   - Volume esperado no primeiro ano: [baixo / médio / alto]
+   - Orçamento mensal para infra: [USD X]
+   - Precisa rodar código no servidor: [sim / não / não sei]
+
+Seja direto. Se eu não precisar de nada além do Lovable, diga isso. Sem empurrar complexidade desnecessária.`,
+    steps: [
+      'Responda as 4 perguntas do final do prompt com sinceridade.',
+      'Cole o prompt preenchido no Claude.',
+      'Leia a recomendação e faça 3 perguntas de dúvida em seguida.',
+      'Só depois disso, vá para o card "Fazer deploy no Vercel" (ou fique no Lovable se ele recomendou).',
+      'Salve a recomendação num .md no seu Notion — referência futura.'
+    ],
+    pitfalls: [
+      'Migrar do Lovable pra Vercel sem necessidade. Se seu projeto é um MVP com 10 usuários, o Lovable Deploy basta.',
+      'Contratar hospedagem cara (AWS, Azure) porque "parece profissional". É overkill pra 99% dos MVPs.',
+      'Confundir hospedagem de site (Vercel) com hospedagem de banco (Supabase). São duas coisas diferentes, você provavelmente precisa das duas.'
+    ]
+  },
+  {
+    id: 'lovable-vs-vercel',
+    title: 'Lovable Deploy vs. Vercel: quando migrar?',
+    cat: 'configurar',
+    tool: 'claude',
+    toolLabel: 'Claude',
+    rationale: 'Essa decisão trava muito iniciante. Claude ajuda a avaliar objetivamente sem viés comercial — com uma matriz clara de critérios.',
+    prompt: `Estou com meu projeto hospedado em [Lovable Deploy / quero saber se devo migrar].
+
+Me ajude a decidir com uma matriz objetiva.
+
+Meu contexto:
+- Stack: React/TS + Supabase
+- Usuários ativos hoje: [X]
+- Usuários esperados em 6 meses: [Y]
+- Orçamento mensal para infra: [USD Z]
+- Eu mexo no código por fora (Claude Code + GitHub): [sim / não]
+- Preciso de domínio customizado: [sim / não]
+- Preciso de Edge Functions / serverless: [sim / não / não sei]
+
+Me dê:
+1. Situação atual em 3 bullets.
+2. Matriz comparativa Lovable Deploy vs. Vercel (custo, limites, facilidade, escalabilidade).
+3. Veredito: fique no Lovable / migre para Vercel / migre para outra.
+4. Se for para migrar, passo a passo da migração sem downtime.
+5. Se for pra ficar, quais sinais indicarão que chegou a hora de migrar.`,
+    steps: [
+      'Preencha o prompt com os seus números reais (não invente).',
+      'Cole no Claude e leia o veredito com calma.',
+      'Se ele recomendar ficar no Lovable, economize esse tempo e siga construindo produto.',
+      'Se recomendar migrar, siga o passo a passo como um projeto dedicado (não enfia entre tarefas).',
+      'Guarde a resposta — em 3-6 meses você refaz essa análise.'
+    ],
+    pitfalls: [
+      'Migrar porque um influencer falou que Vercel é melhor. Decisão de infra deve ser baseada nos SEUS números.',
+      'Migrar no meio de um lançamento. Faça em período de baixa demanda.',
+      'Migrar sem testar. Monte em Vercel em paralelo e só aponte o domínio quando tiver certeza.'
+    ]
+  },
+  {
+    id: 'deploy-vercel',
+    title: 'Fazer deploy de produção no Vercel (passo a passo)',
+    cat: 'configurar',
+    tool: 'gemini',
+    toolLabel: 'Gemini',
+    rationale: 'Depois que você decidiu que precisa de Vercel, Gemini é o tutor: lê o painel, interpreta logs de build, explica variável por variável.',
+    prompt: `Já decidi que vou usar Vercel. Sou iniciante e nunca fiz deploy.
+
+Stack: React/TypeScript, repositório no GitHub.
+Variáveis de ambiente que preciso configurar: [listar nomes. Ex: VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY]
+Domínio customizado: [seudominio.com ou "ainda não tenho"]
+
+Me guie passo a passo, do zero:
+
+ETAPA 1 — Conta e projeto
+- Como criar conta no Vercel (login com GitHub é recomendado).
+- Como importar o repositório do GitHub.
+- O que é "framework preset" e qual escolher.
+
+ETAPA 2 — Variáveis de ambiente
+- O que é variável de ambiente em 2 frases.
+- Como adicionar cada uma no painel.
+- Diferença entre "Production", "Preview" e "Development".
+- Quais são secretas e quais podem ser públicas (VITE_ prefix).
+
+ETAPA 3 — Primeiro deploy
+- O que esperar do primeiro build.
+- Se der erro, vou colar o log — me explique em português e diga o que fazer.
+
+ETAPA 4 — Domínio customizado
+- Como adicionar o domínio no Vercel.
+- Quais registros DNS apontar (me diga os valores exatos).
+- Como verificar se o SSL foi emitido.
+
+ETAPA 5 — Checklist final antes de divulgar
+- O que testar em produção antes de postar o link em qualquer lugar.
+
+Regras:
+- Pergunte antes de assumir.
+- Valide cada etapa comigo.
+- Vou colar print quando travar.
+- Use zero jargão desnecessário.`,
+    steps: [
+      'Tenha o repositório no GitHub com o projeto funcionando localmente.',
+      'Liste as variáveis de ambiente do seu .env (sem os valores, só os nomes).',
+      'Cole o prompt no Gemini e vá etapa por etapa.',
+      'Quando o build der erro, cole o log inteiro + print. Gemini resolve em 2-3 tentativas.',
+      'Só aponte o domínio depois do preview funcionar 100%.',
+      'Teste em mobile + desktop + 2 navegadores antes de divulgar.'
+    ],
+    pitfalls: [
+      'Deixar a chave secreta do Supabase (service_role) em variável VITE_ ou NEXT_PUBLIC_. Fica exposta no frontend.',
+      'Apontar o domínio antes de testar o preview. Se o build quebrar, seu site sai do ar com todo mundo vendo.',
+      'Não diferenciar Preview de Production. Alterações mergeadas na main vão direto pra produção — teste em branch separada primeiro.',
+      'Ignorar o build log vermelho. 90% dos problemas de deploy estão nele.'
+    ]
+  },
+
+  // AUDITAR
+  {
+    id: 'auditar-codigo',
+    title: 'Auditar código gerado por IA antes de subir',
+    cat: 'auditar',
+    tool: 'claude',
+    toolLabel: 'Claude',
+    rationale: 'Claude enxerga problemas estruturais (RLS, tipos, efeitos colaterais) que o iniciante não vê e que podem virar bug de produção.',
+    prompt: `Vou colar abaixo [ARQUIVO / PR / TRECHO] gerado por outra IA. Faça uma auditoria em 4 níveis.
+
+1. BUGS: algo que vai quebrar ou já está errado.
+2. SEGURANÇA: vulnerabilidades, RLS ausente, credenciais expostas, validação de input.
+3. PERFORMANCE: consultas N+1, re-renders desnecessários, missing indexes.
+4. MANUTENIBILIDADE: código repetido, nomes ruins, complexidade desnecessária.
+
+Para cada achado:
+- Gravidade (crítico / médio / baixo)
+- Linha ou trecho específico
+- Correção sugerida em código
+
+Ordene do mais grave para o menor. Seja direto, nada de elogiar o código.
+
+[cole o código aqui]`,
+    steps: [
+      'Cole o código que o Lovable ou outra IA gerou.',
+      'Leia os achados críticos primeiro e corrija no Claude Code.',
+      'Para segurança, trate RLS e validação como OBRIGATÓRIOS antes de produção.',
+      'Rode a auditoria antes de cada deploy importante.'
+    ],
+    pitfalls: [
+      'Auditar tudo de uma vez — 500 linhas em um prompt. Divida em blocos menores.',
+      'Ignorar achados "médios" — somados viram dívida técnica rápido.'
+    ]
+  },
+  {
+    id: 'debug-erro',
+    title: 'Debugar erro lendo print da tela',
+    cat: 'auditar',
+    tool: 'gemini',
+    toolLabel: 'Gemini',
+    rationale: 'Gemini aceita print diretamente e descreve o erro + causa provável. Mais rápido que copiar stack trace em texto.',
+    prompt: `[anexe o print da tela ou do console]
+
+O que está acontecendo nesse erro?
+
+Contexto:
+- Eu estava tentando [o que você estava fazendo]
+- Stack: [React + Supabase / etc]
+- Acabou de começar / sempre deu
+
+Me explique:
+1. O que o erro significa em português simples.
+2. As 3 causas mais prováveis, em ordem.
+3. Como verificar qual é a causa real.
+4. A correção para cada causa.`,
+    steps: [
+      'Tire print da tela inteira — console, URL, estado visual.',
+      'Cole no Gemini junto com o prompt.',
+      'Siga a ordem das 3 causas prováveis (do mais comum ao menos).',
+      'Quando resolver, salve a solução no seu Notion para referência futura.'
+    ],
+    pitfalls: [
+      'Mandar só a mensagem de erro sem contexto. O print completo vale 10x mais.',
+      'Corrigir a causa aparente sem confirmar. Às vezes o erro exibido é sintoma, não a causa.'
+    ]
+  },
+
+  // VENDER
+  {
+    id: 'copy-landing',
+    title: 'Escrever copy da landing page',
+    cat: 'vender',
+    tool: 'gpt',
+    toolLabel: 'GPT',
+    rationale: 'GPT é mais punchy e ousado em copy do que Claude. Para vendas, ritmo e gancho vencem rigor técnico.',
+    prompt: `Escreva o copy completo de uma landing page de vendas para:
+
+PRODUTO: [nome e 1 frase]
+PROMESSA PRINCIPAL: [o resultado prático que o cliente vai ter]
+PÚBLICO: [quem compra]
+DOR: [o que essa pessoa está sentindo hoje]
+OBJEÇÕES: [as 3 principais resistências à compra]
+PREÇO: [R$ X,XX]
+
+Estrutura:
+1. Headline (máx. 12 palavras, impacto imediato).
+2. Subheadline (contexto e promessa, 1-2 frases).
+3. Bloco "o problema" (3 parágrafos curtos sobre a dor).
+4. Bloco "a solução" (o que o produto faz em 3 bullets).
+5. Bloco "o que você leva" (lista dos entregáveis).
+6. Bloco "para quem é / para quem NÃO é" (2 listas).
+7. Bloco de objeções (pergunta + resposta direta, 3 pares).
+8. CTA final com urgência real.
+
+Tom: direto, brasileiro, anti-hype. Evite "transforme sua vida".`,
+    steps: [
+      'Preencha o brief com profundidade — quanto melhor o input, melhor o output.',
+      'Gere 2-3 versões diferentes do copy.',
+      'Pegue a headline de uma versão e o CTA de outra. Monte o Frankenstein.',
+      'Leia em voz alta — se você se sentir constrangido, reescreva.'
+    ],
+    pitfalls: [
+      'Aceitar o primeiro draft. Sempre gere 2 versões e cruze.',
+      'Manter expressões clichê tipo "mude sua vida", "transforme seu negócio". Corta.'
+    ]
+  },
+  {
+    id: 'criar-ads',
+    title: 'Criar variações de anúncio (Meta / TikTok)',
+    cat: 'vender',
+    tool: 'gpt',
+    toolLabel: 'GPT',
+    rationale: 'GPT gera volume criativo rápido. Para ads você quer testar 20 variações — Claude é lento para isso.',
+    prompt: `Gere 15 variações de anúncio para [Meta Ads / TikTok Ads] do seguinte produto.
+
+PRODUTO: [1 frase]
+PÚBLICO-ALVO: [persona]
+PROMESSA: [o resultado prometido]
+PREÇO: [R$ X,XX]
+FORMATO DO AD: [imagem + texto / video + texto / carrossel]
+
+Estrutura para cada ad:
+- GANCHO (headline de 1 frase, 3-6 palavras)
+- CORPO (3-4 linhas, escaneável)
+- CTA (1 linha)
+
+Varie os ângulos emocionais:
+- 5 ads focados em DOR (o que perde sem isso)
+- 5 ads focados em DESEJO (o que ganha com isso)
+- 5 ads focados em PROVA (casos, números, bastidores)
+
+Português brasileiro. Linguagem do dia a dia. Sem "revolucionário".`,
+    steps: [
+      'Rode o prompt com o brief preenchido.',
+      'Escolha 5 ads (pega da mistura dos 3 ângulos).',
+      'Monte os criativos visuais com base nos 5 ganchos.',
+      'Suba no Meta/TikTok com budget baixo por ad nos primeiros 3 dias.',
+      'Derrube os 2 piores, duplique os 2 melhores.'
+    ],
+    pitfalls: [
+      'Manter ad com CTR baixo por teimosia. Mate rápido.',
+      'Usar o mesmo criativo visual em 15 ads. Varie também o visual.'
+    ]
+  },
+  {
+    id: 'email-marketing',
+    title: 'Escrever sequência de email marketing',
+    cat: 'vender',
+    tool: 'claude',
+    toolLabel: 'Claude',
+    rationale: 'Email marketing de qualidade exige narrativa longa e coerência entre mensagens. Claude mantém esse fio muito melhor.',
+    prompt: `Escreva uma sequência de 5 emails para conversão.
+
+CENÁRIO: lead entrou na lista após baixar [lead magnet] e vai receber os emails nos próximos 5 dias antes do carrinho abrir.
+
+PRODUTO FINAL: [nome, 1 frase, preço]
+PÚBLICO: [persona]
+TOM: próximo, humano, sem gurismo.
+
+Estrutura dos 5 emails:
+1. Boas-vindas + entrega do lead magnet + história curta que cria vínculo.
+2. Apontar A DOR real com empatia + caso de alguém que passou por isso.
+3. Mostrar a SOLUÇÃO (sem vender ainda) + demonstrar autoridade com 1 insight forte.
+4. Abrir o carrinho + oferta clara + primeira chamada para ação.
+5. Último dia + reforço com objeções + urgência real.
+
+Para cada email:
+- Assunto (2 opções)
+- Pré-header
+- Corpo (4-8 parágrafos curtos)
+- CTA
+
+Escreva como ser humano, não como infoproduto.`,
+    steps: [
+      'Prepare o brief com detalhe sobre persona e dor.',
+      'Rode no Claude em um Projeto (para manter consistência ao longo de iterações).',
+      'Edite email por email — o primeiro sempre precisa do maior polimento.',
+      'Agende no seu serviço de email (Resend, ActiveCampaign, ConvertKit).'
+    ],
+    pitfalls: [
+      'Começar a vender no email 1. Queima a lista.',
+      'Usar o mesmo assunto genérico ("Novidades!") em todos. Cada email precisa de gancho único.'
+    ]
+  },
+
+  // DELEGAR — Manus
+  {
+    id: 'manus-pesquisa-profunda',
+    title: 'Delegar pesquisa profunda de mercado',
+    cat: 'delegar',
+    tool: 'manus',
+    toolLabel: 'Manus',
+    rationale: 'Gemini faz pesquisa rápida pra você ler. Manus faz pesquisa profunda e entrega o RELATÓRIO pronto — 30-50 concorrentes, tabela comparativa, tendências, citações. O que levaria 8h manuais vira 30min de delegação.',
+    prompt: `Faça uma pesquisa de mercado completa e entregue um relatório estruturado em PDF.
+
+NICHO: [descreva o nicho em 1-2 frases]
+REGIÃO: [Brasil / LATAM / Global]
+MEU PRODUTO: [o que eu estou construindo em 1 parágrafo]
+
+Entrega esperada (relatório de 15-25 páginas):
+1. Tamanho de mercado atual e projetado (com fontes).
+2. Mapa de 30-50 concorrentes (diretos, indiretos, adjacentes) com URL, preço, proposta de valor.
+3. Matriz SWOT consolidada dos 5 principais concorrentes.
+4. 5 tendências relevantes com evidências dos últimos 12 meses.
+5. 3 lacunas de mercado não atendidas.
+6. 5 ângulos de posicionamento diferenciado que eu poderia explorar.
+7. Apêndice com todas as fontes linkadas.
+
+Requisitos:
+- Todas as afirmações precisam ter fonte linkada.
+- Preferência por dados primários (Statista, reports setoriais, 10-K de empresas listadas).
+- Tabelas markdown para dados comparativos.
+- Tom executivo: direto ao ponto, sem floreio.`,
+    steps: [
+      'Prepare um brief detalhado do nicho antes de acionar o Manus (15-20min de preparação vale a hora de trabalho dele).',
+      'Cole o prompt e deixe ele rodar — pode levar 15-40min dependendo da profundidade.',
+      'Quando ele entregar, valide 3 das fontes mais críticas manualmente (Manus às vezes erra URL).',
+      'Use o relatório como INPUT para sessões seguintes com Claude (estratégia) e GPT (copy).',
+      'Salve o relatório no seu Notion como referência permanente do projeto.'
+    ],
+    pitfalls: [
+      'Delegar sem brief. Manus pesquisa qualquer coisa, mas pesquisa mal sem contexto.',
+      'Aceitar o relatório sem validar fontes. URL quebrada ou inventada acontece — sempre confira os top 3.',
+      'Usar Manus para pesquisa que leva 5 minutos no Gemini. Pesquisa rápida é Gemini, pesquisa de entregável é Manus.'
+    ]
+  },
+  {
+    id: 'manus-relatorio-dados',
+    title: 'Delegar análise e relatório a partir de dados',
+    cat: 'delegar',
+    tool: 'manus',
+    toolLabel: 'Manus',
+    rationale: 'Você joga uma planilha bagunçada e recebe de volta um relatório executivo com análises, gráficos e recomendações. Tarefa clássica de "3 dias virando 1 hora".',
+    prompt: `Analise os dados anexados e entregue um relatório executivo.
+
+DADOS: [anexar planilha CSV/XLSX ou link]
+CONTEXTO: [o que esses dados representam, em 1 parágrafo]
+OBJETIVO DA ANÁLISE: [o que eu quero descobrir ou provar]
+AUDIÊNCIA DO RELATÓRIO: [quem vai ler: eu, sócios, investidor, cliente]
+
+Entregável esperado:
+1. Sumário executivo de 1 página (3-5 insights principais).
+2. Análise detalhada por dimensão relevante (tempo, categoria, região, etc).
+3. 5+ gráficos gerados a partir dos dados (coloque as imagens no relatório).
+4. Anomalias e outliers identificados com explicação plausível.
+5. 3 recomendações acionáveis baseadas nos achados.
+6. Metodologia + tratamento de dados no apêndice.
+
+Formato: PDF executivo, design limpo, tabelas e gráficos bem renderizados.`,
+    steps: [
+      'Limpe o CSV ao mínimo antes de enviar (cabeçalhos claros, datas em formato único).',
+      'Descreva o contexto em 1 parágrafo forte — Manus não adivinha o que cada coluna significa.',
+      'Deixe rodar. Analise o relatório com olhar crítico — valide 2 cálculos manualmente.',
+      'Se o veredito não bater com sua intuição, peça para Manus refazer detalhando a metodologia.'
+    ],
+    pitfalls: [
+      'Enviar planilha bagunçada sem limpar. Lixo entra, lixo sai.',
+      'Aceitar recomendações sem checar o cálculo por trás. Agentes erram mais em matemática do que em texto.'
+    ]
+  },
+  {
+    id: 'manus-conteudo-batch',
+    title: 'Delegar produção de conteúdo em batch',
+    cat: 'delegar',
+    tool: 'manus',
+    toolLabel: 'Manus',
+    rationale: 'Precisa de 10 posts, 15 roteiros de reel, 30 emails? Manus produz em batch mantendo tom e consistência — o que ChatGPT ou Claude fariam em 10 sessões separadas.',
+    prompt: `Produza um batch de conteúdo seguindo as diretrizes abaixo.
+
+FORMATO: [posts de blog / roteiros de reel / threads X / emails / carrosséis LinkedIn]
+QUANTIDADE: [10 / 20 / 30]
+NICHO: [seu nicho]
+AUDIÊNCIA: [persona]
+TOM DE VOZ: [direto, brasileiro, anti-hype / acadêmico / descontraído]
+
+Para cada peça entregue:
+- Título / gancho
+- Corpo completo
+- CTA sugerido
+- 3 variações de thumbnail/capa (se aplicável)
+- Hashtags / keywords
+
+DIRETRIZES EDITORIAIS:
+- Evitar termos: [liste clichês que você odeia]
+- Incluir sempre: [seus bordões, posicionamento]
+- Priorizar formato: [listas, histórias pessoais, contraintuitivo]
+
+ENTREGÁVEL: arquivo estruturado (markdown ou planilha) com todas as peças numeradas e prontas para publicação.`,
+    steps: [
+      'Tenha UMA peça-exemplo do seu tom antes de mandar (seu melhor post, pra calibrar).',
+      'Rode o prompt com a peça-exemplo anexada como referência.',
+      'Leia as 3 primeiras peças com atenção — se o tom estiver certo, o resto tende a seguir.',
+      'Programe no Buffer / Metricool de uma vez só pra não perder a consistência.'
+    ],
+    pitfalls: [
+      'Pedir 30 peças sem referência de tom. Vai sair genérico de curso de Hotmart.',
+      'Não revisar individualmente. Mesmo 80% boas, as 20% ruins comprometem a marca.'
+    ]
+  },
+  {
+    id: 'manus-due-diligence',
+    title: 'Delegar due diligence técnica de stack/ferramenta',
+    cat: 'delegar',
+    tool: 'manus',
+    toolLabel: 'Manus',
+    rationale: 'Antes de adotar uma ferramenta nova, Manus pesquisa doc, changelog, reviews, issues abertas no GitHub, Reddit, comparativos — entrega um parecer técnico em horas.',
+    prompt: `Faça uma due diligence técnica completa da seguinte ferramenta/tecnologia.
+
+FERRAMENTA: [nome]
+CONTEXTO DE USO: [para o que eu quero usar no meu projeto]
+STACK ATUAL: [o que eu já uso]
+CRITÉRIOS: [preço / escalabilidade / suporte / curva de aprendizado / lock-in]
+
+Entregue um parecer de 5-8 páginas:
+1. O que é, versão estável atual, tempo de mercado.
+2. Modelo de preço detalhado com cenário real (meu volume).
+3. Top 3 concorrentes diretos com comparativo objetivo.
+4. Riscos: lock-in, licença, manutenção, estabilidade financeira da empresa.
+5. Opinião da comunidade: vasculhe Reddit, HN, X, issues do GitHub (cite posts e dates).
+6. Compatibilidade com minha stack atual.
+7. Veredito final: adotar / esperar / descartar, com justificativa.
+
+Cite todas as fontes. Seja cético, não apologista.`,
+    steps: [
+      'Descreva seu stack e volume REAIS. "Não sei" é resposta válida — escreva isso.',
+      'Deixe rodar. Valide o veredito com 2-3 pessoas do seu network antes de decidir.',
+      'Guarde o parecer no Notion — daqui 6 meses você refaz pra ver o que mudou.'
+    ],
+    pitfalls: [
+      'Contratar a ferramenta já empolgado com o marketing do site dela. Manus é sua defesa contra isso.',
+      'Ignorar o custo de lock-in. Migração forçada custa caro.'
+    ]
+  },
+
+  // ESPECIALIZAR — Skills do Claude
+  {
+    id: 'skill-entender',
+    title: 'Entender o que é uma Skill do Claude',
+    cat: 'especializar',
+    tool: 'skill',
+    toolLabel: 'Skills',
+    rationale: 'Skills são o nível seguinte depois de "saber promptar". Em vez de reescrever o mesmo contexto toda vez, você cria uma especialização permanente que o Claude carrega quando precisa.',
+    prompt: `Atue como professor de skills do Claude.
+
+Me explique, como se eu fosse iniciante:
+
+1. O QUE É uma Skill do Claude (em 3 parágrafos simples).
+2. Diferença entre Skill, Prompt solto e Project:
+   - Prompt: instrução pontual
+   - Project: contexto de uma missão
+   - Skill: expertise permanente que ativa sozinha
+3. O que faz uma Skill BOA vs. uma ruim (princípios de design).
+4. Anatomia técnica: estrutura do SKILL.md, campo name, campo description, arquivos auxiliares.
+5. Por que a DESCRIÇÃO é o componente mais importante — é ela que determina se o Claude vai ativar a skill no momento certo.
+6. 5 casos reais onde uma Skill vale a pena (ex: análise de contratos, escrita na voz da minha marca, revisão de PRDs).
+
+Feche com a pergunta: "qual é a primeira skill que faz sentido você criar dado o seu dia a dia?"`,
+    steps: [
+      'Rode o prompt em uma conversa nova com Claude.',
+      'Anote as 5 ideias de skill que fariam sentido no seu contexto.',
+      'Priorize a que você repete MAIS em prompts soltos — essa é a primeira candidata.',
+      'Vá para o card "Criar sua primeira Skill" quando estiver pronto.'
+    ],
+    pitfalls: [
+      'Confundir Skill com Project. Skills ativam automaticamente; Projects são missões manuais.',
+      'Criar skill de uso único. Se você não vai repetir, prompt normal resolve.'
+    ]
+  },
+  {
+    id: 'skill-criar-primeira',
+    title: 'Criar sua primeira Skill (passo a passo)',
+    cat: 'especializar',
+    tool: 'skill',
+    toolLabel: 'Skills',
+    rationale: 'Criar skill é 30% técnica, 70% descrição. A maioria falha na descrição — e o Claude nunca ativa a skill. Aqui você aprende a escrever a descrição que dispara no momento certo.',
+    prompt: `Vou criar minha primeira Skill. Me guie do zero.
+
+MEU CASO DE USO: [descreva o que você quer que vire skill. Ex: "escrever PRDs no meu padrão", "revisar código gerado por IA", "criar copy no tom da minha marca"]
+
+Me ajude a:
+1. Validar se isso vale uma Skill (ou se prompt resolve).
+2. Escrever o CAMPO DESCRIPTION ideal, que é o gatilho. Regras:
+   - Descreva QUANDO ativar (não o que faz).
+   - Use exemplos concretos de triggers.
+   - Pense: que palavras o usuário usaria numa conversa onde essa skill é útil?
+   - Mencione variações (sinônimos, contextos relacionados).
+3. Escrever o corpo do SKILL.md com:
+   - Contexto e objetivo.
+   - Metodologia / checklist de execução.
+   - Formato de output esperado.
+   - Exemplos bons e ruins.
+4. Identificar se preciso de arquivos auxiliares (templates, referências).
+5. Como testar a skill: cenários que DEVEM ativar e cenários que NÃO devem.
+
+Seja cirúrgico na descrição. Ela é 80% do sucesso da skill.`,
+    steps: [
+      'Tenha exemplos reais do que você quer que a skill faça (seus melhores PRDs, copys, etc).',
+      'Siga o prompt até ter o SKILL.md rascunhado.',
+      'Teste em 5 cenários diferentes — 3 que devem ativar, 2 que não.',
+      'Refine a descrição até a ativação bater 100%.',
+      'Salve a skill e use por 1 semana antes de criar a próxima.'
+    ],
+    pitfalls: [
+      'Escrever descrição que descreve O QUE a skill faz em vez de QUANDO ativar. Nunca ativa no contexto certo.',
+      'Colocar toda a expertise no corpo e deixar descrição rasa. Corpo nunca é lido se descrição não ativar.',
+      'Criar 10 skills de uma vez. Crie uma, use, aprenda, depois a próxima.'
+    ]
+  },
+  {
+    id: 'skill-biblioteca',
+    title: 'Montar uma biblioteca de Skills úteis para quem constrói produtos',
+    cat: 'especializar',
+    tool: 'skill',
+    toolLabel: 'Skills',
+    rationale: 'Algumas skills entregam tanto valor que viram parte do seu processo. Aqui está o kit base para quem constrói produtos com IA — cada uma com o ângulo certo pra disparar no contexto certo.',
+    prompt: `Me ajude a projetar uma biblioteca de Skills base para quem constrói SaaS e produtos digitais com IA.
+
+Meu contexto: [descreva stack, nicho e tipo de produto].
+
+Projete 8 Skills que farão sentido para o meu fluxo. Para CADA uma, entregue:
+
+1. Nome da skill.
+2. Descrição de ativação (o gatilho, seguindo as melhores práticas de design de skill).
+3. O que ela faz (resumo de 1 parágrafo).
+4. Quando ela ativa (3 exemplos de mensagem do usuário).
+5. Quando NÃO ativa (2 exemplos de falso positivo a evitar).
+6. Prioridade: alta / média / baixa dentro do meu fluxo.
+
+Sugestões mínimas que devem estar na lista:
+- Escrever PRD no padrão da casa.
+- Auditar código gerado por IA.
+- Criar schema Supabase seguro por default.
+- Escrever prompt de scaffold para Lovable.
+- Revisar copy de landing no meu tom.
+- Gerar checklist de deploy antes de subir código.
+
+Ao final, diga qual das 8 devo criar PRIMEIRO e por quê.`,
+    steps: [
+      'Rode o prompt com seu contexto detalhado.',
+      'Priorize pela frequência de uso no seu dia a dia (não pelo que "parece mais útil").',
+      'Crie uma skill por semana, no máximo. Qualidade > quantidade.',
+      'Depois de 4 skills, faça uma revisão: quais estão ativando de fato? Ajuste descrições.'
+    ],
+    pitfalls: [
+      'Criar todas as 8 no mesmo dia. Skill ruim testada é pior que skill nenhuma.',
+      'Não medir ativação. Se você nunca vê a skill disparar, a descrição está errada.'
+    ]
+  }
+];
+
+// PHASES — A trilha de 30 dias
+const PHASES = [
+  {
+    id: 1,
+    week: 1,
+    name: 'Idear',
+    days: 'Dias 1–3',
+    goal: 'Transformar uma ideia vaga em um problema claro, validado e posicionado.',
+    checkpoint: 'Você terá: o problema escrito em 1 parágrafo, nome do produto registrado, 3-5 concorrentes mapeados e um ângulo de posicionamento diferenciado.',
+    taskIds: ['validar-ideia', 'pesquisar-concorrencia', 'manus-pesquisa-profunda', 'manus-relatorio-dados', 'brainstorm-nome']
+  },
+  {
+    id: 2,
+    week: 1,
+    name: 'Especificar',
+    days: 'Dias 4–7',
+    goal: 'Escrever o PRD, definir escopo do MVP e decidir as ferramentas da stack antes de qualquer código.',
+    checkpoint: 'Você terá: PRD.md completo com schema de banco, lista do que entra e do que FICA DE FORA do MVP, stack decidida e justificada.',
+    taskIds: ['escrever-prd', 'manus-due-diligence']
+  },
+  {
+    id: 3,
+    week: 2,
+    name: 'Construir',
+    days: 'Dias 8–14',
+    goal: 'Sair do papel: scaffold do MVP no Lovable, conectar GitHub, migrar edições para Claude Code e ter o primeiro preview público.',
+    checkpoint: 'Você terá: projeto no GitHub, edições acontecendo fora do Lovable (economizando crédito), preview navegável numa URL de teste.',
+    taskIds: ['scaffold-mvp', 'editar-codigo', 'gerar-imagens']
+  },
+  {
+    id: 4,
+    week: 3,
+    name: 'Integrar',
+    days: 'Dias 15–18',
+    goal: 'Ligar o cérebro: Supabase com auth e RLS, login com Google, Stripe aceitando pagamento em test mode.',
+    checkpoint: 'Você terá: usuário consegue cadastrar, logar, navegar áreas protegidas, assinar plano (teste) e receber webhook de pagamento no Supabase.',
+    taskIds: ['configurar-supabase', 'configurar-oauth', 'configurar-stripe']
+  },
+  {
+    id: 5,
+    week: 3,
+    name: 'Polir',
+    days: 'Dias 19–21',
+    goal: 'Auditar o código gerado, corrigir falhas de segurança e depurar o que não está funcionando.',
+    checkpoint: 'Você terá: auditoria de código com 0 achados críticos, 3 bugs depurados, RLS validado, aplicação estável em test mode.',
+    taskIds: ['auditar-codigo', 'debug-erro']
+  },
+  {
+    id: 6,
+    week: 4,
+    name: 'Publicar',
+    days: 'Dias 22–25',
+    goal: 'Tirar do test mode e colocar no ar de verdade: escolher hospedagem, apontar domínio, ativar Stripe em produção.',
+    checkpoint: 'Você terá: URL própria (seudominio.com), SSL ativo, Stripe em modo live, primeira transação real possível.',
+    taskIds: ['escolher-hospedagem', 'lovable-vs-vercel', 'deploy-vercel', 'configurar-dns']
+  },
+  {
+    id: 7,
+    week: 4,
+    name: 'Vender',
+    days: 'Dias 26–30',
+    goal: 'Da URL no ar à primeira venda real: landing que converte, anúncios testados e sequência de email ativa.',
+    checkpoint: 'Você terá: landing publicada com copy de vendas, 10+ variações de anúncio rodando, sequência de 5 emails agendada, primeira venda registrada no Stripe live.',
+    taskIds: ['copy-landing', 'criar-ads', 'email-marketing', 'manus-conteudo-batch']
+  }
+];
+
+const BONUS_PHASE = {
+  id: 'bonus',
+  name: 'Acelerar',
+  days: 'Pós dia 30',
+  goal: 'Skills do Claude: transforme tarefas repetitivas em especialização permanente e faça o próximo projeto em metade do tempo.',
+  checkpoint: 'Você terá: biblioteca inicial de 3-5 Skills ativando automaticamente no seu fluxo, reduzindo tempo de briefing em 70%.',
+  taskIds: ['skill-entender', 'skill-criar-primeira', 'skill-biblioteca']
+};
+
+const WEEK_TITLES = {
+  1: { title: 'Fundação', subtitle: 'Da ideia ao plano' },
+  2: { title: 'Construção', subtitle: 'Do plano ao código' },
+  3: { title: 'Integrações', subtitle: 'Do código ao sistema' },
+  4: { title: 'Lançamento', subtitle: 'Do sistema à venda' }
+};
+
+// Skills do skills.sh recomendadas por fase
+const PHASE_SKILLS = {
+  1: [
+    { name: 'obra/superpowers/brainstorming', desc: 'Brainstorming estruturado que força divergência antes de convergir.' },
+    { name: 'coreyhaines31/marketingskills/marketing-ideas', desc: 'Ideação de ângulos de marketing conectados ao produto.' },
+    { name: 'coreyhaines31/marketingskills/product-marketing-context', desc: 'Aterrissa o produto dentro do contexto de mercado real.' }
+  ],
+  2: [
+    { name: 'obra/superpowers/writing-plans', desc: 'Planos de execução acionáveis, do objetivo ao checklist.' },
+    { name: 'coreyhaines31/marketingskills/pricing-strategy', desc: 'Como precificar SaaS sem chutar número e sem subprecificar.' }
+  ],
+  3: [
+    { name: 'anthropics/skills/frontend-design', desc: 'Design de frontend distintivo — evita o visual genérico de AI.' },
+    { name: 'leonxlnx/taste-skill/high-end-visual-design', desc: 'Visual premium, tipografia refinada, composições caras.' },
+    { name: 'shadcn/ui/shadcn', desc: 'Biblioteca de componentes padrão da indústria.' },
+    { name: 'nextlevelbuilder/ui-ux-pro-max-skill', desc: 'UI/UX avançado com foco em detalhes que convertem.' }
+  ],
+  4: [
+    { name: 'supabase/agent-skills/supabase', desc: 'Padrões oficiais do Supabase aplicados corretamente.' },
+    { name: 'supabase/agent-skills/supabase-postgres-best-practices', desc: 'Schema, RLS e queries seguras sem você ser DBA.' },
+    { name: 'better-auth/skills/better-auth-best-practices', desc: 'Autenticação feita certo desde o primeiro commit.' }
+  ],
+  5: [
+    { name: 'pbakaus/impeccable/polish', desc: 'Polimento de output até ficar irrepreensível.' },
+    { name: 'pbakaus/impeccable/critique', desc: 'Crítica construtiva objetiva sobre o que você fez.' },
+    { name: 'obra/superpowers/systematic-debugging', desc: 'Investigação de raiz do problema antes de corrigir.' },
+    { name: 'anthropics/skills/webapp-testing', desc: 'Testes de aplicação web cobrindo o que importa.' }
+  ],
+  6: [
+    { name: 'vercel-labs/agent-skills/deploy-to-vercel', desc: 'Deploy no Vercel com as práticas certas desde o começo.' },
+    { name: 'coreyhaines31/marketingskills/analytics-tracking', desc: 'Tracking configurado corretamente pra você decidir com dados.' },
+    { name: 'squirrelscan/skills/audit-website', desc: 'Auditoria de site antes de subir pra produção.' }
+  ],
+  7: [
+    { name: 'coreyhaines31/marketingskills/copywriting', desc: 'Copy que converte, não copy que enfeita.' },
+    { name: 'coreyhaines31/marketingskills/marketing-psychology', desc: 'Os gatilhos psicológicos de compra, aplicados com ética.' },
+    { name: 'coreyhaines31/marketingskills/page-cro', desc: 'Otimização de conversão em landing page.' },
+    { name: 'coreyhaines31/marketingskills/email-sequence', desc: 'Sequências de email que vendem sem queimar lista.' },
+    { name: 'coreyhaines31/marketingskills/ad-creative', desc: 'Criativos de anúncio com ganchos que funcionam.' },
+    { name: 'coreyhaines31/marketingskills/launch-strategy', desc: 'Estratégia de lançamento com marcos semanais.' }
+  ],
+  bonus: [
+    { name: 'anthropics/skills/skill-creator', desc: 'Crie suas próprias skills seguindo as melhores práticas.' },
+    { name: 'obra/superpowers/writing-skills', desc: 'A meta-skill de escrever skills que ativam no momento certo.' },
+    { name: 'pbakaus/impeccable/distill', desc: 'Destila complexidade em essência — ótimo pra descrições.' }
+  ]
+};
+
+function renderTrail() {
+  const container = document.getElementById('trail-container');
+  const weeks = [1, 2, 3, 4];
+  let html = '';
+
+  weeks.forEach(w => {
+    const phasesInWeek = PHASES.filter(p => p.week === w);
+    const wmeta = WEEK_TITLES[w];
+    html += `
+      <div class="week-group">
+        <div class="week-label">
+          <span class="week-num">Semana ${String(w).padStart(2, '0')}</span>
+          <span class="week-title">${wmeta.title}</span>
+          <span class="week-subtitle">${wmeta.subtitle}</span>
+        </div>
+        ${phasesInWeek.map(p => renderPhase(p)).join('')}
+      </div>
+    `;
+  });
+
+  // Bônus
+  html += `
+    <div class="week-group">
+      <div class="week-label">
+        <span class="week-num">Bônus</span>
+        <span class="week-title">Acelerar o próximo</span>
+        <span class="week-subtitle">Skills como especialização permanente</span>
+      </div>
+      ${renderPhase(BONUS_PHASE, true)}
+    </div>
+  `;
+
+  container.innerHTML = html;
+
+  // Attach toggles
+  document.querySelectorAll('.phase-head').forEach(head => {
+    head.addEventListener('click', e => {
+      const phase = head.closest('.phase');
+      phase.classList.toggle('open');
+    });
+  });
+
+  // Attach task clicks
+  document.querySelectorAll('.phase-task').forEach(el => {
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      openModal(el.dataset.id);
+    });
+  });
+}
+
+function renderPhase(phase, isBonus = false) {
+  const tasks = phase.taskIds.map(id => TASKS.find(t => t.id === id)).filter(Boolean);
+  const num = isBonus ? '★' : String(phase.id).padStart(2, '0');
+  const skillKey = isBonus ? 'bonus' : phase.id;
+  const skills = PHASE_SKILLS[skillKey] || [];
+  const firstSkill = skills[0]?.name || '';
+
+  return `
+    <div class="phase ${isBonus ? 'bonus' : ''}">
+      <div class="phase-head">
+        <div class="phase-num">${num}</div>
+        <div class="phase-meta">
+          <div class="phase-name-row">
+            <span class="phase-name">${phase.name}</span>
+            <span class="phase-days">${phase.days}</span>
+          </div>
+          <div class="phase-goal">${phase.goal}</div>
+        </div>
+        <div class="phase-toggle"><span>Abrir</span></div>
+      </div>
+      <div class="phase-body">
+        <div class="phase-body-inner">
+          <div class="checkpoint-box">
+            <div class="checkpoint-label">Checkpoint da fase</div>
+            <div class="checkpoint-text">${phase.checkpoint}</div>
+          </div>
+          <div class="phase-tasks-label">Tarefas desta fase · ${tasks.length}</div>
+          <div class="phase-tasks">
+            ${tasks.map((t, i) => `
+              <div class="phase-task" data-id="${t.id}">
+                <span class="phase-task-num">${String(i + 1).padStart(2, '0')}</span>
+                <span class="phase-task-title">${t.title}</span>
+                <span class="phase-task-arrow">abrir →</span>
+              </div>
+            `).join('')}
+          </div>
+          ${skills.length > 0 ? `
+          <div class="skills-block">
+            <div class="skills-label">Skills do skills.sh pra esta fase · ${skills.length}</div>
+            <div class="skills-list">
+              ${skills.map(s => `
+                <a class="skill-item" href="https://skills.sh/${s.name}" target="_blank" rel="noopener">
+                  <span class="skill-name">${s.name}</span>
+                  <span class="skill-desc">${s.desc}</span>
+                </a>
+              `).join('')}
+            </div>
+            <div class="skills-install-tip"><span>npx skills add <span class="cmd">${firstSkill}</span></span></div>
+          </div>
+          ` : ''}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// State
+let activeCat = 'all';
+let searchQuery = '';
+
+const $tasks = document.getElementById('tasks');
+const $search = document.getElementById('search');
+const $pills = document.querySelectorAll('.pill');
+
+function renderTasks() {
+  const q = searchQuery.trim().toLowerCase();
+  const filtered = TASKS.filter(t => {
+    const matchCat = activeCat === 'all' || t.cat === activeCat;
+    const matchQuery = !q || t.title.toLowerCase().includes(q) ||
+      t.rationale.toLowerCase().includes(q) || t.toolLabel.toLowerCase().includes(q) ||
+      t.cat.toLowerCase().includes(q);
+    return matchCat && matchQuery;
+  });
+
+  if (filtered.length === 0) {
+    $tasks.innerHTML = '<div class="no-results">nenhuma tarefa encontrada — tente outra palavra</div>';
+    $tasks.style.display = 'block';
+    $tasks.style.border = 'none';
+    return;
+  }
+
+  $tasks.style.display = 'grid';
+  $tasks.style.border = '1px solid var(--line)';
+
+  $tasks.innerHTML = filtered.map(t => `
+    <div class="task-card" data-id="${t.id}">
+      <div class="badge-row">
+        <div class="tool-badge" data-tool="${t.tool}">
+          <span class="dot"></span>${t.toolLabel}
+        </div>
+        <div class="cat-tag">${t.cat}</div>
+      </div>
+      <div class="task-title">${t.title}</div>
+      <div class="task-hint">ver método completo</div>
+    </div>
+  `).join('');
+
+  document.querySelectorAll('.task-card').forEach(card => {
+    card.addEventListener('click', () => openModal(card.dataset.id));
+  });
+}
+
+function openModal(id) {
+  const t = TASKS.find(x => x.id === id);
+  if (!t) return;
+
+  document.getElementById('modalTitle').textContent = t.title;
+  document.getElementById('modalRationale').textContent = t.rationale;
+  document.getElementById('modalToolRow').innerHTML = `
+    <div class="tool-badge" data-tool="${t.tool}">
+      <span class="dot"></span>${t.toolLabel}
+    </div>
+    <div class="cat-tag" style="margin-left:0;">${t.cat}</div>
+  `;
+  document.getElementById('modalPrompt').textContent = t.prompt;
+  document.getElementById('modalSteps').innerHTML = t.steps.map(s => `<li>${s}</li>`).join('');
+  document.getElementById('modalPitfalls').innerHTML = t.pitfalls.map(p => `<li>${p}</li>`).join('');
+
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('modal').addEventListener('click', e => {
+  if (e.target.id === 'modal') closeModal();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+document.getElementById('copyBtn').addEventListener('click', () => {
+  const text = document.getElementById('modalPrompt').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = 'Copiado ✓';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copiar';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+});
+
+$search.addEventListener('input', e => {
+  searchQuery = e.target.value;
+  renderTasks();
+});
+
+$pills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelector('.pill.active').classList.remove('active');
+    pill.classList.add('active');
+    activeCat = pill.dataset.cat;
+    renderTasks();
+  });
+});
+
+// CALCULATOR
+const $edits = document.getElementById('editsRange');
+const $editsVal = document.getElementById('editsVal');
+const $costPer = document.getElementById('costPer');
+const $ccCost = document.getElementById('ccCost');
+const $bad = document.getElementById('badCost');
+const $good = document.getElementById('goodCost');
+const $savings = document.getElementById('savingsVal');
+
+function fmtUSD(v) {
+  return 'USD ' + v.toFixed(2).replace('.', ',');
+}
+
+function calc() {
+  const edits = parseInt($edits.value, 10);
+  const per = parseFloat($costPer.value) || 0;
+  const cc = parseFloat($ccCost.value) || 0;
+  $editsVal.textContent = edits;
+
+  const bad = edits * per;
+  // Método: 3 prompts scaffold no Lovable + assinatura Claude Code (custo fixo mensal)
+  const good = (3 * per) + cc;
+  const savings = Math.max(0, bad - good);
+
+  $bad.textContent = fmtUSD(bad);
+  $good.textContent = fmtUSD(good);
+  $savings.textContent = fmtUSD(savings);
+}
+
+[$edits, $costPer, $ccCost].forEach(el => el.addEventListener('input', calc));
+
+// init
+renderTrail();
+renderTasks();
+calc();
+</script>
+</body>
+</html>
