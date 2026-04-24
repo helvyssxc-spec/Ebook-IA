@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Do Zero ao SaaS — Ebook</title>
+<style>
+  @page { size: A4; margin: 22mm 20mm; }
+  @media print {
+    .page-break { page-break-before: always; }
+    h1, h2 { page-break-after: avoid; }
+    pre, blockquote, table { page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11.5pt;
+    line-height: 1.6;
+    color: #1a1a1a;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+  h1 { font-size: 32pt; line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.5px; }
+  h2 { font-size: 20pt; line-height: 1.25; margin: 32px 0 12px; border-bottom: 2px solid #111; padding-bottom: 6px; }
+  h3 { font-size: 15pt; margin: 24px 0 10px; }
+  h4 { font-size: 12pt; margin: 18px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; color: #444; }
+  p  { margin: 0 0 12px; text-align: justify; hyphens: auto; }
+  a  { color: #0645ad; }
+  strong { color: #000; }
+  em { font-style: italic; }
+  hr { border: 0; border-top: 1px solid #ccc; margin: 24px 0; }
+  ul, ol { margin: 0 0 14px 20px; padding: 0; }
+  li { margin: 4px 0; }
+  blockquote {
+    margin: 18px 0;
+    padding: 10px 18px;
+    border-left: 4px solid #0645ad;
+    background: #f7f9fc;
+    font-style: italic;
+    color: #333;
+  }
+  code {
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 10pt;
+    background: #f0f0f0;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+  pre {
+    background: #1e1e1e;
+    color: #eaeaea;
+    padding: 14px 16px;
+    border-radius: 6px;
+    font-size: 9.5pt;
+    line-height: 1.45;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  pre code { background: transparent; color: inherit; padding: 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10.5pt;
+    margin: 14px 0;
+  }
+  th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; vertical-align: top; }
+  th { background: #f0f0f0; }
+  .page-break { page-break-before: always; height: 0; }
+</style>
+</head>
+<body>
+<h1>Do Zero ao SaaS</h1>
+<h2>Do zero ao primeiro SaaS faturando em 30 dias</h2>
+<h3>Sem saber programar.</h3>
+<hr>
+<p><strong>Autor</strong>: Equipe Do Zero ao SaaS
+<strong>Edição</strong>: 1ª edição — 2026
+<strong>Método</strong>: 5 ferramentas de IA · 7 fases · 1 produto em produção</p>
+<hr>
+<h2>Aviso antes da primeira página</h2>
+<p>Este não é um curso de programação.</p>
+<p>Este também não é um curso de &quot;vibe coding&quot; de guru do TikTok que te promete faturar milhões em 30 dias se você só &quot;seguir o fluxo&quot;.</p>
+<p>É um <strong>método</strong>. Uma sequência de decisões e ações, em ordem, para sair do ponto onde você tem uma ideia na cabeça e chegar no ponto onde existe um produto real rodando numa URL pública, aceitando pagamento no Stripe, com um primeiro cliente que pagou com dinheiro de verdade.</p>
+<p>Se você quer entender por que React é melhor que Vue, este ebook não é pra você.
+Se você quer aprender a projetar sistemas distribuídos, este ebook não é pra você.
+Se você quer ficar &quot;sabendo de tudo&quot; sem nunca publicar nada, este ebook <strong>especialmente</strong> não é pra você.</p>
+<p>Agora: se você quer parar de esperar, parar de aprender infinitamente, e fazer sua primeira coisa real acontecer usando IA como alavanca — estamos no lugar certo.</p>
+<p>Não há mágica aqui. Há método.</p>
+<p>Vamos.</p>
+<hr>
+<h2>Como usar este ebook</h2>
+<ul>
+<li><strong>Leia a Parte 1 antes de qualquer coisa.</strong> Ela define como você vai pensar durante o método inteiro. Pular essa parte é como montar móvel sem ler o manual: vai dar certo, mas vai sangrar.</li>
+<li><strong>A Parte 2 apresenta suas cinco ferramentas.</strong> Leia uma por dia se quiser decantar, ou de uma vez se estiver com pressa.</li>
+<li><strong>A Parte 3 é o motor operacional.</strong> O ciclo dos 5 passos e dois estudos de caso reais. Releia antes de começar cada fase da trilha.</li>
+<li><strong>A Parte 4 é a joia da coroa</strong> — os dois &quot;pulos do gato&quot; que economizam tempo, dinheiro e frustração. Releia toda semana nos primeiros 30 dias.</li>
+<li><strong>A Parte 5 fecha o ciclo</strong> — troubleshooting e o que fazer depois que você publicou.</li>
+</ul>
+<p>Você tem 3 companheiros além deste PDF:</p>
+<ol>
+<li><strong>O Dashboard interativo</strong> (URL no seu email) — onde ficam os prompts prontos, a biblioteca de 100+ prompts e a calculadora.</li>
+<li><strong>Os 8 templates</strong> na pasta do produto — PRDs, schemas, checklists.</li>
+<li><strong>A comunidade</strong> (link no seu email) — onde você faz perguntas quando travar.</li>
+</ol>
+<p>Não leia o ebook de uma vez tentando absorver tudo. Leia a parte da trilha em que você está. Aplique. Volte. Leia a próxima.</p>
+<hr>
+<h2>O que você vai ter ao final dos 30 dias</h2>
+<p>Não vou te prometer milhão no primeiro mês. Vou te prometer o que eu sei que acontece se você seguir o método:</p>
+<ul>
+<li>Uma URL pública (seu domínio ou subdomínio Vercel) onde seu SaaS roda.</li>
+<li>Login funcionando (email/senha e Google).</li>
+<li>Stripe integrado em modo live, aceitando pagamento real.</li>
+<li>Uma landing de vendas no ar com copy que converte.</li>
+<li>Pelo menos uma venda registrada — mesmo que seja sua mãe comprando pra testar.</li>
+<li>Conhecimento pra repetir o processo quantas vezes quiser.</li>
+</ul>
+<p>Isso não é pouco. Isso é mais do que 95% das pessoas que começam a &quot;aprender programação&quot; conseguem em 2 anos.</p>
+<p>Boa leitura.</p>
+<hr>
+<div class="page-break"></div><h1>PARTE 1 — Por que esse método existe</h1>
+<blockquote>
+<p><em>Duas ideias pra decantar antes de tocar numa única ferramenta.</em></p>
+</blockquote>
+<hr>
+<h2>Capítulo 1 — O caos invisível</h2>
+<p>Você já reparou que, toda vez que você tenta construir alguma coisa com IA, abre pelo menos quatro abas no navegador?</p>
+<p>Uma pro Claude, porque alguém falou que ele é bom em raciocínio.
+Outra pro ChatGPT, porque você já tinha conta.
+Uma pro Gemini, porque o Google empurrou.
+E uma pro Lovable, porque viralizou num reel semana passada.</p>
+<p>Aí você pula de aba em aba, tentando lembrar em qual delas colou o último prompt, qual das versões do código funcionava, em qual chat estava o schema do banco que você pediu. Seis horas depois, você tem: muita coisa aberta, nenhuma linha pronta, e a sensação crescente de que talvez o problema seja você.</p>
+<p>Não é você. É método.</p>
+<p>Ou melhor: a falta dele.</p>
+<p>Existem hoje centenas de tutoriais de 20 minutos no YouTube te mostrando &quot;como fazer um SaaS em uma tarde com IA&quot;. Você assiste. Tenta reproduzir. Trava na terceira etapa porque a ferramenta do youtuber era outra versão, ou porque o erro que apareceu na sua tela não apareceu na dele, ou porque você esqueceu de configurar uma variável que ele passou voando.</p>
+<p>O problema é estrutural. Você está tentando dirigir quatro carros ao mesmo tempo sem saber pra onde está indo.</p>
+<h3>O teste do espelho</h3>
+<p>Faça esse diagnóstico rápido. Marque quantos itens são verdade pra você hoje:</p>
+<ul>
+<li>Eu abro Claude/GPT/Gemini meio que aleatoriamente, conforme lembro de qual está aberto.</li>
+<li>Meus prompts começam com &quot;oi, tudo bem?&quot; ou equivalente.</li>
+<li>Eu pago Lovable e queimo os créditos em 3 dias sem ter nada publicado.</li>
+<li>Quando o código gera um erro, eu copio o erro no mesmo chat onde estava gerando o código, mesmo que o chat já tenha 40 mensagens.</li>
+<li>Eu nunca sei se devo pedir o código pronto ou pedir o plano primeiro.</li>
+<li>Eu tenho uma pasta &quot;Ideias de SaaS&quot; com 20 ideias, zero começadas.</li>
+<li>Toda vez que eu tento aprender, aparece uma ferramenta nova e eu paro pra testar ela.</li>
+</ul>
+<p>Se você marcou 3 ou mais, bem-vindo. Você é o público desse método.</p>
+<p>A boa notícia: o problema é solucionável e não é longo. O que você precisa não é mais conhecimento. É ordem.</p>
+<h3>Por que o &quot;prompt mágico&quot; não resolve</h3>
+<p>Existe uma fantasia, muito vendida em packs do Hotmart a R$ 27, de que existe algum prompt específico, escrito de uma forma especial, que vai transformar uma IA genérica num programador sênior. O tal do &quot;mega prompt&quot;.</p>
+<p>Isso é mentira de quatro formas diferentes:</p>
+<p><strong>Primeiro</strong>, nenhum prompt isolado substitui a falta de clareza sobre o que você quer construir. Se você não sabe o que é o produto, nenhum prompt vai descobrir por você.</p>
+<p><strong>Segundo</strong>, um prompt bom resolve um problema. Construir um SaaS são dezenas de problemas encadeados. Um prompt não basta. Uma sequência de prompts, feita na ordem certa, para ferramentas diferentes, basta.</p>
+<p><strong>Terceiro</strong>, ferramentas de IA têm forças e fraquezas específicas. Um prompt genial pro Claude pode gerar lixo no GPT. Pedir imagem pro Claude é como pedir que ele desenhe: não vai sair bem. Pedir PRD pro GPT é como pedir poema pro Excel: vai sair, mas não vai ser bom.</p>
+<p><strong>Quarto</strong>, mesmo o melhor prompt do mundo esbarra num limite duro: você precisa saber <strong>quando usar cada ferramenta</strong> e <strong>o que fazer com a resposta</strong>. Isso é método, não prompt.</p>
+<h3>O que este ebook faz diferente</h3>
+<p>Vou te dar uma fórmula que tem três camadas:</p>
+<ol>
+<li><strong>Um mapa mental</strong> — quais cinco ferramentas existem e qual o papel de cada uma.</li>
+<li><strong>Um fluxo operacional</strong> — a ordem em que você chama cada uma, em cada fase do seu projeto.</li>
+<li><strong>Prompts calibrados</strong> — palavra por palavra, testados, pra cada papel de cada ferramenta.</li>
+</ol>
+<p>As três camadas juntas é o que chamo de orquestra. Porque é isso que você vai aprender a fazer: orquestrar. Não tocar violino. Reger.</p>
+<p>A diferença entre um músico e um maestro é que o músico precisa dominar um instrumento. O maestro precisa saber quando cada instrumento deve entrar, em que intensidade, por quanto tempo. O maestro não precisa tocar violino melhor que o violinista — precisa saber que aquela passagem pede violino, não trompete.</p>
+<p>Você vai virar maestro.</p>
+<hr>
+<h2>Capítulo 2 — Mindset: você é o maestro, não o músico</h2>
+<p>Precisamos desfazer uma confusão comum antes de seguir: <strong>aprender a programar</strong> e <strong>aprender a construir produtos com IA</strong> são duas habilidades diferentes.</p>
+<p>A primeira leva 2 a 5 anos, exige matemática discreta, estruturas de dados, paradigmas de programação, frameworks que mudam a cada 18 meses. É uma carreira.</p>
+<p>A segunda pode ser aprendida em 30 dias e usada pro resto da vida. É um método.</p>
+<p>As duas habilidades têm alguma sobreposição — você vai, sim, encostar em código em alguns momentos. Mas a diferença de atitude é gigante. O programador pensa em <strong>como</strong> fazer. Você vai pensar em <strong>o quê</strong> fazer, e delegar o &quot;como&quot; pra IA certa.</p>
+<h3>A analogia que resolve</h3>
+<p>Imagina que você decidiu construir uma casa. Existem dois caminhos:</p>
+<p><strong>Caminho A — virar pedreiro.</strong>
+Você aprende a misturar cimento, a assentar tijolo, a instalar fiação elétrica, a furar cerâmica sem trincar. Depois de 3 anos aprendendo, você constrói sua casa. É sua, ficou ótima. E você agora é pedreiro.</p>
+<p><strong>Caminho B — virar contratante/arquiteto.</strong>
+Você desenha a planta, define os cômodos, escolhe os materiais, contrata os pedreiros certos pras partes certas, supervisiona o trabalho, aprova os resultados. Em 3 meses a casa está pronta. É sua, ficou ótima. E você agora sabe gerenciar obras.</p>
+<p>O caminho tradicional de &quot;aprender a programar&quot; é o A.
+O método Do Zero ao SaaS é o B.</p>
+<p>Nos dois casos, a casa fica em pé. A diferença é que no B você paralelizou o trabalho com gente (ou IA) que faz cada parte melhor e mais rápido do que você jamais faria.</p>
+<h3>O que isso significa na prática</h3>
+<p>Se você aceita ser maestro em vez de músico, algumas coisas mudam:</p>
+<p><strong>Você para de tentar entender tudo.</strong>
+Não é seu trabalho saber por que React usa hooks em vez de classes. É seu trabalho saber que quando a IA gera um componente, ela vai usar hooks, e que isso é o padrão atual do mercado. Ponto. Você delega o &quot;por quê&quot; pra quem gerou.</p>
+<p><strong>Você começa a pensar em papéis.</strong>
+Claude é bom em X. Gemini é bom em Y. GPT é bom em Z. Lovable faz W. Manus executa tarefas longas. Sua tarefa como maestro é mapear cada pedaço do seu projeto pro especialista certo.</p>
+<p><strong>Você para de escrever prompts gigantes tentando resolver tudo de uma vez.</strong>
+Prompt grande demais é sintoma de que você não decidiu o que quer. Decide primeiro, prompta depois. Prompt pequeno e certeiro vence prompt longo e vago, sempre.</p>
+<p><strong>Você aceita que a IA erra.</strong>
+Às vezes a IA gera código que não funciona, resposta que não faz sentido, análise que tem número inventado. Isso é parte do jogo. Seu trabalho como maestro é ter critério pra detectar o erro e mandar de volta pra corrigir. Nenhum maestro aceita a primeira execução da orquestra sem ajustes.</p>
+<h3>O custo oculto de cada escolha errada</h3>
+<p>Uma das coisas que separa quem constrói de quem fica só estudando é a <strong>consciência de custo</strong>.</p>
+<p>Todo prompt tem um custo. Todo minuto que você gasta esperando uma resposta tem um custo. Todo crédito queimado em iteração desnecessária tem um custo.</p>
+<p>No método, você vai aprender coisas específicas sobre custo que mudam tudo:</p>
+<ul>
+<li>Por que iterar dentro do Lovable é a armadilha mais cara do mercado hoje.</li>
+<li>Como o Claude Code pode fazer em centavos o que o Lovable cobra em dezenas de dólares.</li>
+<li>Quando vale pagar Gemini Pro e quando a versão gratuita é suficiente.</li>
+<li>Por que &quot;deixar o Manus rodando a noite toda&quot; pode te dar um relatório de 80 páginas inútil.</li>
+</ul>
+<p>Tudo isso está nas próximas partes. O que você precisa internalizar agora é: <strong>dinheiro é feedback</strong>. Se você está queimando 50 dólares por semana e não tem produto, a ferramenta não está errada — o uso está.</p>
+<h3>Mapa mental para fixar</h3>
+<p>Antes de seguir pro Capítulo 3, imprima ou anote num papel as três frases abaixo. Elas são sua bússola no método inteiro:</p>
+<p><strong>1. Eu não preciso saber como a ferramenta faz. Preciso saber quando usá-la.</strong></p>
+<p><strong>2. Prompt grande é sintoma de indecisão. Decido primeiro, prompto depois.</strong></p>
+<p><strong>3. Todo output de IA é rascunho até eu validar. Eu sou o maestro, não a plateia.</strong></p>
+<p>Se essas três frases estiverem vivas na sua cabeça enquanto você lê a Parte 2, o resto do método se encaixa sozinho.</p>
+<hr>
+<div class="page-break"></div><h1>PARTE 2 — As cinco ferramentas e seus papéis</h1>
+<blockquote>
+<p><em>Você vai reger cinco instrumentos. Cada um com função específica. Saber o papel de cada um é 80% do método.</em></p>
+</blockquote>
+<hr>
+<h2>Capítulo 3 — Claude, o Arquiteto</h2>
+<p>Claude é a ferramenta que você usa quando precisa <strong>pensar bem</strong>. Não rapidamente — bem.</p>
+<p>Se você pudesse resumir a personalidade do Claude em uma frase, seria: &quot;aquele amigo engenheiro que responde devagar mas responde certo&quot;. Ele é construído pra contexto longo, raciocínio estruturado e saída técnica de qualidade. É o melhor da categoria em código, escrita técnica e análise que exige cuidado.</p>
+<h3>O que Claude faz melhor que os outros</h3>
+<p><strong>Escrever PRDs e documentação técnica.</strong>
+Você descreve o projeto, Claude entrega um documento estruturado, coerente, com seções bem definidas. Ele não inventa bullet points aleatórios — ele raciocina sobre o que o PRD precisa cobrir e entrega o que falta.</p>
+<p><strong>Projetar arquitetura e schema de banco.</strong>
+Se você precisa decidir como as tabelas do seu Supabase vão se relacionar, Claude pensa em normalização, em índices, em segurança (RLS), e te entrega o schema como código SQL pronto pra colar. Mais importante: ele explica as decisões por baixo do schema, pra você aprender.</p>
+<p><strong>Auditar código gerado por outra IA.</strong>
+Quando o Lovable gera um código e você tem medo de subir em produção, Claude é quem audita. Ele enxerga bugs, brechas de segurança, queries ineficientes, e te mostra linha por linha o que precisa arrumar.</p>
+<p><strong>Resolver problema complexo em contexto longo.</strong>
+Quando você tem um problema que envolve vários arquivos, várias camadas, várias decisões interconectadas, Claude aguenta o contexto inteiro sem perder o fio. GPT ia confundir. Gemini ia alucinar. Claude mantém a linha.</p>
+<p><strong>Escrita técnica ou editorial de qualidade.</strong>
+Se você precisa de um texto que soe inteligente sem soar chato, Claude é a melhor opção. Para escrita de marketing puro (copy de venda), GPT ganha. Mas pra tudo que envolve técnica + texto, Claude é o padrão.</p>
+<h3>O que Claude NÃO faz bem</h3>
+<ul>
+<li><strong>Brainstorm rápido e criativo.</strong> Ele pensa demais antes de responder. Se você quer 50 ideias em 2 minutos, use GPT.</li>
+<li><strong>Gerar imagens.</strong> Ele não faz. Use GPT (DALL-E) ou ferramenta específica.</li>
+<li><strong>Pesquisa web profunda com entregável pronto.</strong> Ele pesquisa, mas entrega em formato conversa. Se você quer relatório formatado em PDF, use Manus.</li>
+<li><strong>Código de 300 linhas num único prompt sem contexto.</strong> Ele tenta, mas vai alucinar em partes. Prefira sessões iterativas menores.</li>
+</ul>
+<h3>Como Claude espera ser tratado</h3>
+<p>Claude funciona melhor quando você:</p>
+<ol>
+<li><strong>Dá contexto antes da tarefa.</strong> Em vez de &quot;escreve um PRD&quot;, use &quot;Sou empreendedor solo, stack Lovable+Supabase, quero construir [X]. Escreva o PRD.&quot;</li>
+<li><strong>Pede uma coisa de cada vez.</strong> &quot;Gere o PRD&quot; → recebe → &quot;agora o schema&quot; → recebe → &quot;agora critique tudo&quot;. É mais produtivo que &quot;faça o PRD, o schema e critique tudo de uma vez&quot;.</li>
+<li><strong>Usa Projects quando o assunto vai durar dias.</strong> Projects permitem que o Claude mantenha contexto entre sessões. Perfeito pro projeto da sua trilha.</li>
+<li><strong>Pede para ele discordar.</strong> Se você fala &quot;concorda?&quot; ele tende a concordar. Se você fala &quot;seja cético, aponte falhas no meu raciocínio&quot;, ele muda de postura.</li>
+</ol>
+<h3>Artifacts, Projects, Memory — o que importa</h3>
+<p>Três recursos do Claude que você vai usar bastante:</p>
+<ul>
+<li><strong>Artifacts</strong>: quando Claude entrega código ou documento longo, ele abre um painel lateral que você pode copiar, editar, reutilizar. Perfeito pra PRDs e schemas.</li>
+<li><strong>Projects</strong>: uma &quot;pasta&quot; dentro do Claude que mantém contexto entre conversas. Crie um Project chamado &quot;SaaS Equipe Do Zero ao SaaS&quot; e todas as conversas sobre seu produto acontecem lá. Ele lembra do que você falou sem você precisar repetir.</li>
+<li><strong>Memory</strong>: ele lembra de fatos seus entre conversas (seu nome, seu projeto, suas preferências). Você pode pedir explicitamente pra ele lembrar de algo: &quot;lembre que meu stack é Lovable + Supabase&quot;.</li>
+</ul>
+<h3>Prompts-chave pra Claude (use estes literalmente)</h3>
+<p><strong>Pra validar uma ideia:</strong></p>
+<pre><code>Aja como um investidor cético. Vou descrever uma ideia de SaaS.
+Sua tarefa: listar os 5 maiores riscos em ordem de gravidade,
+identificar 3 suposições que estou assumindo como verdade, e
+sugerir o menor experimento possível para validar a suposição
+mais crítica. Se a ideia for fraca, fale sem rodeios.
+
+IDEIA: [descreva em 2-3 frases]
+PÚBLICO: [quem usaria]
+MODELO DE RECEITA: [como ganha dinheiro]
+</code></pre>
+<p><strong>Pra escrever um PRD:</strong></p>
+<pre><code>Atue como Product Manager experiente. Gere um PRD completo para:
+
+PROJETO: [nome + 1 parágrafo]
+PROBLEMA: [a dor que resolve]
+USUÁRIO-ALVO: [persona]
+STACK: Lovable (React/TS) + Supabase + Stripe
+
+Estrutura:
+1. Visão e objetivo
+2. Problema e contexto
+3. Personas detalhadas
+4. Proposta de valor
+5. Escopo do MVP (o que ENTRA e o que FICA DE FORA)
+6. Fluxos de usuário principais
+7. Schema de banco (tabelas e relações em SQL)
+8. Autenticação e segurança (RLS)
+9. Integrações externas
+10. Métricas de sucesso
+11. Riscos e mitigações
+
+Seja específico. Liste em vez de parafrasear. Onde houver decisão,
+recomende UMA opção com 1 frase de justificativa.
+</code></pre>
+<p><strong>Pra auditar código:</strong></p>
+<pre><code>Vou colar um trecho de código gerado por outra IA. Faça auditoria
+em 4 níveis:
+
+1. BUGS: o que vai quebrar
+2. SEGURANÇA: RLS ausente, credenciais expostas, validação
+3. PERFORMANCE: queries N+1, re-renders, missing indexes
+4. MANUTENIBILIDADE: código duplicado, nomes ruins
+
+Pra cada achado: gravidade (crítico/médio/baixo), linha específica,
+correção em código. Ordene do mais grave ao menor. Nada de elogiar.
+
+[cole o código]
+</code></pre>
+<p><strong>Pro ciclo da trilha inteira, crie um Project.</strong> Chame de &quot;Do Zero ao SaaS — [seu projeto]&quot;. Coloque lá: o PRD, o schema, as decisões-chave. Toda conversa nova dentro do Project já entra com esse contexto.</p>
+<hr>
+<h2>Capítulo 4 — Gemini, o Tutor e Leitor</h2>
+<p>Gemini é a ferramenta que você abre quando <strong>não sabe como fazer alguma coisa</strong>.</p>
+<p>Se Claude é o engenheiro que planeja, Gemini é o professor que te guia. Ele é multimodal, tem contexto gigantesco, e tem um tom didático que as outras IAs não conseguem. Quando você manda um screenshot do painel do Supabase perguntando &quot;o que clico agora?&quot;, Gemini olha a imagem, entende o que aparece, e te diz qual botão apertar.</p>
+<p>Essa habilidade específica — <strong>ler print e explicar</strong> — faz dele insubstituível no fluxo de um iniciante.</p>
+<h3>O que Gemini faz melhor que os outros</h3>
+<p><strong>Ler screenshots e explicar.</strong>
+Você tira print do painel do Stripe, do erro do console, do painel do Supabase, do DNS da Cloudflare. Gemini olha, entende, e te explica o que cada campo significa. Claude também lê imagem, mas é menos paciente em &quot;me ensine&quot;. Gemini tem a vocação de tutor.</p>
+<p><strong>Aguentar contexto gigantesco.</strong>
+Gemini tem a maior janela de contexto do mercado (milhões de tokens). Isso significa que você pode mandar a documentação INTEIRA de uma ferramenta junto do prompt, e ele responde com base naquilo. Ninguém mais faz isso na escala dele.</p>
+<p><strong>Guiar passo a passo com paciência.</strong>
+Você diz &quot;sou iniciante, me guie&quot;, e ele realmente segue. Para. Explica. Espera confirmação. As outras IAs tendem a &quot;adiantar&quot; e te dar 10 passos de uma vez. Gemini aceita ir devagar quando você pede.</p>
+<p><strong>Analisar planilhas e documentos longos.</strong>
+Jogou um CSV de 10.000 linhas? Ele analisa. Jogou um PDF de 200 páginas? Ele resume, extrai, responde perguntas. Pra isso, não tem igual.</p>
+<p><strong>Integração com Google (Drive, Docs, Sheets, Gmail).</strong>
+Se você vive dentro do ecossistema Google, Gemini é a escolha natural. Ele entende seus arquivos sem você precisar fazer upload manual toda vez.</p>
+<h3>O que Gemini NÃO faz tão bem</h3>
+<ul>
+<li><strong>Escrita técnica de longa forma.</strong> Ele escreve, mas o estilo não tem o mesmo peso editorial do Claude.</li>
+<li><strong>Código complexo multi-arquivo.</strong> Ele tenta, mas se confunde mais que Claude em projetos grandes.</li>
+<li><strong>Criatividade livre.</strong> Ele tende a ser mais &quot;wikipedia&quot; que &quot;artista&quot;. Pra brainstorm criativo, use GPT.</li>
+<li><strong>Tarefas autônomas de ponta a ponta.</strong> Ele responde, mas não &quot;faz pra você&quot;. Pra isso você precisa de Manus.</li>
+</ul>
+<h3>A técnica &quot;Me Guie Passo a Passo&quot; — o pulo do gato #1</h3>
+<p>Aqui está a razão pela qual Gemini vai ser seu melhor amigo nos próximos 30 dias.</p>
+<p>Existe um formato de prompt que transforma Gemini em tutor paciente, passo a passo. Vou te dar o template exato agora. Decore. Este prompt vai te salvar dezenas de vezes durante a trilha:</p>
+<pre><code>Sou iniciante absoluto. Nunca configurei [ASSUNTO] na vida.
+
+Preciso: [OBJETIVO CONCRETO]
+
+Stack que estou usando: [LISTA]
+
+Me guie passo a passo. Regras:
+- Pergunte antes de assumir qualquer coisa.
+- Valide cada etapa comigo antes de passar pra próxima.
+- Quando eu tiver dúvida, vou mandar print da tela.
+- Se eu errar algo, me diga como desfazer.
+- Evite jargão técnico. Se precisar usar, defina em 1 frase.
+
+Vamos começar pela etapa 1.
+</code></pre>
+<p>Esse prompt ativa o modo tutor. Gemini para de despejar 10 passos e vai com você um a um.</p>
+<p>Quando você travar em alguma etapa, <strong>tire um print da tela inteira</strong> (janela do navegador + mensagens de erro, se houver) e cole direto na conversa. Gemini olha a imagem, entende onde você está, e te diz exatamente o que fazer em seguida.</p>
+<h3>5 situações em que Gemini vai salvar sua pele</h3>
+<p>Durante a trilha de 30 dias, você vai precisar do &quot;me guie passo a passo&quot; do Gemini em pelo menos estas situações:</p>
+<ol>
+<li><strong>Configurar Supabase do zero</strong> — criar projeto, tabelas, RLS, auth.</li>
+<li><strong>Apontar domínio e configurar DNS</strong> — o campo mais traumático do iniciante.</li>
+<li><strong>Ativar webhook do Stripe</strong> — crítico, sem isso pagamento não processa.</li>
+<li><strong>Configurar OAuth com Google</strong> — labirinto no Google Cloud Console.</li>
+<li><strong>Fazer deploy no Vercel e ler logs de erro</strong> — interpretar build falho.</li>
+</ol>
+<p>Cada uma dessas situações é um capítulo da Parte 4. Mas o prompt-chave é o mesmo. Varia só o objetivo.</p>
+<h3>Uma sacada extra: Gemini dentro do Antigravity</h3>
+<p>Se você usa Antigravity (ferramenta desktop do Google que integra Claude Code + Gemini num único lugar), você tem um bônus: o Gemini enxerga o ambiente do seu projeto. Ele pode ler seus arquivos locais, seus logs, seu terminal, e te guiar com o contexto inteiro do projeto à mão.</p>
+<p>Não é pré-requisito. Mas se você gosta de ter tudo num lugar só, vale instalar.</p>
+<hr>
+<h2>Capítulo 5 — GPT, o Sparring Criativo</h2>
+<p>GPT (ChatGPT da OpenAI) é a ferramenta que você usa quando precisa <strong>pensar rápido, criar em volume, e iterar sem peso</strong>.</p>
+<p>Se Claude é o engenheiro introvertido e Gemini é o professor paciente, GPT é aquele colega hiperativo que solta 40 ideias por minuto. Nem todas são boas. Mas é com ele que você destrava o bloqueio criativo.</p>
+<h3>O que GPT faz melhor que os outros</h3>
+<p><strong>Brainstorm de volume.</strong>
+&quot;Me dá 50 opções de nome pro meu produto.&quot; GPT entrega sem reclamar. Claude provavelmente entrega 10 com uma dissertação. Gemini entrega 30 genéricas. GPT consegue ser solto, ousado, variado.</p>
+<p><strong>Copy punchy.</strong>
+Pra headline de landing, legenda de ad, roteiro de reel, thread de X — GPT tem ritmo. Claude é mais &quot;correto&quot;. GPT é mais &quot;vende&quot;. Em marketing, vender ganha de correto.</p>
+<p><strong>Imagens com DALL-E.</strong>
+Essa é exclusividade. Nem Claude nem Gemini (pelo menos não da mesma forma integrada) geram imagens. GPT + DALL-E te entrega assets visuais direto no chat.</p>
+<p><strong>GPTs customizados.</strong>
+Você pode criar seu próprio GPT especializado (ex: &quot;Copywriter da minha marca&quot;) e reusar sempre. Claude tem Projects pra coisa parecida, mas o sistema de GPTs customizados é mais maduro e tem marketplace próprio.</p>
+<p><strong>Ações rápidas.</strong>
+Você joga uma pergunta, ele responde em segundos. Pra ajustes rápidos de texto, renomeações, variações criativas — GPT é mais ágil.</p>
+<h3>O que GPT NÃO faz tão bem</h3>
+<ul>
+<li><strong>Código em projeto longo.</strong> Alucina mais que Claude quando o contexto cresce.</li>
+<li><strong>Análise técnica profunda.</strong> Tende a &quot;performar inteligência&quot; sem de fato raciocinar até o fim.</li>
+<li><strong>Escrita editorial de peso.</strong> O texto tem energia, mas falta densidade.</li>
+<li><strong>Tutoriais passo a passo pacientes.</strong> Ele adianta. Pra iniciante, pode assustar.</li>
+<li><strong>Contexto ultra longo.</strong> Se você joga 50 páginas de doc, ele começa a esquecer partes.</li>
+</ul>
+<h3>Quando chamar GPT no método</h3>
+<p>Durante a trilha, você vai abrir o GPT principalmente em três momentos:</p>
+<ol>
+<li><strong>Fase 1 — Idear.</strong> Brainstorm de nome, ângulos de posicionamento, variações criativas.</li>
+<li><strong>Fase 3 — Construir.</strong> Gerar imagens pra landing, ícones, assets visuais.</li>
+<li><strong>Fase 7 — Vender.</strong> Copy de landing, variações de anúncio, emails.</li>
+</ol>
+<p>Nas outras fases, GPT pode ser útil também, mas o protagonismo fica com Claude (arquitetura) e Gemini (configuração).</p>
+<h3>Prompt-chave pra GPT em brainstorm</h3>
+<pre><code>Gere 30 opções de [NOME / HEADLINE / ÂNGULO] pro seguinte produto.
+
+PRODUTO: [1 frase]
+PÚBLICO: [quem compra]
+SENSAÇÃO DESEJADA: [premium / jovem / sóbrio / descontraído]
+
+Divida em 5 categorias, 6 opções cada:
+1. [categoria 1 - ex: nomes inventados tipo Uber, Kavak]
+2. [categoria 2 - ex: combinações de palavras tipo DigitalOcean]
+3. [categoria 3 - ex: metáforas poéticas tipo Arc, Linear]
+4. [categoria 4 - ex: nomes em português que não soam brega]
+5. [categoria 5 - ex: siglas ou abreviações curtas]
+</code></pre>
+<p>Note que o prompt impõe estrutura. Sem estrutura, GPT dispara em todas as direções. Com estrutura, ele dispara onde você quer.</p>
+<h3>Sobre os GPTs customizados</h3>
+<p>Se você usa ChatGPT Plus, considere criar um GPT customizado chamado &quot;Copywriter [seu produto]&quot; com instruções tipo:</p>
+<pre><code>Você é copywriter especializado em infoprodutos BR.
+Tom: direto, brasileiro, anti-hype. Zero &quot;transforme sua vida&quot;.
+Sempre que eu pedir copy, entregue 3 variações diferentes em
+ângulo (dor / desejo / prova). Max 4 linhas cada.
+</code></pre>
+<p>Aí toda vez que você precisa de copy, abre esse GPT. Consistência sem copiar e colar regras.</p>
+<hr>
+<h2>Capítulo 6 — Lovable, o Executor Visual</h2>
+<p>Lovable é a ferramenta que tira seu projeto do papel em minutos. Você escreve um prompt descrevendo o que quer, e ele te entrega um aplicativo React rodando, com interface, rotas, componentes — tudo funcional.</p>
+<p>É o instrumento mais espetacular das cinco. E também o mais perigoso, se usado errado.</p>
+<h3>O que Lovable faz melhor que os outros</h3>
+<p><strong>Scaffold visual imediato.</strong>
+Você descreve um app e em 2 minutos tem um app. Com telas, navegação, design decente. Nenhuma outra ferramenta te dá esse &quot;pulo&quot; inicial com tão pouco atrito.</p>
+<p><strong>Preview em tempo real.</strong>
+Toda vez que você muda algo, o preview atualiza. Você vê o que está construindo enquanto constrói. Isso elimina a &quot;cegueira&quot; de programar sem ver o resultado.</p>
+<p><strong>Deploy automático.</strong>
+Lovable hospeda seu app numa URL pública automaticamente. Você pode mandar o link pra alguém testar em 5 minutos de projeto.</p>
+<p><strong>Integração com Supabase nativa.</strong>
+Com 2-3 cliques, você conecta Lovable ao Supabase, e ele já gera código pra auth, queries, inserts, etc. Não é magia — é integração bem feita.</p>
+<p><strong>GitHub sync.</strong>
+Ele sincroniza automaticamente com um repositório GitHub. Isso abre o &quot;pulo do gato&quot; que você vai ver na Parte 4.</p>
+<h3>O que Lovable NÃO faz bem</h3>
+<p>Aqui está a parte que quase ninguém fala:</p>
+<ul>
+<li><strong>Edição iterativa é cara.</strong> Cada prompt que você manda dentro do Lovable queima crédito. Projeto médio com muitas iterações pode queimar 50-100 dólares facilmente.</li>
+<li><strong>Refatorações complexas.</strong> Quando o projeto cresce, pedir mudanças estruturais dentro do Lovable fica lento e caro.</li>
+<li><strong>Debugging profundo.</strong> Se o código gerado tem bug, corrigir dentro do Lovable é exaustivo. Melhor tirar do Lovable e corrigir fora.</li>
+<li><strong>Customizações muito específicas.</strong> Às vezes você quer mudar algo pequeno e Lovable insiste em mudar coisas adjacentes também.</li>
+</ul>
+<h3>A regra sagrada do Lovable</h3>
+<p>Esta é a frase mais importante deste capítulo:</p>
+<p><strong>Lovable é pra COMEÇAR, não pra continuar.</strong></p>
+<p>Use Lovable pra gerar o scaffold inicial (1 a 3 prompts). Depois disso, saia dele. Continue o desenvolvimento no Cursor ou Claude Code (Parte 4 explica). Use Lovable só como visualizador do progresso.</p>
+<p>Essa regra sozinha pode te economizar 300 dólares nos próximos 30 dias. Não é exagero.</p>
+<h3>O prompt de scaffold que economiza 80% de crédito</h3>
+<p>A maioria das pessoas perde crédito no Lovable porque manda prompts curtos e vai refinando. Dez prompts pequenos queimam mais crédito que um prompt bem feito grande.</p>
+<p>Template do prompt de scaffold perfeito:</p>
+<pre><code>Crie um aplicativo web com as seguintes especificações.
+
+NOME: [nome]
+DESCRIÇÃO: [1 frase do que faz]
+STACK: React + TypeScript + Tailwind + shadcn/ui + Supabase
+
+TELAS OBRIGATÓRIAS:
+1. Landing pública (hero, features, pricing, footer)
+2. Login / Signup via Supabase Auth (email + Google)
+3. Dashboard protegido em /app
+4. [tela principal 1]
+5. [tela principal 2]
+
+SCHEMA SUPABASE INICIAL:
+[cole o schema que Claude te deu antes]
+
+ESTÉTICA: [descreva em 3 palavras — ex: &quot;dark, minimal, tipografia sóbria&quot;]
+INSPIRAÇÃO VISUAL: [cite 1-2 marcas]
+
+Quero o scaffold completo funcional. Configure Supabase Auth,
+proteja as rotas, integre o schema. DEPOIS disso vou mover o
+projeto pro GitHub e editar fora do Lovable via Cursor/Claude Code.
+</code></pre>
+<p>Note o último parágrafo. Você está informando o Lovable que vai sair dele. Isso ajuda ele a não superproduzir.</p>
+<h3>Os 3 únicos momentos em que você volta pro Lovable</h3>
+<p>Depois do scaffold inicial, você volta ao Lovable só em três situações:</p>
+<ol>
+<li><strong>Pra visualizar o preview.</strong> Depois que você editou no Cursor/Claude Code e fez push, o Lovable atualiza o preview. Você vê o resultado no navegador dele.</li>
+<li><strong>Mudanças triviais de UI puramente visuais.</strong> Trocar a cor de um botão, ajustar padding — às vezes é mais rápido no Lovable do que abrir o editor.</li>
+<li><strong>Compartilhar preview com cliente ou stakeholder.</strong> A URL do Lovable é pública e fácil de compartilhar.</li>
+</ol>
+<p>Tudo fora disso: fica no editor.</p>
+<h3>O que o Lovable te ensina (sem querer)</h3>
+<p>Mesmo que você não saiba programar, só de ler o código que o Lovable gera você começa a pegar padrões:</p>
+<ul>
+<li>Estrutura de componentes React.</li>
+<li>Como hooks funcionam na prática.</li>
+<li>Como queries do Supabase são escritas.</li>
+<li>Como routes são protegidas.</li>
+</ul>
+<p>Você não precisa dominar isso. Mas depois de 30 dias usando o método, você vai <strong>entender</strong> o que está acontecendo. E isso é mais do que 90% das pessoas que &quot;aprenderam React&quot; na marra.</p>
+<hr>
+<h2>Capítulo 7 — Manus, o Operário Autônomo</h2>
+<p>Manus é a ferramenta mais diferente das cinco. Porque com ela você não <strong>prompta</strong> — você <strong>delega</strong>.</p>
+<p>As outras quatro são assistentes: você pergunta, elas respondem. Manus é agente: você define uma tarefa, ele sai, executa, volta com o resultado pronto. A diferença operacional é gigante.</p>
+<h3>O que Manus faz melhor que os outros</h3>
+<p><strong>Executar tarefas de longa duração autonomamente.</strong>
+Você diz &quot;faça uma pesquisa de mercado profunda sobre [nicho] e me entregue um relatório executivo em PDF&quot;. Manus sai. Pesquisa. Cruza fontes. Gera gráficos. Formata. Entrega PDF pronto depois de 30-60 minutos. Você não supervisiona cada passo.</p>
+<p><strong>Produzir entregáveis finais, não rascunhos.</strong>
+Quando Manus termina, você tem um arquivo pronto. Um PDF, uma apresentação, uma planilha, um blog post completo. Não é &quot;base pra você trabalhar em cima&quot; — é entregável.</p>
+<p><strong>Tarefas multi-passo complexas.</strong>
+Operações que envolvem vários &quot;subtarefas&quot; encadeadas (pesquisar → analisar → comparar → compilar → formatar) são onde Manus brilha. Nas outras ferramentas, você teria que orquestrar cada passo manualmente.</p>
+<p><strong>Processar grandes volumes.</strong>
+Produzir 30 posts de blog em batch. Analisar uma planilha de 50.000 linhas. Fazer due diligence técnica profunda de uma ferramenta. Tudo isso Manus faz bem.</p>
+<h3>O que Manus NÃO faz bem</h3>
+<ul>
+<li><strong>Decisões estratégicas finas.</strong> Ele executa bem, mas decidir &quot;fazer X ou Y&quot; é melhor pro Claude.</li>
+<li><strong>Iteração criativa rápida.</strong> Cada rodada do Manus é lenta. Pra brainstorm ágil, use GPT.</li>
+<li><strong>Trabalho que exige você no loop.</strong> Se é coisa que muda a cada 5 minutos com o feedback, delegar pro Manus é frustrante.</li>
+<li><strong>Precisão matemática de cálculos complexos.</strong> Ele tenta, mas pode errar em contas delicadas. Valide.</li>
+</ul>
+<h3>A mudança de mentalidade: delegar vs. promptar</h3>
+<p>Pra usar Manus bem, você precisa virar a chave no cérebro.</p>
+<p><strong>Promptar</strong> é: você está presente, conversando, iterando. &quot;Escreva isso, agora aquilo, agora ajuste aquilo.&quot;</p>
+<p><strong>Delegar</strong> é: você descreve o resultado final esperado com o máximo de detalhe, manda, e volta depois. &quot;Faça X, com essas características, no formato Y, entregue em Z.&quot;</p>
+<p>A qualidade do que Manus entrega é <strong>proporcional à qualidade do briefing</strong>. Briefing ruim → entrega ruim. Briefing bem feito → entrega de 8 horas humanas em 40 minutos.</p>
+<h3>Quando chamar Manus no método</h3>
+<p>As tarefas que se beneficiam de Manus durante a trilha:</p>
+<ol>
+<li><strong>Fase 1 — Idear.</strong> Pesquisa profunda de mercado com relatório pronto. Análise de dados se você tem planilha.</li>
+<li><strong>Fase 2 — Especificar.</strong> Due diligence técnica da stack (esperado vs. realidade de cada ferramenta).</li>
+<li><strong>Fase 7 — Vender.</strong> Produção de conteúdo em batch (30 posts, 15 reels, sequência de email).</li>
+</ol>
+<p>Fora disso, use as outras ferramentas.</p>
+<h3>O briefing perfeito pro Manus</h3>
+<p>Um briefing bem feito pro Manus tem 4 partes:</p>
+<p><strong>1. Objetivo final.</strong> Não &quot;faça pesquisa&quot; — &quot;entregue relatório de 15-25 páginas sobre [X]&quot;.</p>
+<p><strong>2. Contexto.</strong> Quem é você, pra que vai usar isso, quem vai ler.</p>
+<p><strong>3. Formato do entregável.</strong> PDF executivo? Planilha? Markdown? Quantas páginas/linhas/posts?</p>
+<p><strong>4. Restrições e critérios.</strong> Todas as afirmações com fonte linkada. Fontes primárias preferidas. Tom executivo. Sem jargão. Etc.</p>
+<p>Exemplo concreto de briefing bem feito:</p>
+<pre><code>Faça pesquisa de mercado completa. Entregue relatório em PDF.
+
+NICHO: SaaS de gestão financeira pra micro empreendedores BR.
+REGIÃO: Brasil.
+AUDIÊNCIA DO RELATÓRIO: eu + 2 sócios técnicos.
+
+FORMATO: PDF de 20 páginas, design executivo, tabelas e gráficos.
+
+CONTEÚDO OBRIGATÓRIO:
+1. Tamanho do mercado (dados com fonte)
+2. 30 concorrentes com URL, preço, proposta de valor
+3. Matriz SWOT dos top 5
+4. 5 tendências dos últimos 12 meses com evidência
+5. 3 lacunas não atendidas
+6. 5 ângulos de posicionamento diferenciado
+7. Apêndice com fontes linkadas
+
+TOM: executivo, direto, sem floreio.
+FONTES: priorizar dados primários (Statista, reports setoriais,
+relatórios de empresas listadas). Nada de blog genérico.
+</code></pre>
+<p>Esse briefing produz um PDF que 3 consultorias cobrariam 15.000 reais pra entregar em 3 semanas. Manus faz em 40 minutos.</p>
+<h3>A validação obrigatória</h3>
+<p>Uma coisa crítica: <strong>Manus alucina</strong>. Às vezes inventa URLs que não existem, atribui quotes a pessoas que não disseram aquilo, cita dados com precisão falsa.</p>
+<p>Regra: <strong>antes de usar qualquer dado do relatório dele em algo público, valide 3-5 fontes críticas manualmente</strong>. Abre os links. Confere os números.</p>
+<p>Manus é um acelerador brutal, mas não é infalível. Seu papel como maestro continua: validar o que chega.</p>
+<hr>
+<h2>Síntese da Parte 2 — A partitura das cinco ferramentas</h2>
+<p>Se você memorizar uma única coisa da Parte 2, seja esta tabela:</p>
+<table>
+<thead>
+<tr>
+<th>Ferramenta</th>
+<th>Papel</th>
+<th>Use quando</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Claude</strong></td>
+<td>Arquiteto</td>
+<td>Planejar, especificar, auditar, decidir</td>
+</tr>
+<tr>
+<td><strong>Gemini</strong></td>
+<td>Tutor</td>
+<td>Configurar coisas que você não sabe fazer</td>
+</tr>
+<tr>
+<td><strong>GPT</strong></td>
+<td>Sparring</td>
+<td>Brainstorm rápido, copy, imagem</td>
+</tr>
+<tr>
+<td><strong>Lovable</strong></td>
+<td>Executor visual</td>
+<td>Scaffold inicial e preview</td>
+</tr>
+<tr>
+<td><strong>Manus</strong></td>
+<td>Operário autônomo</td>
+<td>Delegar tarefas longas com entregável pronto</td>
+</tr>
+</tbody></table>
+<p>Cole isso num papel. Deixa do lado do computador. Nos próximos 30 dias, toda vez que você for abrir uma aba, olhe a tabela primeiro.</p>
+<p>Na Parte 3, vamos juntar tudo: o ciclo dos 5 passos que você vai rodar a cada fase da trilha.</p>
+<hr>
+<div class="page-break"></div><h1>PARTE 3 — O Método em Ação</h1>
+<blockquote>
+<p><em>Até aqui, você tem as ferramentas e o mindset. Agora vem o fluxo operacional. Esta parte é a receita.</em></p>
+</blockquote>
+<hr>
+<h2>Capítulo 8 — O Ciclo dos 5 Passos</h2>
+<p>Antes de entrar nos estudos de caso, precisamos apresentar o núcleo operacional do método: o <strong>Ciclo dos 5 Passos</strong>.</p>
+<p>Este ciclo é a sequência que você vai rodar dentro de cada fase da trilha. Não é &quot;a ordem das fases&quot; (essa é a trilha, capítulo 15 em diante). É o padrão de pensamento dentro de qualquer tarefa não-trivial que você for fazer.</p>
+<p>Depois que você internaliza o ciclo, ele vira automático. Toda tarefa nova, você pensa: &quot;em qual passo estou agora?&quot;. Isso sozinho já resolve 80% do caos que a gente discutiu no Capítulo 1.</p>
+<h3>Os 5 Passos</h3>
+<pre><code>  1. IDEIA       →  Claude
+  2. PESQUISA    →  Gemini ou Manus
+  3. PLANO       →  Claude
+  4. EXECUÇÃO    →  Lovable, Claude Code, GPT
+  5. AUDITORIA   →  Claude
+</code></pre>
+<p>Cada passo tem uma ferramenta principal. Cada passo tem um entregável concreto. E cada passo só pode começar depois que o anterior está fechado.</p>
+<p>Vou explicar um a um.</p>
+<hr>
+<h3>Passo 1 — IDEIA (Claude)</h3>
+<p><strong>Objetivo:</strong> sair de &quot;tenho uma ideia vaga&quot; pra &quot;tenho um problema definido, com persona e proposta de valor clara&quot;.</p>
+<p><strong>Ferramenta principal:</strong> Claude.</p>
+<p><strong>Por que Claude:</strong> porque ideia vaga precisa de raciocínio estruturado pra virar algo concreto. Claude pressiona a ideia, aponta falhas, sugere variações. Ele é o &quot;investidor cético&quot; que você precisa nessa hora.</p>
+<p><strong>Entregável:</strong> um parágrafo único, de no máximo 5 frases, que responde:</p>
+<ul>
+<li>O que é.</li>
+<li>Pra quem é.</li>
+<li>Que problema resolve.</li>
+<li>Qual é o diferencial.</li>
+<li>Como ganha dinheiro.</li>
+</ul>
+<p>Se você não consegue condensar sua ideia em 5 frases, você não tem ideia ainda — tem desejo. Volta pro Claude e pressiona mais.</p>
+<hr>
+<h3>Passo 2 — PESQUISA (Gemini ou Manus)</h3>
+<p><strong>Objetivo:</strong> descobrir o que já existe, o que o mercado precisa e o que falta.</p>
+<p><strong>Ferramenta principal:</strong> Gemini pra pesquisa rápida + leitura de dados. Manus pra pesquisa profunda com relatório formatado.</p>
+<p><strong>Por que dividir:</strong> Gemini é ótimo pra &quot;vasculhada rápida&quot; em 15-30 minutos. Manus é pra &quot;mergulho profundo de 40-60 minutos com PDF pronto no final&quot;. Você escolhe a profundidade conforme o momento.</p>
+<p><strong>Entregável:</strong> uma tabela de concorrentes (mínimo 10), um parágrafo sobre o tamanho de mercado, e 3 ângulos de diferenciação que você pode explorar.</p>
+<p><strong>Regra de ouro:</strong> não pule este passo achando que &quot;já conhece o mercado&quot;. Você sempre acha que conhece. Sempre tem algo que escapou. Em 2 horas de pesquisa bem feita, você descobre que uma ferramenta que já resolve seu problema existe há 4 anos e fatura 2 milhões. Melhor descobrir agora do que depois de 30 dias construindo.</p>
+<hr>
+<h3>Passo 3 — PLANO (Claude)</h3>
+<p><strong>Objetivo:</strong> transformar a ideia + pesquisa em um plano de execução detalhado. Isso é o PRD + o schema + a lista de tarefas.</p>
+<p><strong>Ferramenta principal:</strong> Claude (em um Project, pra manter contexto).</p>
+<p><strong>Por que Claude:</strong> porque plano bom precisa de coerência interna e raciocínio técnico. É onde Claude mais brilha.</p>
+<p><strong>Entregável:</strong> três documentos — PRD preenchido, schema Supabase em SQL, e lista das 10-15 tarefas principais pra construir o MVP em ordem de execução.</p>
+<p><strong>Regra:</strong> você não passa pro passo 4 sem os três documentos prontos. Construir sem plano é construir em círculos. Vai gastar dinheiro, queimar crédito e não chegar em lugar nenhum.</p>
+<hr>
+<h3>Passo 4 — EXECUÇÃO (Lovable + Claude Code + GPT)</h3>
+<p><strong>Objetivo:</strong> transformar o plano em código rodando.</p>
+<p><strong>Ferramentas principais:</strong></p>
+<ul>
+<li><strong>Lovable</strong> pro scaffold inicial (1 a 3 prompts).</li>
+<li><strong>Claude Code</strong> (via terminal, no seu computador) pra todas as edições depois do scaffold.</li>
+<li><strong>GPT</strong> pontualmente pra gerar imagens e copy.</li>
+</ul>
+<p><strong>Por que essa divisão:</strong> é o &quot;pulo do gato&quot; completo — você aproveita o melhor do Lovable (scaffold rápido) sem cair na armadilha do Lovable (edição cara). Claude Code faz o que Lovable faria, mas com uma fração do custo. GPT entra só pra tarefas criativas rápidas.</p>
+<p><strong>Entregável:</strong> MVP funcional, no preview do Lovable, conectado ao GitHub, com o código sendo editado fora do Lovable. Auth funcionando. Telas principais navegáveis.</p>
+<hr>
+<h3>Passo 5 — AUDITORIA (Claude)</h3>
+<p><strong>Objetivo:</strong> revisar o que foi construído antes de subir pra produção.</p>
+<p><strong>Ferramenta principal:</strong> Claude, em auditoria estruturada.</p>
+<p><strong>Por que Claude:</strong> porque auditoria exige olhar crítico, identificar bug sutil, encontrar brecha de segurança, apontar código duplicado. Claude enxerga esses problemas que o iniciante não vê.</p>
+<p><strong>Entregável:</strong> lista de achados em 4 categorias (bugs / segurança / performance / manutenibilidade), com correções sugeridas. Depois: versão corrigida.</p>
+<p><strong>Regra:</strong> nenhum código vai pra produção sem passar por este passo. É inegociável. Se você pular, vai ter brecha de RLS, senha exposta, bug no fluxo de pagamento. E aí você processa reembolso.</p>
+<hr>
+<h3>O ciclo dentro da trilha</h3>
+<p>Este ciclo de 5 passos se repete em cada fase da trilha. Nem sempre você passa pelos 5 — às vezes a fase só precisa de Execução + Auditoria (ex: Fase 6 Publicar). Mas o padrão está sempre ali.</p>
+<p>Pense assim:</p>
+<ul>
+<li><strong>Fase 1 (Idear)</strong> = rodar os passos 1 e 2 intensamente.</li>
+<li><strong>Fase 2 (Especificar)</strong> = rodar o passo 3.</li>
+<li><strong>Fase 3 (Construir)</strong> = primeira rodada dos passos 4 e 5.</li>
+<li><strong>Fase 4 (Integrar)</strong> = segunda rodada dos passos 4 e 5, com foco em auth e pagamento.</li>
+<li><strong>Fase 5 (Polir)</strong> = auditoria pesada (passo 5) + correções (passo 4).</li>
+<li><strong>Fase 6 (Publicar)</strong> = execução final (passo 4).</li>
+<li><strong>Fase 7 (Vender)</strong> = novo ciclo começando — mas agora pra marketing, não produto.</li>
+</ul>
+<p>O ciclo é uma lente. A trilha é o caminho. Você usa a lente pra enxergar cada pedaço do caminho.</p>
+<hr>
+<h3>O erro mais comum: pular o passo 3</h3>
+<p>Iniciantes fazem isso o tempo todo. Tem uma ideia, dá uma pesquisada rápida, e já abre o Lovable. Pula o PRD, pula o schema, pula o plano.</p>
+<p>O que acontece: você prompta no Lovable sem saber exatamente o que quer. Lovable entrega algo. Você vê e percebe que não era bem aquilo. Prompta de novo. Queima crédito. Itera. Itera. 30 dólares depois, o que você tem é uma tela sem rumo e um saldo no cartão.</p>
+<p>Com o plano, você entra no Lovable sabendo exatamente: &quot;quero 5 telas específicas, com esses componentes, conectadas a esse schema, com essa estética&quot;. Lovable entrega certeiro. 1-2 prompts e o scaffold está pronto.</p>
+<p>A diferença entre &quot;gastei 3 dólares e tenho o MVP&quot; e &quot;gastei 60 dólares e não tenho nada&quot; é <strong>uma hora de plano com Claude</strong>.</p>
+<p>Dedique essa hora. Sempre.</p>
+<hr>
+<h2>Capítulo 9 — Estudo de Caso 1: Do zero ao PRD</h2>
+<p>Vamos ver o ciclo funcionando na prática. Pra este estudo de caso, vou usar um exemplo concreto — um produto hipotético chamado &quot;Foconote&quot;. Observe o padrão mais do que os detalhes do produto em si.</p>
+<h3>Contexto</h3>
+<p><strong>Ideia inicial (vaga):</strong> &quot;Acho que existe espaço pra um app de notas que ajuda pessoas com TDAH a focar.&quot;</p>
+<p>Note que essa ideia tem tudo de errado: é vaga, assume mercado sem verificar, não tem diferencial, não tem modelo de receita. É o ponto de partida realista de quase todo empreendedor.</p>
+<h3>Passo 1 — Ideia (Claude)</h3>
+<p>Prompt enviado ao Claude:</p>
+<blockquote>
+<p>Aja como investidor cético. Vou descrever uma ideia de SaaS.
+Sua tarefa: listar os 5 maiores riscos em ordem de gravidade,
+identificar 3 suposições que estou assumindo como verdade, e
+sugerir o menor experimento possível para validar a suposição
+mais crítica. Se a ideia for fraca, fale sem rodeios.</p>
+<p>IDEIA: Um app de notas feito pra pessoas com TDAH, com
+features específicas pra ajudar a focar.
+PÚBLICO: Pessoas com TDAH diagnosticado ou suspeita, 22-45 anos,
+que trabalham com atividade intelectual e têm dificuldade de
+produtividade.
+MODELO DE RECEITA: Assinatura mensal R$ 19,90.</p>
+</blockquote>
+<p>Claude respondeu com os 5 riscos, as suposições e um experimento. Resumidamente:</p>
+<p><strong>Riscos apontados:</strong></p>
+<ol>
+<li>Notion e Obsidian já dominam — diferenciação insuficiente.</li>
+<li>Suposição de que TDAH precisa de &quot;features específicas&quot; pode ser ilusão.</li>
+<li>Ticket baixo (R$ 19,90) exige escala pra ser viável — CAC vai comer margem.</li>
+<li>Público fragmentado: &quot;TDAH&quot; é diagnóstico, não segmento comercial.</li>
+<li>Barreira técnica baixa — qualquer concorrente replica em 3 meses.</li>
+</ol>
+<p><strong>Suposições não validadas:</strong></p>
+<ol>
+<li>Pessoas com TDAH abandonam ferramentas genéricas <em>por falta de features específicas</em> (pode ser por outro motivo).</li>
+<li>Existe disposição a pagar por feature vertical quando Notion é grátis.</li>
+<li>O volume de pessoas com TDAH buscando solução é grande o suficiente.</li>
+</ol>
+<p><strong>Experimento sugerido:</strong> Landing simples explicando o produto imaginado. Anúncio no Instagram/TikTok segmentando palavras-chave de TDAH. Observar CTR e cadastros em waitlist. Meta: 3% de CTR e 100 cadastros em 7 dias com R$ 200 de budget. Se bater, valida desejo. Se não, a ideia precisa ser repensada.</p>
+<p><strong>O que fizemos com essa resposta:</strong>
+Não seguimos cegamente. Fizemos o experimento. Bateu 1.2% de CTR (metade do esperado) e 30 cadastros (um terço). Resultado: reformulação.</p>
+<p><strong>Nova ideia refinada:</strong></p>
+<blockquote>
+<p>Ferramenta de captura rápida de ideias fragmentadas pra
+profissionais criativos (designers, escritores, devs) que
+trabalham em sprints curtos de foco e precisam despejar
+pensamentos sem organizar. Diferente de Notion porque não tem
+estrutura — é como um &quot;caderninho digital sempre aberto&quot;.</p>
+</blockquote>
+<p>Note: a persona mudou. O problema mudou. O ângulo mudou. O formato do produto ficou mais específico. Isso é validação funcionando.</p>
+<hr>
+<h3>Passo 2 — Pesquisa (Gemini + Manus)</h3>
+<p><strong>Pesquisa rápida com Gemini:</strong></p>
+<blockquote>
+<p>Faça uma varredura rápida dos concorrentes de capturadores
+rápidos de ideias pra pessoas criativas. Foco em:</p>
+<ul>
+<li>Drafts (iOS)</li>
+<li>Bear</li>
+<li>Apple Notes</li>
+<li>Google Keep</li>
+<li>Apps de &quot;second brain&quot; tipo Capacities, Tana.
+Entregue: tabela com proposta de valor, público, preço, ponto
+fraco. Só entregue dados que tiverem fonte verificável.</li>
+</ul>
+</blockquote>
+<p>Gemini retornou tabela com 8 concorrentes. Principais achados:</p>
+<ul>
+<li>Drafts é o mais similar — mas é só iOS.</li>
+<li>Bear tem foco em escrita, não captura rápida.</li>
+<li>Google Keep é grátis — barreira de preço enorme.</li>
+<li>Nenhum deles tem integração com IA pra &quot;destilação&quot; da ideia depois.</li>
+</ul>
+<p><strong>Insight:</strong> o ângulo &quot;captura rápida + IA organiza depois&quot; era lacuna real.</p>
+<p><strong>Pesquisa profunda com Manus</strong> (delegada, voltou 45 min depois com PDF):</p>
+<blockquote>
+<p>Faça pesquisa profunda do mercado brasileiro de ferramentas
+de produtividade pessoal. Entrega: relatório de 20 páginas
+cobrindo tamanho, concorrentes (BR e global), tendências
+2024-2026, ticket médio disposto, canais de aquisição dominantes
+neste nicho. Todas as afirmações com fonte linkada.</p>
+</blockquote>
+<p>Manus entregou PDF com:</p>
+<ul>
+<li>Mercado BR de produtividade pessoal: USD 340M, crescendo 18% aa.</li>
+<li>15 concorrentes BR (vários desconhecidos até então).</li>
+<li>Canal dominante de aquisição: YouTube (via influenciadores de produtividade).</li>
+<li>Ticket médio do nicho: R$ 29/mês. R$ 19,90 estava subprecificado.</li>
+<li>Tendência forte: &quot;AI-powered&quot; é diferencial ativo em 2026, mas em 12 meses vira commodity.</li>
+</ul>
+<p><strong>Entregável do passo 2:</strong> arquivo <code>pesquisa-mercado.md</code> com as duas análises consolidadas.</p>
+<hr>
+<h3>Passo 3 — Plano (Claude em Project)</h3>
+<p>Criado Project no Claude chamado &quot;Foconote&quot;. Upload do PRD template e da pesquisa de mercado no contexto do projeto.</p>
+<p>Prompt:</p>
+<blockquote>
+<p>Com base no template PRD e na pesquisa anexada, escreva o PRD
+completo pra versão 1.0 do Foconote. Stack: Lovable + Supabase</p>
+<ul>
+<li>Stripe + Resend. Preço: R$ 29/mês. Público: profissionais
+criativos. Foco do MVP em captura rápida + destilação via IA.
+Seja específico, use o template como guia, mas corte features
+que não são essenciais pro MVP.</li>
+</ul>
+</blockquote>
+<p>Claude entregou PRD de 14 páginas. Principais decisões de escopo:</p>
+<p><strong>ENTRA no MVP:</strong></p>
+<ul>
+<li>Captura rápida via atalho de teclado (universal no app).</li>
+<li>3 tipos de &quot;destilação&quot; via IA: resumo, lista de ações, expansão.</li>
+<li>Tag automática (IA sugere).</li>
+<li>Busca full-text.</li>
+<li>Conta e assinatura Stripe.</li>
+</ul>
+<p><strong>FICA DE FORA:</strong></p>
+<ul>
+<li>Colaboração em equipe.</li>
+<li>App mobile nativo (só web responsivo na v1).</li>
+<li>Integrações com outros apps (só export em markdown).</li>
+<li>Categorias manuais (só tags automáticas).</li>
+</ul>
+<p><strong>Schema Supabase gerado:</strong>
+Tabelas <code>profiles</code>, <code>subscriptions</code>, <code>notes</code>, <code>distillations</code>, <code>tags</code>. Total 5 tabelas. RLS configurado em todas.</p>
+<p><strong>Entregáveis finais do passo 3:</strong></p>
+<ul>
+<li><code>prd-foconote-v1.md</code> (14 pág)</li>
+<li><code>schema-foconote.sql</code> (pronto pra colar no Supabase)</li>
+<li><code>tarefas-construcao.md</code> (12 tarefas em ordem)</li>
+</ul>
+<hr>
+<h3>Por que parar por aqui neste capítulo</h3>
+<p>Este estudo de caso foca nos passos 1 a 3 — da ideia ao PRD. É a parte <strong>estratégica</strong>. O próximo capítulo mostra os passos 4 e 5 do mesmo exemplo: construir o MVP e auditar antes de subir.</p>
+<p>A lição central deste capítulo: <strong>a primeira ideia quase nunca é a ideia que vai pra produção</strong>. O ciclo de 5 passos força você a pressionar a ideia, pesquisar o mercado, e replanejar antes de escrever qualquer linha de código.</p>
+<p>Isso é o oposto do que o iniciante típico faz (ideia → código). E é por isso que o iniciante típico não lança.</p>
+<hr>
+<h2>Capítulo 10 — Estudo de Caso 2: Do PRD ao MVP no ar</h2>
+<p>Continuamos com o Foconote. PRD pronto, schema pronto, tarefas listadas. Vamos construir.</p>
+<h3>Passo 4 — Execução (parte 1: scaffold no Lovable)</h3>
+<p>Com o PRD em mãos, o prompt enviado ao Lovable foi UM SÓ, bem calibrado:</p>
+<blockquote>
+<p>Crie um aplicativo web com as seguintes especificações.</p>
+<p>NOME: Foconote
+DESCRIÇÃO: Ferramenta de captura rápida de ideias com destilação
+via IA.
+STACK: React + TypeScript + Tailwind + shadcn/ui + Supabase.</p>
+<p>TELAS OBRIGATÓRIAS:</p>
+<ol>
+<li>Landing pública (hero, features, pricing, CTA)</li>
+<li>Login / Signup via Supabase Auth (email + Google)</li>
+<li>/app — editor principal com sidebar de notas + área de texto</li>
+<li>/app/settings — perfil e assinatura</li>
+</ol>
+<p>SCHEMA SUPABASE:
+[colado aqui o SQL completo do passo 3]</p>
+<p>ESTÉTICA: dark minimal, tipografia sóbria, ênfase em tipografia
+(Fraunces + Inter), paleta bege/grafite. Inspiração: Linear, Arc.</p>
+<p>Configure Supabase Auth, proteja /app/* e /app/settings/*,
+integre o schema. DEPOIS disso vou mover o projeto pro GitHub
+e editar fora do Lovable via Claude Code.</p>
+</blockquote>
+<p>Resultado: scaffold em 3 minutos. 4 telas navegáveis. Auth funcionando com placeholder. Schema conectado. Custo: 1 prompt, cerca de 25 centavos de crédito.</p>
+<p>Um segundo prompt pra refinar:</p>
+<blockquote>
+<p>Ajuste o editor principal: remova a sidebar de categorias,
+adiciona atalho global Cmd+N pra nova nota, e adiciona dropdown
+&quot;destilar&quot; com 3 opções (resumir, extrair ações, expandir).</p>
+</blockquote>
+<p>Pronto. Segundo e último prompt no Lovable. Daqui pra frente, tudo foi no Claude Code.</p>
+<p><strong>Passo imediato depois:</strong></p>
+<ol>
+<li>Conectar Lovable ao GitHub (botão no próprio Lovable).</li>
+<li>Clonar repo localmente.</li>
+<li>Abrir terminal na pasta, rodar <code>claude</code> pra abrir Claude Code.</li>
+</ol>
+<p><strong>Status:</strong> projeto rodando, scaffold completo, saindo do Lovable.</p>
+<hr>
+<h3>Passo 4 — Execução (parte 2: edições no Claude Code)</h3>
+<p>Aqui começa a economia real. Todas as edições a partir daqui acontecem no Claude Code, não no Lovable.</p>
+<p>Exemplo de prompt dentro do Claude Code:</p>
+<blockquote>
+<p>Este projeto é um capturador de notas. Quero implementar a
+função &quot;destilar&quot;. O fluxo é:</p>
+<ol>
+<li>Usuário seleciona uma nota.</li>
+<li>Clica em &quot;destilar&quot; e escolhe o tipo (resumir, ações, expandir).</li>
+<li>Frontend manda POST pra Edge Function do Supabase.</li>
+<li>Edge Function chama API da Anthropic (Claude Sonnet) com o
+prompt específico do tipo.</li>
+<li>Resposta volta e é salva na tabela <code>distillations</code>.</li>
+<li>Frontend exibe a destilação ao lado da nota original.</li>
+</ol>
+<p>Preciso da Edge Function completa, o código do frontend pra
+chamar, e as tipagens TypeScript. Antes de mexer nos arquivos,
+me liste o que vai alterar e peça aprovação.</p>
+</blockquote>
+<p>Claude Code listou 4 arquivos a editar, pediu aprovação, editou, commitou. Preview no Lovable atualizou em 30 segundos.</p>
+<p><strong>Custo estimado dessa tarefa:</strong> 1-2 centavos de uso de API da Anthropic. A mesma tarefa no Lovable teria custado 8-15 prompts (pedir, ajustar, testar, corrigir), ou seja, cerca de 2-4 dólares.</p>
+<p>Esse é o tamanho da economia. Por tarefa. Multiplicado por 40-60 tarefas ao longo de 30 dias.</p>
+<hr>
+<h3>Passo 4 — Execução (parte 3: assets visuais com GPT)</h3>
+<p>Pra landing, precisávamos de 3 elementos visuais: hero illustration, ícones pras 3 features principais, e uma imagem OG pra compartilhamento em redes sociais.</p>
+<p>Prompt pro GPT + DALL-E:</p>
+<blockquote>
+<p>Gere uma ilustração hero pra landing de um app chamado Foconote.
+Estilo: isométrico minimalista, paleta bege e grafite, foco numa
+folha de caderno flutuante com pontos de luz sugerindo ideias
+sendo capturadas. Dimensão 16:9. Sem texto. Estética: Linear,
+Notion.</p>
+</blockquote>
+<p>3 iterações. Imagem aprovada. Otimizada no TinyPNG. Subida pro projeto.</p>
+<p>Total de tempo no GPT: 15 minutos. 3 assets prontos.</p>
+<hr>
+<h3>Passo 5 — Auditoria (Claude)</h3>
+<p>Antes de publicar em produção, rodamos o passo 5: auditoria profunda do código gerado.</p>
+<p>Prompt no Claude (com arquivos anexados):</p>
+<blockquote>
+<p>Audite estes 4 arquivos do projeto Foconote. Use estrutura:</p>
+<ol>
+<li>BUGS que vão quebrar</li>
+<li>SEGURANÇA (RLS, inputs, chaves expostas)</li>
+<li>PERFORMANCE (queries N+1, re-renders, missing indexes)</li>
+<li>MANUTENIBILIDADE</li>
+</ol>
+<p>Ordene do mais crítico ao menor. Para cada achado: gravidade,
+linha, correção em código.</p>
+</blockquote>
+<p>Claude encontrou:</p>
+<p><strong>Críticos (3):</strong></p>
+<ul>
+<li>Edge Function não valida se user está autenticado antes de chamar API da Anthropic. Qualquer requisição HTTP externa poderia consumir crédito.</li>
+<li><code>stripe-signature</code> não está sendo validado no webhook — brecha grave.</li>
+<li>Campo <code>email</code> do profile não tem unique constraint — possível duplicata.</li>
+</ul>
+<p><strong>Médios (5):</strong></p>
+<ul>
+<li>Queries na tela principal fazem N+1 (5 requests separados pra pegar tags).</li>
+<li>Re-render em cascata no editor principal ao digitar.</li>
+<li>Sem tratamento de erro na chamada da destilação — trava a UI.</li>
+<li>Chave pública do Supabase exposta no bundle (OK, é pública, mas não documentado).</li>
+<li>Tempo médio de carregamento: 3.1s. Meta 2.0s.</li>
+</ul>
+<p><strong>Baixos (4):</strong> detalhes de código.</p>
+<p>Com essa lista, voltamos pro Claude Code e corrigimos um por um. Cada correção era um prompt específico (&quot;aplicar correção 1&quot;, &quot;aplicar correção 2&quot;, etc). Commits separados pra cada correção, pra ser fácil reverter se algo quebrar.</p>
+<p><strong>Depois das correções:</strong> segunda auditoria. 0 críticos. 1 médio (performance residual). Aceito.</p>
+<hr>
+<h3>Resultado final</h3>
+<ul>
+<li>MVP funcionando em URL pública do Lovable.</li>
+<li>Auth funcionando (email + Google).</li>
+<li>Schema no Supabase com RLS validado.</li>
+<li>Edge Function de destilação funcionando com Claude Sonnet.</li>
+<li>Stripe integrado em test mode (ainda não live).</li>
+<li>Auditoria aprovada.</li>
+</ul>
+<p><strong>Custo total do Lovable:</strong> cerca de 40 centavos (2 prompts de scaffold + uns 3 ajustes triviais depois).
+<strong>Custo total do Claude Code (API Anthropic):</strong> cerca de 12 dólares em 3 semanas de edição.
+<strong>Custo comparativo se tivesse feito tudo no Lovable:</strong> estimados 150-200 dólares em créditos.</p>
+<p>Economia real do método: <strong>~90%</strong>.</p>
+<h3>Lição do estudo de caso</h3>
+<p>O que separa quem publica de quem não publica não é habilidade técnica. É seguir o ciclo. O Foconote hipotético fez:</p>
+<ol>
+<li>Ideia → pressionada com Claude → reformulada.</li>
+<li>Pesquisa → concorrentes mapeados, oportunidade validada.</li>
+<li>Plano → PRD, schema, tarefas — tudo antes de código.</li>
+<li>Execução → scaffold rápido no Lovable, edição barata no Claude Code, assets no GPT.</li>
+<li>Auditoria → erros críticos pegos antes de produção.</li>
+</ol>
+<p>Tudo isso em 3 semanas de trabalho não-integral, por uma única pessoa, sem saber programar no sentido tradicional.</p>
+<p>A Parte 4 agora vai aprofundar os <strong>dois pulos do gato</strong> que tornam esse fluxo possível — o Gemini como tutor e a arquitetura Lovable + GitHub + Claude Code.</p>
+<hr>
+<div class="page-break"></div><h1>PARTE 4 — Os Dois Pulos do Gato</h1>
+<blockquote>
+<p><em>Este é o centro gravitacional do método. Se você lê só uma parte deste ebook, que seja esta. Os dois pulos do gato pagam o livro cem vezes.</em></p>
+</blockquote>
+<hr>
+<h2>Capítulo 11 — Pulo do Gato #1: Gemini como Tutor</h2>
+<p>Todo iniciante trava em algum momento. Sempre. O momento é sempre o mesmo: quando precisa configurar algo que nunca configurou.</p>
+<p>Configurar banco de dados. Apontar DNS. Ativar webhook. Configurar OAuth. Deploy em Vercel. Essas são as cinco paredes em que 90% dos iniciantes batem e desistem.</p>
+<p>Este capítulo é sobre derrubar essas cinco paredes com uma única técnica.</p>
+<h3>O problema é psicológico antes de técnico</h3>
+<p>Quando você abre o painel do Supabase pela primeira vez, você vê 18 abas laterais, 40 botões, jargão por todo lado. Sua reação natural é travar. Porque o painel assume que você sabe o que é &quot;RLS&quot;, &quot;PostgREST&quot;, &quot;Realtime&quot;, &quot;Storage&quot;. Você não sabe. Nada ali faz sentido.</p>
+<p>A solução popular é péssima: ler documentação. A doc do Supabase assume o mesmo nível de conhecimento que o painel. Você ia abrir, ler 10 páginas, não entender nada, fechar.</p>
+<p>Outra solução popular também é ruim: vídeo no YouTube. Vídeo de 2023 mostra um painel que mudou em 2026. Você segue os passos, botão está em outro lugar, você trava, fecha.</p>
+<p>A solução que funciona: <strong>conversar com uma IA que olha o painel junto com você</strong>.</p>
+<p>É isso que o Gemini faz, e faz melhor que qualquer outra ferramenta. Você manda print do painel, diz &quot;estou aqui, meu objetivo é esse, o que clico agora?&quot;. Ele responde explicando o que aparece na tela e qual botão apertar.</p>
+<p>É como ter um professor particular de tecnologia, disponível 24h, que nunca se irrita, nunca julga sua pergunta e nunca te faz sentir burro.</p>
+<h3>A técnica &quot;Me Guie Passo a Passo&quot;</h3>
+<p>O prompt matriz — este é literalmente o único prompt que você precisa memorizar pra destravar qualquer configuração técnica:</p>
+<pre><code>Sou iniciante absoluto. Nunca configurei [ASSUNTO] na vida.
+
+Preciso: [OBJETIVO CONCRETO]
+
+Stack que estou usando: [LISTA]
+
+Me guie passo a passo. Regras:
+- Pergunte antes de assumir qualquer coisa.
+- Valide cada etapa comigo antes de passar pra próxima.
+- Quando eu tiver dúvida, vou mandar print da tela.
+- Se eu errar algo, me diga como desfazer.
+- Evite jargão técnico. Se precisar usar, defina em 1 frase.
+- Ao final de cada etapa, me diga &quot;confirmado?&quot; antes de seguir.
+
+Vamos começar pela etapa 1.
+</code></pre>
+<p>Decore isso. Cola num arquivo. Use sempre que travar.</p>
+<p>Esse prompt faz 5 coisas importantes:</p>
+<ol>
+<li>Desliga o &quot;modo intelectual&quot; do Gemini e liga o &quot;modo tutor&quot;.</li>
+<li>Força ele a ir devagar em vez de despejar 10 passos.</li>
+<li>Obriga ele a validar entendimento antes de avançar.</li>
+<li>Abre canal pra você mandar print da tela.</li>
+<li>Define a responsabilidade: ele explica, você executa, ele valida.</li>
+</ol>
+<hr>
+<h3>Tutorial 1 — Configurar Supabase do zero</h3>
+<p>Vamos passar em detalhe pela primeira aplicação prática. Este é o cenário: você acabou de criar conta no Supabase, abriu o painel, e está paralisado.</p>
+<p><strong>Seu prompt inicial:</strong></p>
+<pre><code>Sou iniciante absoluto. Nunca configurei banco de dados na vida.
+
+Preciso: criar projeto no Supabase com as tabelas profiles,
+subscriptions, items. Preciso também configurar Row Level
+Security (RLS) e integrar Google OAuth.
+
+Stack: React + TypeScript + Supabase.
+
+Me guie passo a passo. [resto do prompt matriz]
+
+Vamos começar pela etapa 1.
+</code></pre>
+<p><strong>Gemini responde:</strong></p>
+<blockquote>
+<p>Beleza. Etapa 1: criar o projeto.</p>
+<ol>
+<li>Acesse <a href="https://supabase.com/dashboard">https://supabase.com/dashboard</a></li>
+<li>Faça login (use GitHub se já tem conta — é mais rápido).</li>
+<li>Clique em &quot;New project&quot; no canto superior direito.</li>
+<li>Preencha:<ul>
+<li>Organization: deixe o default ou crie uma nova.</li>
+<li>Name: dê um nome (ex: &quot;meu-saas-v1&quot;).</li>
+<li>Database password: gere uma senha forte e SALVE num
+gerenciador de senhas (você vai precisar depois).</li>
+<li>Region: escolha a mais próxima de você. Pra Brasil,
+&quot;South America (São Paulo)&quot;.</li>
+<li>Plano: deixe Free (você pode mudar depois).</li>
+</ul>
+</li>
+</ol>
+<p>Clique em &quot;Create new project&quot; e espere 2 minutos enquanto
+o projeto é provisionado.</p>
+<p>Confirmado? Me avisa quando estiver pronto e vamos pra etapa 2.</p>
+</blockquote>
+<p>Você faz exatamente isso. Se trava em algo, tira print e cola. Gemini explica. Você destravra.</p>
+<p><strong>Etapa 2 (depois da confirmação):</strong></p>
+<blockquote>
+<p>Agora vamos criar as tabelas. Abre o painel do seu projeto e
+clica em &quot;SQL Editor&quot; no menu lateral.</p>
+<p>Vou te passar o SQL completo, comentado, pra você colar e rodar.
+Copia o bloco abaixo:</p>
+<p>[SQL com comentários explicativos]</p>
+<p>Cola no editor, clica em &quot;Run&quot; no canto inferior direito.
+Se aparecer &quot;Success. No rows returned&quot;, funcionou.
+Se aparecer erro, manda print.</p>
+<p>Confirmado?</p>
+</blockquote>
+<p>E assim por diante. Etapa a etapa. Quando precisar fazer algo no painel (não no SQL), Gemini explica qual botão, em qual menu, qual campo preencher.</p>
+<p><strong>Tempo total pra configurar Supabase completo com Gemini:</strong> 45 minutos a 1 hora, na primeira vez. Depois que você fez uma vez, as próximas levam 15 minutos.</p>
+<p><strong>Tempo pra configurar lendo doc sozinho:</strong> desiste no minuto 30 e vira &quot;vou aprender programação primeiro&quot;.</p>
+<hr>
+<h3>Tutorial 2 — Apontar domínio e configurar DNS</h3>
+<p>Segunda parede clássica. Você comprou <code>meuproduto.com.br</code> no Registro.br, hospedou o site no Vercel, e agora precisa &quot;apontar&quot; o domínio. Não faz ideia do que isso significa.</p>
+<p><strong>Prompt:</strong></p>
+<pre><code>Sou iniciante absoluto. Nunca configurei DNS na vida.
+
+Preciso: apontar meu domínio meuproduto.com.br, comprado no
+Registro.br, pro meu site hospedado no Vercel.
+
+[resto do prompt matriz]
+
+Explique também o que cada tipo de registro DNS (A, CNAME, MX, TXT)
+significa antes de usar. Vamos começar pela etapa 1.
+</code></pre>
+<p>Gemini vai começar explicando:</p>
+<ul>
+<li>O que é DNS (em 2 frases).</li>
+<li>Por que existem vários tipos de registro.</li>
+<li>Qual você vai usar (normalmente A ou CNAME pra Vercel).</li>
+<li>Quanto tempo demora pra propagar.</li>
+</ul>
+<p>Depois te guia:</p>
+<ol>
+<li>No painel do Vercel: adiciona o domínio, copia os valores DNS que o Vercel mostra.</li>
+<li>No painel do Registro.br: entra em &quot;Configurações DNS&quot; → &quot;Editar zona&quot;.</li>
+<li>Adiciona os registros exatamente como o Vercel pediu.</li>
+<li>Salva.</li>
+<li>Testa propagação em <a href="https://dnschecker.org">https://dnschecker.org</a>.</li>
+</ol>
+<p>Quando você trava em algum campo (&quot;o que coloco no campo &#39;TTL&#39;?&quot;), tira print, manda, ele explica.</p>
+<hr>
+<h3>Tutorial 3 — Configurar webhook do Stripe</h3>
+<p>Terceira parede. Você integrou Stripe Checkout, o pagamento processa, mas... nada acontece depois. A assinatura não aparece no Supabase. O usuário paga e continua sem acesso premium.</p>
+<p>O problema: falta configurar o webhook que avisa seu app que o pagamento foi feito.</p>
+<p><strong>Prompt:</strong></p>
+<pre><code>Sou iniciante absoluto. Nunca configurei webhook de pagamento.
+
+Preciso: configurar webhook do Stripe pra que, quando alguém
+assinar, meu app saiba e atualize a tabela `subscriptions` no
+Supabase.
+
+Stack: Supabase Edge Functions, React, Stripe.
+
+[resto do prompt matriz]
+
+Explique também o que é webhook e por que eu preciso validar a
+assinatura cripto (stripe-signature) antes de confiar no payload.
+</code></pre>
+<p>Gemini vai:</p>
+<ol>
+<li>Explicar o conceito de webhook em 2 frases.</li>
+<li>Te guiar a criar uma Edge Function no Supabase.</li>
+<li>Te dar o código completo da Edge Function (já com validação de assinatura).</li>
+<li>Te guiar a criar o endpoint webhook no painel do Stripe.</li>
+<li>Te ensinar a testar em sandbox com cartão de teste.</li>
+<li>Te mostrar como checar logs de evento no painel do Stripe.</li>
+</ol>
+<p>Esse é talvez o tutorial mais valioso dos cinco. Webhook mal configurado é onde 80% dos SaaS novos perdem dinheiro silenciosamente.</p>
+<hr>
+<h3>Tutorial 4 — Configurar OAuth com Google</h3>
+<p>Quarta parede. Você quer login com Google no seu app. Abre o Google Cloud Console pela primeira vez. Trava.</p>
+<p><strong>Prompt:</strong></p>
+<pre><code>Sou iniciante absoluto. Nunca mexi no Google Cloud Console.
+
+Preciso: configurar &quot;Sign in with Google&quot; no meu app, integrado
+com Supabase Auth.
+
+Domínio: meuproduto.com.br
+Ambiente dev: localhost:3000
+
+[resto do prompt matriz]
+
+Aviso especial sobre redirect URIs — explique em detalhe porque é
+onde quase todo mundo erra.
+</code></pre>
+<p>Gemini vai:</p>
+<ol>
+<li>Explicar a diferença entre Consent Screen e OAuth Credentials.</li>
+<li>Te guiar a criar projeto no Google Cloud.</li>
+<li>Te guiar a habilitar as APIs certas.</li>
+<li>Criar credenciais OAuth Web Application.</li>
+<li>Configurar redirect URIs (o ponto traiçoeiro — você precisa dos URIs de dev E produção).</li>
+<li>Pegar client_id e client_secret.</li>
+<li>Colar essas credenciais no painel do Supabase Auth.</li>
+<li>Testar fluxo de login em dev.</li>
+<li>Publicar consent screen pra usuários externos (sem isso, só suas contas internas conseguem logar).</li>
+</ol>
+<hr>
+<h3>Tutorial 5 — Deploy no Vercel e interpretação de logs</h3>
+<p>Quinta parede. Você tentou fazer deploy no Vercel, o build falhou, você olhou 400 linhas de log vermelho e fechou a aba.</p>
+<p><strong>Prompt:</strong></p>
+<pre><code>Sou iniciante absoluto. Primeiro deploy no Vercel.
+
+Preciso: fazer deploy de produção do meu app React/TS hospedado
+no GitHub. Também preciso configurar variáveis de ambiente
+(VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY, STRIPE_SECRET_KEY).
+
+[resto do prompt matriz]
+
+Se o build falhar, vou colar o log inteiro e você me explica
+o que significa e como corrigir.
+</code></pre>
+<p>Gemini vai:</p>
+<ol>
+<li>Explicar o que é deploy e o que acontece nos bastidores.</li>
+<li>Te guiar a conectar repositório GitHub ao Vercel.</li>
+<li>Explicar cada campo na tela de configuração inicial.</li>
+<li>Ensinar a diferença entre Preview e Production.</li>
+<li>Cadastrar as variáveis de ambiente com o contexto certo (dev, preview, production).</li>
+<li>Rodar primeiro deploy.</li>
+</ol>
+<p><strong>Quando o build falhar</strong> (e vai falhar na primeira vez, quase sempre), você cola o log inteiro no chat. Gemini lê, explica o que quebrou, te diz o que ajustar. Geralmente 2-3 iterações até o build passar.</p>
+<hr>
+<h3>Uma observação crítica sobre o Gemini</h3>
+<p>Em todos esses tutoriais, você está tratando o Gemini como tutor — não como solucionador automático. A diferença é sutil mas importante.</p>
+<p><strong>Tutor:</strong> explica, valida, ensina enquanto executa. Você entende o que está fazendo.
+<strong>Solucionador automático:</strong> faz pra você, você não aprende nada.</p>
+<p>Você quer o primeiro. O Gemini faz bem o primeiro porque o prompt matriz força ele a esse comportamento. Sem o prompt matriz, ele cai no segundo modo, e aí você termina o processo com o DNS apontado mas sem ter entendido por quê.</p>
+<p>Entender é valioso. Da próxima vez que precisar fazer algo parecido, você faz sozinho em 10 minutos.</p>
+<hr>
+<h2>Capítulo 12 — Pulo do Gato #2: Parte 1 — O Fluxo Econômico</h2>
+<p>Hora de falar sobre dinheiro.</p>
+<p>Lovable é uma ferramenta maravilhosa. É também uma ferramenta cara. Não pelo preço de assinatura — mas pelo custo por edição.</p>
+<p>Todo prompt que você manda dentro do Lovable queima créditos. Esses créditos são reais e acabam. Se você usa o Lovable da forma que parece natural (pedir, refinar, ajustar, iterar), você vai queimar dezenas de dólares numa semana, e possivelmente não vai ter produto publicado.</p>
+<p>Este capítulo é sobre entender exatamente o tamanho do problema.</p>
+<h3>O que significa &quot;edição iterativa&quot;</h3>
+<p>Quando você constrói algo no Lovable, o fluxo natural é este:</p>
+<ol>
+<li>&quot;Crie um app de notas com login.&quot;</li>
+<li>&quot;Deixa o header mais escuro.&quot;</li>
+<li>&quot;Adiciona um botão no canto.&quot;</li>
+<li>&quot;Muda a fonte pra Inter.&quot;</li>
+<li>&quot;Move esse botão mais pra direita.&quot;</li>
+<li>&quot;Ah, e também quero que salve as notas no Supabase.&quot;</li>
+<li>&quot;Esqueci, adiciona autenticação com Google.&quot;</li>
+<li>...</li>
+</ol>
+<p>Cada um desses 8 prompts queima crédito. Projeto real médio passa dos 60-80 prompts facilmente.</p>
+<p>Cada prompt, em cima disso, regenera grandes porções do código. Lovable não é um editor de código — é um gerador de código. Cada prompt é uma nova geração quase completa.</p>
+<h3>A matemática do desastre</h3>
+<p>Vamos fazer uma simulação realista.</p>
+<p><strong>Cenário A — Iniciante sem método (100% Lovable):</strong></p>
+<ul>
+<li>Scaffold inicial: 1 prompt.</li>
+<li>Ajustes visuais: 15 prompts.</li>
+<li>Adição de features: 25 prompts.</li>
+<li>Correções de bugs: 20 prompts.</li>
+<li>Integrações (Supabase, Stripe, Resend): 15 prompts.</li>
+<li>Ajustes finais pré-deploy: 10 prompts.</li>
+</ul>
+<p><strong>Total:</strong> cerca de 86 prompts no Lovable.</p>
+<p>Pelo pricing do Lovable (que varia de plano, mas estima-se em USD 0.20 a USD 0.35 por prompt em projetos médios), isso gasta entre <strong>USD 17 e USD 30</strong> por semana de trabalho. Se o projeto demora 3 semanas, está falando em <strong>USD 50 a USD 90</strong> só em crédito Lovable.</p>
+<p>Adiciona a assinatura mensal (USD 20-30) e você passou de USD 100 no projeto.</p>
+<p><strong>Cenário B — Iniciante com método (Lovable + GitHub + Claude Code):</strong></p>
+<ul>
+<li>Scaffold inicial: 1 prompt no Lovable.</li>
+<li>Ajustes triviais visuais: 2 prompts no Lovable.</li>
+<li><strong>Tudo mais:</strong> Claude Code.</li>
+</ul>
+<p><strong>Total no Lovable:</strong> 3 prompts. USD 1 a USD 1,50.
+<strong>Total no Claude Code:</strong> USD 20 por mês de assinatura (cobertura ampla).</p>
+<p>Custo total do projeto no Cenário B: <strong>USD 22</strong>.</p>
+<p>Diferença: <strong>USD 80 economizados</strong>. Isso é 400% mais barato.</p>
+<p>Multiplique por vários projetos por ano. É o valor de um computador novo, ou uma viagem, ou o orçamento de ads pra lançar o produto.</p>
+<h3>Por que iterar no Lovable custa caro mesmo sendo &quot;só um prompt&quot;</h3>
+<p>Três razões técnicas:</p>
+<p><strong>1. Lovable regenera muito código a cada prompt.</strong>
+Ao pedir pra mudar a cor de um botão, Lovable pode regenerar o componente inteiro, o arquivo inteiro, ou até arquivos relacionados. Isso consome muito &quot;token&quot; por baixo — e custo sobe.</p>
+<p><strong>2. Lovable incorpora contexto longo.</strong>
+A cada prompt, Lovable lê o projeto inteiro (ou parte grande dele) pra entender o contexto. Projeto cresce, custo cresce.</p>
+<p><strong>3. Lovable é otimizado pra velocidade de criação, não eficiência de iteração.</strong>
+É um gerador de UI que virou editor de projeto. A arquitetura é boa pra gerar do zero, menos boa pra iterar.</p>
+<h3>Por que iterar no Claude Code custa muito menos</h3>
+<p>Claude Code é um CLI conversacional. Você roda no terminal, e ele edita arquivos do seu projeto local com base em prompts. Três vantagens:</p>
+<p><strong>1. Contexto controlado.</strong>
+Você (ou a IA) escolhe quais arquivos entram no contexto. Não carrega o projeto inteiro a cada prompt. Custa menos token por chamada.</p>
+<p><strong>2. Tarefas cirúrgicas.</strong>
+Você pode dizer &quot;ajuste só a cor desse botão no arquivo X&quot;. Claude Code edita 1 linha. Custo: centavos.</p>
+<p><strong>3. Assinatura fixa vs. pay-per-prompt.</strong>
+O Claude Code Plan da Anthropic é uma assinatura mensal (a partir de USD 20/mês). Você usa bastante sem surpresa no cartão.</p>
+<h3>A única dúvida legítima: &quot;mas Claude Code não é programar?&quot;</h3>
+<p>Não. Ou melhor: é — mas no sentido &quot;conversar com o código&quot;, não &quot;digitar código&quot;.</p>
+<p>No Claude Code você:</p>
+<ul>
+<li>Abre o terminal na pasta do projeto.</li>
+<li>Digita <code>claude</code> pra entrar no chat.</li>
+<li>Escreve em português: &quot;ajuste a cor do botão principal pra bege&quot; ou &quot;adicione uma página de perfil com edição de dados&quot;.</li>
+<li>Claude Code edita os arquivos diretos.</li>
+<li>Você vê o diff (mudança), aprova ou pede ajuste.</li>
+<li>Commit + push, Lovable sincroniza o preview.</li>
+</ul>
+<p>Você nunca escreveu uma linha de código &quot;no dedo&quot;. Você só conversou.</p>
+<p>É tão acessível quanto o Lovable. E 30x mais barato.</p>
+<h3>Matriz de decisão — quando usar o quê</h3>
+<table>
+<thead>
+<tr>
+<th>Tarefa</th>
+<th>Lovable</th>
+<th>Claude Code</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Scaffold inicial do projeto</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Preview visual rápido</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Mostrar progresso pra cliente</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Edição de componente existente</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Adicionar feature nova</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Corrigir bug</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Integração com API externa</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Configurar Edge Function Supabase</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Ajuste de copy/texto estático</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Mudança trivial de CSS (1 cor, 1 padding)</td>
+<td>⚠️ (ok rápido)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Refatoração estrutural</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<p>Olha essa tabela. Lovable ganha em 3 cenários. Claude Code ganha em 9. Essa é a proporção real de tempo gasto num projeto.</p>
+<p>Se você passa 90% do tempo usando a ferramenta errada pra 90% das tarefas, claro que queima crédito. Simples assim.</p>
+<hr>
+<h2>Capítulo 13 — Pulo do Gato #2: Parte 2 — Executando o Fluxo</h2>
+<p>Agora o passo a passo operacional do fluxo econômico. Vou cobrir cada etapa em detalhe, incluindo os comandos exatos de terminal.</p>
+<h3>Etapa 1 — Scaffold no Lovable (1 a 3 prompts)</h3>
+<p>Já cobrimos no capítulo 6. Resumo: um prompt grande, bem estruturado, que cria o projeto inteiro de uma vez. No máximo 2-3 prompts de refinamento depois. Então: sai do Lovable.</p>
+<h3>Etapa 2 — Conectar o projeto ao GitHub</h3>
+<p>No painel do Lovable, você vai encontrar um botão de &quot;GitHub integration&quot; (varia de posição conforme a versão, mas sempre está presente).</p>
+<ol>
+<li>Clique nele.</li>
+<li>Autorize o Lovable a acessar seu GitHub.</li>
+<li>Escolha &quot;criar novo repositório&quot; (ou vincular a um existente).</li>
+<li>Nome do repo: geralmente o nome do seu projeto.</li>
+<li>Público ou privado: pra plano grátis do Vercel, público é mais simples. Pra projetos reais, privado é seguro.</li>
+<li>Confirma.</li>
+</ol>
+<p>Em 30 segundos, o Lovable cria o repo no seu GitHub e faz o primeiro push. O código do seu projeto está agora no GitHub.</p>
+<h3>Etapa 3 — Clonar o repositório localmente</h3>
+<p>Abra o terminal no seu computador.</p>
+<blockquote>
+<p><strong>Se você nunca abriu terminal:</strong> não se assuste. É uma caixa preta onde você digita comandos. No Mac, procura &quot;Terminal&quot; no Spotlight. No Windows, procura &quot;PowerShell&quot;. Linux você já sabe.</p>
+</blockquote>
+<p>Comando pra clonar (substitua pela URL do seu repo):</p>
+<pre><code class="language-bash">git clone https://github.com/seu-usuario/seu-projeto.git
+</code></pre>
+<p>Entra na pasta:</p>
+<pre><code class="language-bash">cd seu-projeto
+</code></pre>
+<p>Pronto. Agora o código do seu projeto está no seu computador também.</p>
+<h3>Etapa 4 — Abrir o projeto no Claude Code</h3>
+<p>Se você nunca instalou o Claude Code, é rápido. Vai no site oficial da Anthropic, segue o guia (leva uns 5 minutos). Precisa de conta Anthropic com plano ativo.</p>
+<p>Com ele instalado, dentro da pasta do projeto, basta rodar:</p>
+<pre><code class="language-bash">claude
+</code></pre>
+<p>Abre um chat. Você está dentro do Claude Code, ele está vendo os arquivos da sua pasta.</p>
+<p><strong>Primeiro prompt de teste:</strong></p>
+<pre><code>Liste os arquivos do projeto e me faça um resumo rápido
+da estrutura.
+</code></pre>
+<p>Claude responde descrevendo o que ele vê: componentes, páginas, arquivos de configuração. Você está na cabine de comando.</p>
+<h3>Etapa 5 — Editando no Claude Code</h3>
+<p>A partir daqui, você usa o Claude Code pra tudo. Algumas formas comuns:</p>
+<p><strong>Adicionar uma feature:</strong></p>
+<pre><code>Preciso adicionar uma página de /perfil onde o usuário pode:
+- Ver seu nome e email.
+- Editar seu nome.
+- Fazer upload de uma foto de perfil (usando Supabase Storage).
+- Cancelar assinatura Stripe.
+
+Antes de editar, me diga quais arquivos vai mexer e peça aprovação.
+</code></pre>
+<p><strong>Corrigir bug:</strong></p>
+<pre><code>Tem um bug: quando o usuário clica em &quot;salvar nota&quot;, às vezes
+o salvamento dá erro mas a UI não mostra. Investigue a causa e
+proponha correção. Antes de aplicar, me explique.
+</code></pre>
+<p><strong>Refatoração:</strong></p>
+<pre><code>A lógica de chamar a API do Stripe está duplicada em 3 componentes.
+Extraia pra um hook customizado reutilizável. Mantenha o
+comportamento idêntico.
+</code></pre>
+<p>Claude Code sempre pede aprovação antes de editar arquivos. Você vê o diff, aprova ou ajusta.</p>
+<h3>Etapa 6 — Commit e push</h3>
+<p>Depois de cada bloco de mudanças (ou no final da sessão), você faz commit e push. Isso envia as mudanças de volta pro GitHub, e o Lovable sincroniza o preview.</p>
+<p>Você pode pedir pro próprio Claude Code fazer isso:</p>
+<pre><code>Faça commit dessas mudanças com uma mensagem clara descrevendo
+o que foi feito, e faça push pro GitHub.
+</code></pre>
+<p>Claude Code executa os comandos Git no terminal. Pronto. Em 30 segundos o Lovable atualiza o preview, e você vê o resultado.</p>
+<h3>Etapa 7 — Lovable como visualizador</h3>
+<p>De agora em diante, Lovable é basicamente um navegador com preview do seu projeto. Você abre pra:</p>
+<ul>
+<li>Testar visualmente depois de edições.</li>
+<li>Compartilhar preview com cliente.</li>
+<li>Mostrar pra amigos.</li>
+</ul>
+<p>Você NÃO edita mais no Lovable. Sua casa é o Claude Code.</p>
+<h3>Resumo em 3 frases</h3>
+<ol>
+<li><strong>Lovable começa, Claude Code continua, GitHub sincroniza.</strong></li>
+<li><strong>Você só volta pro Lovable pra visualizar, nunca pra editar.</strong></li>
+<li><strong>O custo cai de USD 80 pra USD 22 por projeto, e você ganha controle real do código.</strong></li>
+</ol>
+<hr>
+<h2>Capítulo 14 — Claude Code na prática pra não-devs</h2>
+<p>Este capítulo é pra quem nunca abriu terminal. Pra quem tem medo de código. Pra quem acha que &quot;Git&quot; é uma tacada no golfe.</p>
+<p>Boa notícia: você não precisa virar programador. Você precisa aprender 6 comandos de terminal e entender 3 conceitos básicos de Git. Total de tempo de aprendizado: 30-40 minutos.</p>
+<h3>Os 3 conceitos de Git que você precisa</h3>
+<p><strong>1. Repositório (repo)</strong>
+Um repositório é a pasta do seu projeto, versionada. Todo arquivo do projeto mora ali. Pense numa pasta mágica que lembra todas as versões anteriores de cada arquivo.</p>
+<p><strong>2. Commit</strong>
+Um commit é um &quot;snapshot&quot; da pasta num momento do tempo. Você salva uma versão do projeto dizendo &quot;aqui, nesse estado&quot;. Depois pode voltar pra esse estado se der problema.</p>
+<p><strong>3. Push</strong>
+Push é quando você envia seus commits locais (do seu computador) pro GitHub (na nuvem). É como um backup na nuvem, mas com todo o histórico.</p>
+<p>É isso. Repositório = pasta com histórico. Commit = salvar uma versão. Push = mandar pra nuvem.</p>
+<h3>Os 6 comandos de terminal</h3>
+<p>Vou listar cada um com o que faz, quando usar, exemplo.</p>
+<p><strong>1. <code>cd [pasta]</code> — entrar numa pasta</strong></p>
+<pre><code class="language-bash">cd ~/Documents/meu-projeto
+</code></pre>
+<p>Te leva pra pasta do projeto. Você precisa estar dentro dela pra rodar os outros comandos.</p>
+<p><strong>2. <code>git clone [URL]</code> — baixar um repositório do GitHub</strong></p>
+<pre><code class="language-bash">git clone https://github.com/seu-usuario/seu-projeto.git
+</code></pre>
+<p>Usa isso uma vez, no começo, pra baixar o projeto do GitHub pro seu computador.</p>
+<p><strong>3. <code>git status</code> — ver o que mudou</strong></p>
+<pre><code class="language-bash">git status
+</code></pre>
+<p>Mostra quais arquivos você alterou desde o último commit. Útil pra saber o que você vai commitar.</p>
+<p><strong>4. <code>git add .</code> — marcar todos os arquivos alterados pra commit</strong></p>
+<pre><code class="language-bash">git add .
+</code></pre>
+<p>O ponto no final significa &quot;todos&quot;. Use antes de commit.</p>
+<p><strong>5. <code>git commit -m &quot;mensagem&quot;</code> — salvar uma versão</strong></p>
+<pre><code class="language-bash">git commit -m &quot;adiciona página de perfil&quot;
+</code></pre>
+<p>A mensagem descreve o que mudou. Seja claro. Você vai agradecer depois.</p>
+<p><strong>6. <code>git push</code> — enviar pro GitHub</strong></p>
+<pre><code class="language-bash">git push
+</code></pre>
+<p>Manda seus commits pro GitHub. O Lovable vai sincronizar automaticamente.</p>
+<h3>O fluxo padrão de trabalho</h3>
+<p>Depois de cada bloco de mudanças no Claude Code:</p>
+<pre><code class="language-bash">git status          # confere o que mudou
+git add .           # marca tudo
+git commit -m &quot;o que você mudou, em português&quot;
+git push            # envia pro GitHub
+</code></pre>
+<p>Em 95% dos casos, é isso. Esses 4 comandos resolvem seu dia a dia inteiro.</p>
+<h3>Deixa o Claude Code rodar esses comandos por você</h3>
+<p>A parte linda: você não precisa digitar esses comandos sozinho. Claude Code faz pra você.</p>
+<p>Depois de uma edição, simplesmente escreva:</p>
+<pre><code>Faça commit dessas mudanças e push pro GitHub. Mensagem:
+&quot;[descrição do que mudou]&quot;.
+</code></pre>
+<p>Claude Code executa os 4 comandos automaticamente. Você só aprova a execução.</p>
+<p>Você literalmente nunca precisa digitar <code>git</code> no terminal se não quiser. Mas é bom saber o que está acontecendo por baixo.</p>
+<h3>Erros comuns do iniciante (e como resolver)</h3>
+<p><strong>&quot;git command not found&quot;</strong>
+Git não está instalado. No Mac, vem com as &quot;Command Line Tools&quot; do Xcode. Pode instalar rodando <code>xcode-select --install</code>. No Windows, baixa em git-scm.com.</p>
+<p><strong>&quot;permission denied&quot; no push</strong>
+Você não está autenticado no GitHub. Configura usando GitHub CLI (<code>gh auth login</code>) ou SSH key. Claude Code pode te guiar nisso se acontecer.</p>
+<p><strong>&quot;merge conflict&quot;</strong>
+Duas versões do mesmo arquivo divergem. Raro acontecer se você é a única pessoa no projeto. Se acontecer, tira print e manda pro Gemini ou Claude Code — eles resolvem.</p>
+<p><strong>&quot;your branch is behind&quot;</strong>
+Significa que o Lovable alterou algo no GitHub que você ainda não baixou. Roda <code>git pull</code> pra baixar antes de dar push.</p>
+<h3>A frase pra se lembrar</h3>
+<p><em>&quot;Eu não programo. Eu conversa com a ferramenta que programa.&quot;</em></p>
+<p>Cola num papel. Te lembra sempre que sentir impostor.</p>
+<p>Na Parte 5, fechamos o ciclo: troubleshooting de problemas comuns e o que fazer depois que seu produto está no ar.</p>
+<hr>
+<div class="page-break"></div><h1>PARTE 5 — Escalar e Profissionalizar</h1>
+<blockquote>
+<p><em>Seu produto está no ar. Agora vem o que ninguém conta: o que fazer depois.</em></p>
+</blockquote>
+<hr>
+<h2>Capítulo 15 — Troubleshooting dos erros mais comuns</h2>
+<p>Este capítulo é pra você consultar quando algo quebrar. Não leia de ponta a ponta — leia o erro que está acontecendo com você agora.</p>
+<p>São 15 situações que eu sei que vão acontecer, porque acontecem com 90% das pessoas que fazem a trilha. Cada uma com o diagnóstico e a solução específica.</p>
+<h3>Erro 1: A IA alucinou e inventou uma função que não existe</h3>
+<p><strong>Sintoma:</strong> Claude Code ou Lovable gerou código chamando um método tipo <code>supabase.auth.magicalSignIn()</code> e isso não existe na documentação.</p>
+<p><strong>Causa:</strong> Modelos generativos às vezes inventam APIs plausíveis.</p>
+<p><strong>Solução:</strong></p>
+<ol>
+<li>Abra o Gemini. Mande print do código gerado.</li>
+<li>Prompt: &quot;Esse código usa o método X. Verifique se esse método existe na documentação oficial da biblioteca. Se não existir, sugira o método correto.&quot;</li>
+<li>Gemini consulta a doc e te dá o método real.</li>
+<li>Volte pro Claude Code e peça: &quot;substitua X por Y conforme a doc oficial da biblioteca&quot;.</li>
+</ol>
+<h3>Erro 2: Sincronização Lovable ↔ GitHub quebrou</h3>
+<p><strong>Sintoma:</strong> Você editou no Claude Code e deu push, mas o preview do Lovable não atualizou.</p>
+<p><strong>Causa:</strong> Lovable pode ter dessincronizado, ou você editou direto no Lovable depois que saiu dele.</p>
+<p><strong>Solução:</strong></p>
+<ol>
+<li>No painel do Lovable, procure um botão &quot;Sync with GitHub&quot; ou similar.</li>
+<li>Force a sincronização manual.</li>
+<li>Se não resolver: faça um commit vazio pra triggar nova sincronização:<pre><code class="language-bash">git commit --allow-empty -m &quot;trigger lovable sync&quot;
+git push
+</code></pre>
+</li>
+<li>Última opção: reconecte o GitHub no Lovable (desconecta e conecta de novo).</li>
+</ol>
+<h3>Erro 3: Supabase não conecta (&quot;Failed to fetch&quot;)</h3>
+<p><strong>Sintoma:</strong> O app carrega, mas qualquer ação que precisa do Supabase falha.</p>
+<p><strong>Causa (90% das vezes):</strong> variáveis de ambiente erradas ou ausentes.</p>
+<p><strong>Solução:</strong></p>
+<ol>
+<li>Abra o console do navegador (F12 → Console).</li>
+<li>Digite: <code>console.log(import.meta.env)</code> e aperte Enter.</li>
+<li>Confirme que <code>VITE_SUPABASE_URL</code> e <code>VITE_SUPABASE_ANON_KEY</code> aparecem com valores.</li>
+<li>Se não aparecem: as variáveis não foram configuradas no Vercel (ou Lovable).</li>
+<li>Vá em Settings → Environment Variables e adicione. Redeploy.</li>
+</ol>
+<h3>Erro 4: &quot;CORS error&quot; no console</h3>
+<p><strong>Sintoma:</strong> Erro vermelho no console falando em CORS quando tenta acessar API externa.</p>
+<p><strong>Causa:</strong> A API que você está chamando não permite requisição do seu domínio.</p>
+<p><strong>Solução:</strong> NUNCA chame APIs de terceiros direto do frontend com chaves secretas. Crie uma Edge Function no Supabase que faz a chamada (o backend não tem problema de CORS) e o frontend chama a Edge Function.</p>
+<p>Prompt pro Claude Code:</p>
+<pre><code>Essa chamada à API X está dando CORS error no frontend.
+Mova a chamada pra uma Edge Function do Supabase e faça o
+frontend chamar a Edge Function em vez da API direto.
+</code></pre>
+<h3>Erro 5: RLS bloqueando queries que deveriam funcionar</h3>
+<p><strong>Sintoma:</strong> Usuário logado tenta ler dados próprios e recebe array vazio. Ou inserir dá erro.</p>
+<p><strong>Causa:</strong> Policy de RLS mal configurada.</p>
+<p><strong>Solução:</strong></p>
+<ol>
+<li>No Supabase, vá na tabela afetada → Policies.</li>
+<li>Confirme que existe policy pra SELECT (ou INSERT, conforme o caso).</li>
+<li>A policy deve usar <code>auth.uid()</code> pra comparar com <code>user_id</code>.</li>
+<li>Exemplo correto:<pre><code class="language-sql">create policy &quot;users read own data&quot;
+on items for select
+using (auth.uid() = user_id);
+</code></pre>
+</li>
+<li>Se a policy existe mas não funciona, teste no SQL Editor rodando a query diretamente — o erro retornado é mais claro.</li>
+</ol>
+<h3>Erro 6: Webhook do Stripe não dispara</h3>
+<p><strong>Sintoma:</strong> Usuário pagou no Stripe, mas a assinatura não apareceu no Supabase.</p>
+<p><strong>Causa:</strong> várias possíveis. Vamos por ordem de probabilidade:</p>
+<p><strong>Solução:</strong></p>
+<ol>
+<li><strong>Checa no painel Stripe</strong> (Events tab): o evento foi entregue? Qual status?</li>
+<li>Se status é &quot;Failed&quot; e retorna 500: há bug na sua Edge Function. Vá nos logs.</li>
+<li>Se status é &quot;Failed&quot; e retorna 401: a validação de <code>stripe-signature</code> está falhando. Confira o <code>STRIPE_WEBHOOK_SECRET</code> na sua Edge Function.</li>
+<li>Se status é &quot;Succeeded&quot; mas o Supabase não atualizou: a Edge Function rodou mas tem bug na lógica de atualização. Confira os logs da Edge Function no painel Supabase.</li>
+</ol>
+<h3>Erro 7: Build falha no Vercel</h3>
+<p><strong>Sintoma:</strong> Você faz push, Vercel tenta deploy, aparece &quot;Build Failed&quot;.</p>
+<p><strong>Causa:</strong> várias, sempre no log.</p>
+<p><strong>Solução:</strong></p>
+<ol>
+<li>Clique no deploy falho no painel Vercel.</li>
+<li>Copie o log de erro completo.</li>
+<li>Cole no Gemini: &quot;Meu build falhou no Vercel com esse log. Explique em português o que aconteceu e como corrigir.&quot; Anexe o log.</li>
+<li>Gemini interpreta e te diz o que fazer.</li>
+</ol>
+<p>Erros comuns encontrados aqui:</p>
+<ul>
+<li>Variável de ambiente faltando.</li>
+<li>Erro de TypeScript (tipo esperado X, recebeu Y).</li>
+<li>Import de pacote que não está no package.json.</li>
+<li>Case-sensitivity (nome de arquivo no Mac funciona, no Linux do Vercel não).</li>
+</ul>
+<h3>Erro 8: &quot;Your branch is behind by X commits&quot;</h3>
+<p><strong>Sintoma:</strong> Tenta fazer <code>git push</code> e aparece esse erro.</p>
+<p><strong>Causa:</strong> Alguém (ou o Lovable) alterou no GitHub e você não baixou ainda.</p>
+<p><strong>Solução:</strong></p>
+<pre><code class="language-bash">git pull
+# depois
+git push
+</code></pre>
+<p>Se aparecer conflito de merge:</p>
+<ol>
+<li>Abra os arquivos que o terminal marcou.</li>
+<li>Decida manualmente qual versão fica.</li>
+<li>Ou melhor: mande pro Claude Code resolver: &quot;tem conflito de merge nesses arquivos, resolva mantendo [a versão X]&quot;.</li>
+</ol>
+<h3>Erro 9: Domínio não resolve (&quot;Site can&#39;t be reached&quot;)</h3>
+<p><strong>Sintoma:</strong> Você apontou DNS mas o domínio não abre o site.</p>
+<p><strong>Causa:</strong> 3 possibilidades.</p>
+<p><strong>Solução:</strong></p>
+<ol>
+<li><strong>DNS ainda propagando.</strong> Espere até 24h. Teste em <a href="https://dnschecker.org">https://dnschecker.org</a> — se aparecer em várias regiões, já propagou.</li>
+<li><strong>Registro errado.</strong> Volte no Vercel → Domains e confira EXATAMENTE os valores que eles pediram. Compare com o que está no Registro.br.</li>
+<li><strong>Conflito com outros registros.</strong> Se você tinha o domínio apontando pra outro lugar antes, remova os registros antigos conflitantes.</li>
+</ol>
+<h3>Erro 10: Email vai pra spam</h3>
+<p><strong>Sintoma:</strong> Você testa o email de boas-vindas, chega no spam (ou nem chega).</p>
+<p><strong>Causa:</strong> Domínio não verificado, DKIM/SPF não configurado, reputação do domínio ruim.</p>
+<p><strong>Solução:</strong></p>
+<ol>
+<li>No Resend, confirme que seu domínio está verificado (status &quot;Verified&quot;).</li>
+<li>Se não: siga o guia do Resend pra adicionar os registros DKIM/SPF no DNS do seu domínio.</li>
+<li>Nunca envie de <code>@gmail.com</code> ou similares — use <code>@seudominio.com</code>.</li>
+<li>Se o domínio é novo (&lt; 1 mês), aqueça gradualmente: não mande 500 emails no primeiro dia.</li>
+</ol>
+<h3>Erro 11: Login com Google não redireciona de volta</h3>
+<p><strong>Sintoma:</strong> Usuário clica em &quot;Login com Google&quot;, autoriza, e fica numa página de erro ou em branco.</p>
+<p><strong>Causa (99% das vezes):</strong> redirect URI mal configurado.</p>
+<p><strong>Solução:</strong></p>
+<ol>
+<li>Google Cloud Console → Credentials → seu OAuth client.</li>
+<li>Em &quot;Authorized redirect URIs&quot;, tenha ESSAS três:<pre><code>https://&lt;seu-projeto&gt;.supabase.co/auth/v1/callback
+http://localhost:3000       (ou sua porta de dev)
+https://seusite.com.br   (produção)
+</code></pre>
+</li>
+<li>Salvar. Pode demorar até 5 min pra valer.</li>
+<li>Teste de novo em aba anônima.</li>
+</ol>
+<h3>Erro 12: Gemini/Claude/GPT para de responder no meio</h3>
+<p><strong>Sintoma:</strong> Você manda prompt, ele começa a responder, e trunca no meio.</p>
+<p><strong>Causa:</strong> limite de tokens da conversa atingido, ou erro temporário do serviço.</p>
+<p><strong>Solução:</strong></p>
+<ol>
+<li>Abra conversa nova. Copie o que precisa de contexto. Recomece com o essencial.</li>
+<li>Se estiver trabalhando em algo longo no Claude, use <strong>Projects</strong> — contexto persiste entre conversas.</li>
+<li>Evite colar 5000 linhas de código num prompt — pedaços menores são mais eficientes.</li>
+</ol>
+<h3>Erro 13: Supabase Storage não aceita upload</h3>
+<p><strong>Sintoma:</strong> Você tenta fazer upload de imagem e dá erro.</p>
+<p><strong>Causa:</strong> bucket não existe, ou RLS do Storage não permite.</p>
+<p><strong>Solução:</strong></p>
+<ol>
+<li>Confirme que o bucket existe (painel Supabase → Storage).</li>
+<li>Se o bucket é privado, confirme que as policies permitem upload pro user autenticado:<pre><code class="language-sql">create policy &quot;authenticated users upload&quot;
+on storage.objects for insert
+to authenticated
+with check (bucket_id = &#39;avatars&#39;);
+</code></pre>
+</li>
+<li>No código, confirme que está usando o client autenticado (não o service_role no frontend).</li>
+</ol>
+<h3>Erro 14: &quot;Crédito esgotado&quot; no Lovable no meio do projeto</h3>
+<p><strong>Sintoma:</strong> Você queimou o crédito do mês antes de terminar.</p>
+<p><strong>Causa:</strong> você não seguiu o Pulo do Gato #2.</p>
+<p><strong>Solução (imediata):</strong></p>
+<ol>
+<li>Pare de editar no Lovable AGORA.</li>
+<li>Conecte ao GitHub se ainda não conectou.</li>
+<li>Passa tudo pro Claude Code.</li>
+<li>Espere o próximo ciclo de crédito pra usar Lovable só como preview.</li>
+</ol>
+<p><strong>Solução (definitiva):</strong> relê o Capítulo 12 e segue à risca.</p>
+<h3>Erro 15: A assinatura não libera acesso premium</h3>
+<p><strong>Sintoma:</strong> Usuário pagou, webhook atualizou tabela, mas a UI continua tratando ele como free.</p>
+<p><strong>Causa:</strong> lógica de verificação de status não está lendo corretamente.</p>
+<p><strong>Solução:</strong></p>
+<ol>
+<li>No frontend, adicione log temporário: <code>console.log(&#39;subscription:&#39;, subscription)</code>.</li>
+<li>Reload. Olhe no console: o objeto subscription veio?</li>
+<li>Se veio null: a query não está rodando ou está filtrando errado.</li>
+<li>Se veio com status &#39;active&#39;: o bloqueio está na lógica de permissão, revise a condicional.</li>
+<li>Pro Claude Code: &quot;quando subscription.status é &#39;active&#39; ou &#39;trialing&#39;, liberar acesso premium. Revise o componente X.&quot;</li>
+</ol>
+<hr>
+<h2>Capítulo 16 — Depois de publicar: o que fazer</h2>
+<p>Você chegou no dia 30. Seu produto está no ar. Primeira venda aconteceu. E agora?</p>
+<p>Este capítulo é curto mas importante. Porque o pior que pode acontecer é você tratar o lançamento como fim, e não como começo.</p>
+<h3>Os primeiros 7 dias pós-lançamento</h3>
+<p>Não adicione features novas. Não redesenhe nada. Não brinque com o código.</p>
+<p>Faça apenas 3 coisas:</p>
+<p><strong>1. Converse com cada cliente novo pessoalmente.</strong>
+Manda email ou WhatsApp pra cada um dos primeiros 10-20 clientes pagantes. Pergunte:</p>
+<ul>
+<li>Como você chegou até aqui?</li>
+<li>O que te convenceu a pagar?</li>
+<li>Tem alguma parte confusa do produto?</li>
+<li>Qual a próxima coisa mais urgente que você precisa?</li>
+</ul>
+<p>Essas conversas valem mais do que qualquer pesquisa de mercado. Eu garanto.</p>
+<p><strong>2. Monitore ativamente.</strong>
+Deixe abertos em abas:</p>
+<ul>
+<li>Dashboard do Stripe (Events tab).</li>
+<li>Dashboard do Supabase (Logs).</li>
+<li>Dashboard do Vercel (Functions + Analytics).</li>
+<li>Email da conta que recebe alertas.</li>
+</ul>
+<p>Qualquer erro em produção, você vê em segundos e pode reagir rápido.</p>
+<p><strong>3. Documente o que aprendeu.</strong>
+Num arquivo <code>.md</code> no seu projeto, anote:</p>
+<ul>
+<li>Bugs que apareceram nos primeiros dias.</li>
+<li>Feedback recorrente.</li>
+<li>Métricas iniciais (conversão, churn precoce, tempo médio de uso).</li>
+<li>Decisões que você precisa tomar em breve.</li>
+</ul>
+<p>Esse arquivo vai ser ouro em 60 dias.</p>
+<h3>Os 30 dias seguintes</h3>
+<p>Com base no feedback dos primeiros 7 dias, você identifica:</p>
+<ul>
+<li><strong>Fricção número 1</strong> que está afastando cliente.</li>
+<li><strong>Feature número 1</strong> que todo mundo pede.</li>
+<li><strong>Feature número 1</strong> que ninguém usa (e que você pode remover).</li>
+</ul>
+<p>Foque TODO o seu tempo nesses 3 pontos. Nada mais.</p>
+<p>Não adicione features inventadas. Não reescreva o site porque você não gostou mais. Não mude o preço 3 vezes. Foco é o que separa o produto que sobrevive do produto que morre.</p>
+<h3>Quando buscar crescimento agressivo</h3>
+<p>A hora de apertar o acelerador de marketing é depois que você tem:</p>
+<ul>
+<li><strong>Pelo menos 20 clientes pagantes.</strong></li>
+<li><strong>Churn mensal abaixo de 15%.</strong></li>
+<li><strong>NPS acima de 30.</strong></li>
+<li><strong>Você mesmo recomendaria pro seu melhor amigo.</strong></li>
+</ul>
+<p>Antes disso, gastar em tráfego é jogar dinheiro num balde furado. Consertos de produto vêm primeiro.</p>
+<p>Quando chegar a hora, o Pulo do Gato #1 + #2 continuam te servindo. Você vai precisar de:</p>
+<ul>
+<li>Landing com variações A/B.</li>
+<li>Criativos de ad em volume.</li>
+<li>Sequências de email mais sofisticadas.</li>
+<li>SEO de verdade.</li>
+</ul>
+<p>Tudo isso é GPT e Manus delegando trabalho pesado. Você continua orquestrando.</p>
+<h3>Quando sair do stack no-code</h3>
+<p>Em algum momento você vai ouvir: &quot;ih, isso aí não escala, você precisa migrar pra AWS/K8s/microserviços&quot;.</p>
+<p>95% das vezes isso é bobagem. Supabase + Vercel + Stripe aguenta fluxos de milhões de reais/ano tranquilamente. Empresas listadas usam essa stack.</p>
+<p>Só considere migrar se:</p>
+<ul>
+<li>Custo mensal de Supabase passa de USD 500 (aí é hora de conversar com eles pra plano customizado).</li>
+<li>Você tem caso de uso bem específico (ex: ML pesado, processamento de vídeo).</li>
+<li>Você contratou time de 3+ devs experientes.</li>
+</ul>
+<p>Antes disso: fica onde está. Resolve o problema do cliente. Fatura.</p>
+<h3>Virando autoridade no seu nicho</h3>
+<p>Algo que acontece depois que o produto está rodando: você percebe que sabe MUITO sobre o nicho. Mais do que a maioria. E começa a ser procurado:</p>
+<ul>
+<li>&quot;Como você fez?&quot;</li>
+<li>&quot;Consegue construir algo parecido pra mim?&quot;</li>
+<li>&quot;Dá uma consultoria?&quot;</li>
+</ul>
+<p>Três caminhos se abrem:</p>
+<p><strong>1. Continuar focado no produto.</strong> Ignora as solicitações. Fatura mais.</p>
+<p><strong>2. Fazer consultoria de alto ticket.</strong> Cobrar R$ 5-15k por projeto entregue a clientes. Exige tempo, mas margem altíssima.</p>
+<p><strong>3. Ensinar o método.</strong> Se você se interessar por ensinar, crie seu próprio curso, ebook, mentoria. O mercado brasileiro em 2026 paga bem por esse tipo de conhecimento prático.</p>
+<p>Escolha um. Os três dão certo. O segredo é não tentar fazer os três ao mesmo tempo.</p>
+<hr>
+<h2>Encerramento do ebook</h2>
+<p>Você chegou até aqui. Parabéns.</p>
+<p>Se você está lendo isso sem ter começado ainda, entendi. Feche o PDF. Abre o Dashboard interativo. Começa a Fase 1. Volta aqui quando travar.</p>
+<p>Se você está lendo isso tendo feito alguma parte da trilha, você já sabe algo que 99% das pessoas não vão saber nunca: <strong>método vence talento, consistência vence intensidade, e entregar imperfeito vence não entregar</strong>.</p>
+<p>A IA não é mágica. Ela é alavanca. Sem ponto de apoio (seu cérebro, sua clareza, seu critério), alavanca não levanta nada.</p>
+<p>Este ebook foi o ponto de apoio. A alavanca agora é sua.</p>
+<p>Construa coisas. Publique mesmo imperfeitas. Conversa com clientes de verdade. Ajusta. Repete.</p>
+<p>Em 12 meses, você vai ler sua primeira versão deste ebook e achar que era só o começo.</p>
+<p>Boa obra.</p>
+<hr>
+<h1>APÊNDICES</h1>
+<h2>Apêndice A — Glossário técnico sem vergonha</h2>
+<p>Termos que aparecem o tempo todo. Cada um em 1-2 frases, sem jargão.</p>
+<p><strong>API</strong>
+Um jeito padronizado de um programa pedir informação ou ação pra outro programa. Tipo um cardápio: você escolhe o prato (endpoint), passa detalhes (parâmetros), e recebe o prato (resposta).</p>
+<p><strong>Auth (autenticação)</strong>
+Processo de provar quem você é no sistema. Login e senha, Google OAuth, etc. Diferente de autorização (que define o que você pode fazer depois de logado).</p>
+<p><strong>Backend</strong>
+A parte do sistema que roda no servidor, longe do usuário. Onde ficam os dados seguros, as regras de negócio, as chaves secretas. Oposto de frontend.</p>
+<p><strong>Bucket (Storage)</strong>
+Uma &quot;pasta&quot; no Supabase Storage onde você guarda arquivos (imagens, PDFs). Cada bucket tem suas regras de quem pode ler/escrever.</p>
+<p><strong>Build</strong>
+O processo de transformar o código fonte em arquivos otimizados prontos pra rodar em produção. Onde erros aparecem antes do usuário ver.</p>
+<p><strong>CORS</strong>
+Uma regra de segurança do navegador que impede um site de chamar APIs de outros domínios sem permissão. Causa o erro mais comum pra iniciante.</p>
+<p><strong>CRUD</strong>
+Sigla de Create, Read, Update, Delete — as 4 operações básicas em dados. Todo SaaS é CRUD + regras de negócio.</p>
+<p><strong>DNS</strong>
+Sistema que traduz nome de domínio (seudominio.com) pra endereço IP (192.168.1.1). Quando você compra domínio, precisa configurar DNS pra apontar pro seu site.</p>
+<p><strong>Edge Function</strong>
+Código backend que roda perto do usuário (em servidor &quot;na borda&quot; da rede). Perfeito pra webhooks e APIs rápidas.</p>
+<p><strong>Endpoint</strong>
+Uma URL específica de uma API que faz uma coisa específica. Tipo &quot;/api/users&quot; pra listar usuários.</p>
+<p><strong>Environment Variables</strong>
+Chaves e configurações que mudam entre ambientes (dev, prod). Você não coloca no código — coloca em variáveis que o servidor lê.</p>
+<p><strong>Frontend</strong>
+A parte do sistema que o usuário vê no navegador. HTML, CSS, JS, React. Oposto de backend.</p>
+<p><strong>Hook (React)</strong>
+Função especial do React que te dá acesso a capacidades (estado, efeitos, contexto). useState, useEffect, etc. Você não precisa entender a fundo — só usar.</p>
+<p><strong>HTTPS</strong>
+Versão segura do HTTP (os dados trafegam criptografados). Todo site profissional usa HTTPS. Vercel faz automático.</p>
+<p><strong>JSON</strong>
+Formato de dados estruturados usado em APIs. Parece objeto JavaScript. Tipo: <code>{&quot;nome&quot;: &quot;João&quot;, &quot;idade&quot;: 30}</code>.</p>
+<p><strong>OAuth</strong>
+Protocolo que permite &quot;Login com Google/Facebook/etc&quot;. Você autoriza o outro sistema a confirmar sua identidade.</p>
+<p><strong>ORM</strong>
+Ferramenta que faz queries no banco usando código em vez de SQL direto. Supabase cliente é uma espécie de ORM.</p>
+<p><strong>PRD (Product Requirements Document)</strong>
+Documento que descreve o que o produto faz, pra quem, por quê, como. Primeira entrega antes de qualquer código.</p>
+<p><strong>Push (Git)</strong>
+Enviar seus commits locais pro repositório remoto (GitHub).</p>
+<p><strong>React</strong>
+Biblioteca de JavaScript pra construir interfaces. Base do Lovable, do Next.js, de quase tudo moderno.</p>
+<p><strong>Repository (repo)</strong>
+Uma pasta versionada com histórico. Normalmente hospedada no GitHub.</p>
+<p><strong>RLS (Row Level Security)</strong>
+Recurso do PostgreSQL (e Supabase) que filtra automaticamente quais linhas cada usuário pode ver/editar. Obrigatório pra segurança em SaaS multi-tenant.</p>
+<p><strong>Schema</strong>
+Estrutura do banco de dados — quais tabelas existem, quais colunas, quais tipos, quais relações.</p>
+<p><strong>SSR (Server-Side Rendering)</strong>
+Gerar o HTML no servidor antes de mandar pro navegador. Melhor pra SEO e performance inicial.</p>
+<p><strong>SSL/TLS</strong>
+Protocolos de criptografia que tornam o HTTPS seguro. Vercel gerencia automaticamente.</p>
+<p><strong>TypeScript</strong>
+JavaScript com tipos. Ajuda a pegar bugs antes do usuário ver. Todo SaaS profissional usa.</p>
+<p><strong>Webhook</strong>
+Um endpoint que RECEBE notificações de outros sistemas. Tipo: Stripe te manda um webhook quando alguém pagou.</p>
+<hr>
+<h2>Apêndice B — Stack Map Visual</h2>
+<p>Referência rápida: qual ferramenta faz o quê no seu projeto.</p>
+<pre><code>┌──────────────────────────────────────────────────────┐
+│                   FRONTEND                            │
+│                                                       │
+│   React + TypeScript + Tailwind + shadcn/ui          │
+│   (scaffold feito no Lovable, depois editado em      │
+│    Claude Code)                                       │
+│                                                       │
+│   Hospedagem: Vercel                                  │
+│   Domínio: seusite.com.br                          │
+└────────────────┬─────────────────────────────────────┘
+                 │
+                 │ API calls
+                 ▼
+┌──────────────────────────────────────────────────────┐
+│                   BACKEND                             │
+│                                                       │
+│   Supabase                                            │
+│   ├── Auth (email, Google, reset)                     │
+│   ├── Database (PostgreSQL + RLS)                     │
+│   ├── Storage (arquivos, imagens)                     │
+│   └── Edge Functions (webhooks, APIs custom)          │
+└────────────────┬─────────────────────────────────────┘
+                 │
+                 ├────────────► Stripe (pagamento)
+                 │
+                 ├────────────► Resend (email)
+                 │
+                 └────────────► APIs de IA
+                                (Anthropic, OpenAI, etc)
+</code></pre>
+<p><strong>Fluxo de desenvolvimento:</strong></p>
+<pre><code>Lovable → GitHub → Claude Code → GitHub → Vercel
+ (scaffold)       (edições)    (push)   (deploy)
+
+    ↓                                      ↓
+  Preview                              Produção
+  público                              (seu domínio)
+</code></pre>
+<p><strong>Fluxo de dinheiro:</strong></p>
+<pre><code>Cliente → Stripe Checkout → Stripe → Webhook → Supabase
+         (cartão ou Pix)            (Edge Fn)  (subscriptions)
+                                                    │
+                                                    ▼
+                                            Frontend libera
+                                            acesso premium
+</code></pre>
+<hr>
+<h2>Apêndice C — Cheat sheet Git pra não-devs</h2>
+<h3>Fluxo padrão diário</h3>
+<pre><code class="language-bash">cd caminho/do/projeto     # entrar na pasta
+git pull                  # baixar alterações
+# ... edita com Claude Code ...
+git add .                 # marcar tudo
+git commit -m &quot;mensagem&quot;  # salvar versão
+git push                  # enviar pro GitHub
+</code></pre>
+<h3>Consultas</h3>
+<pre><code class="language-bash">git status                # o que mudou
+git log --oneline -10     # últimos 10 commits
+git diff                  # diferenças desde último commit
+</code></pre>
+<h3>Desfazer coisas</h3>
+<pre><code class="language-bash">git checkout arquivo      # restaurar arquivo
+git reset --soft HEAD~1   # desfazer último commit, manter mudanças
+git reset --hard HEAD~1   # desfazer último commit, descartar (cuidado!)
+</code></pre>
+<h3>Situações especiais</h3>
+<pre><code class="language-bash">git pull --rebase         # sincronizar mantendo linha do tempo linear
+git stash                 # guardar mudanças sem commit
+git stash pop             # trazer de volta
+</code></pre>
+<hr>
+<h2>Apêndice D — Cheat sheet de comandos Claude Code</h2>
+<p>Dentro da sessão do Claude Code, você pode usar esses prompts-padrão:</p>
+<h3>Exploração</h3>
+<pre><code>Liste os arquivos do projeto e me faça um resumo da estrutura.
+</code></pre>
+<pre><code>Leia o arquivo X e me explique o que ele faz em 3 bullets.
+</code></pre>
+<h3>Implementação</h3>
+<pre><code>Adicione a feature [X]. Antes de editar, liste os arquivos que
+vai mexer e peça aprovação.
+</code></pre>
+<h3>Debug</h3>
+<pre><code>Tem um bug: [descreva sintoma]. Investigue a causa e proponha
+correção.
+</code></pre>
+<h3>Refatoração</h3>
+<pre><code>A lógica X está duplicada em vários lugares. Extraia pra um
+[hook/função/módulo] reutilizável. Mantenha o comportamento
+idêntico.
+</code></pre>
+<h3>Auditoria</h3>
+<pre><code>Audite o arquivo X quanto a:
+1. Bugs
+2. Segurança (chaves, validação, RLS)
+3. Performance
+4. Manutenibilidade
+
+Ordene do mais crítico ao menor.
+</code></pre>
+<h3>Git</h3>
+<pre><code>Faça commit dessas mudanças com uma mensagem clara descrevendo
+o que foi alterado. Depois push pro GitHub.
+</code></pre>
+<h3>Perguntas</h3>
+<pre><code>Por que você fez X dessa forma? Explique a decisão.
+</code></pre>
+<pre><code>Tem uma forma mais simples de fazer isso?
+</code></pre>
+<hr>
+<h2>Apêndice E — Sinais de que você está fazendo certo (e de que está fazendo errado)</h2>
+<h3>Você está fazendo CERTO se:</h3>
+<ul>
+<li>Tem PRD antes de ter código.</li>
+<li>Faz commit várias vezes por dia com mensagens claras.</li>
+<li>Consulta este ebook quando trava (em vez de tentar na raça).</li>
+<li>Conversa com potenciais clientes antes e depois de publicar.</li>
+<li>Mede coisas (cadastros, conversão, uso).</li>
+<li>Decide feature com base em dor real, não em &quot;acho legal&quot;.</li>
+<li>Reserva tempo pra auditoria antes de cada deploy.</li>
+</ul>
+<h3>Você está fazendo ERRADO se:</h3>
+<ul>
+<li>Pula o PRD achando que &quot;ideia é simples&quot;.</li>
+<li>Fica 2 horas tentando &quot;descobrir sozinho&quot; em vez de perguntar pra IA certa.</li>
+<li>Edita tudo no Lovable e queima crédito.</li>
+<li>Reescreve o projeto inteiro porque &quot;não gostou mais&quot;.</li>
+<li>Adiciona features sem consultar cliente.</li>
+<li>Não tem Stripe em test mode antes de live.</li>
+<li>Posta landing sem auditoria nem testes responsivos.</li>
+<li>Publica sem RLS configurado.</li>
+</ul>
+<hr>
+</body></html>

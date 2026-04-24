@@ -1,0 +1,11 @@
+.env
+.env.*
+node_modules/
+.vercel/
+
+# Chat foi extraído pra repositório próprio (helvyssxc-spec/chat-dozeroaosaas)
+chat-dozeroaosaas/
+
+# Arquivos temporários do SO
+Thumbs.db
+.DS_Store

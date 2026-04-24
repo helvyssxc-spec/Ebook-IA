@@ -1,0 +1,724 @@
+{
+  "library_version": "1.0",
+  "total_prompts": 100,
+  "last_updated": "2026-04-23",
+  "categories": [
+    "planejamento",
+    "pesquisa",
+    "arquitetura",
+    "design",
+    "desenvolvimento",
+    "integracao",
+    "auditoria",
+    "debug",
+    "conteudo",
+    "marketing",
+    "emails",
+    "vendas",
+    "ops",
+    "skills"
+  ],
+  "tools": ["claude", "gemini", "gpt", "lovable", "claude-code", "manus"],
+  "prompts": [
+    {
+      "id": 1,
+      "category": "planejamento",
+      "tool": "claude",
+      "title": "Pressionar uma ideia como investidor",
+      "prompt": "Aja como um investidor cético e rigoroso. Vou descrever uma ideia de SaaS. Sua tarefa: listar os 5 maiores riscos em ordem de gravidade, identificar 3 suposições que estou assumindo como verdade, e sugerir o menor experimento possível para validar a #1. Se a ideia for fraca, fale sem rodeios.\n\nIDEIA: [descreva em 2-3 frases]\nPÚBLICO: [quem usaria]\nMODELO: [como ganha dinheiro]"
+    },
+    {
+      "id": 2,
+      "category": "planejamento",
+      "tool": "claude",
+      "title": "Refinar proposta de valor em 1 frase",
+      "prompt": "Ajude-me a escrever a proposta de valor do meu SaaS em UMA frase com a estrutura: '[Produto] ajuda [Persona] a [Resultado] sem [Dor evitada]'.\n\nGere 10 variações diferentes dessa frase pra:\n\nPRODUTO: [nome + descrição em 1 linha]\nPERSONA: [quem é]\nPROBLEMA: [dor principal]\n\nVarie os ângulos: velocidade, qualidade, economia, conforto, status. Indique qual versão você escolheria e por quê."
+    },
+    {
+      "id": 3,
+      "category": "planejamento",
+      "tool": "claude",
+      "title": "Definir escopo de MVP — entra e fica de fora",
+      "prompt": "Estou planejando um MVP com prazo de 30 dias. Abaixo está a lista COMPLETA de features que me ocorreram. Ajude-me a dividir entre 'ENTRA no MVP' e 'FICA DE FORA' usando estes critérios:\n\n1. É essencial pra resolver o problema central do usuário?\n2. Dá pra construir em menos de 3 dias?\n3. Se eu remover, o produto ainda tem valor pagável?\n\nSe a resposta pros 3 for SIM, entra. Senão, fica de fora.\n\nLISTA DE FEATURES:\n[cole sua lista]\n\nSeja rigoroso. Espero que pelo menos metade fique de fora."
+    },
+    {
+      "id": 4,
+      "category": "planejamento",
+      "tool": "claude",
+      "title": "Criar personas detalhadas",
+      "prompt": "Crie 2 personas detalhadas pro meu produto.\n\nPRODUTO: [descrição]\nMERCADO-ALVO GERAL: [ex: profissionais criativos 25-40 anos]\n\nPra cada persona, entregue:\n- Nome fictício\n- Idade, ocupação, contexto familiar\n- Um dia típico dela (2 parágrafos)\n- Dor principal relacionada ao meu produto\n- Soluções atuais que ela usa (e por que não resolvem)\n- Em que momento ela buscaria algo como o meu produto\n- Objeções que ela teria pra pagar\n- Ticket mensal que ela aceitaria pagar\n\nNão invente persona genérica. Seja específico."
+    },
+    {
+      "id": 5,
+      "category": "planejamento",
+      "tool": "claude",
+      "title": "Definir métricas do MVP",
+      "prompt": "Quais métricas eu deveria monitorar nos primeiros 90 dias do meu MVP?\n\nPRODUTO: [descrição + modelo de receita]\n\nEntregue:\n1. Métrica de aquisição principal (com meta numérica pros 90 dias)\n2. Métrica de ativação (usuário chegando ao 'aha moment')\n3. Métrica de retenção\n4. Métrica de receita\n5. Métrica de referência/viralização (se aplicável)\n\nPra cada métrica:\n- Como calcular\n- Meta realista pros 90 dias\n- Sinal de alerta (quando preocupar)\n- Ferramenta sugerida pra medir\n\nSeja prático. Nada de métrica vaidosa (tipo 'visitantes na landing')."
+    },
+    {
+      "id": 6,
+      "category": "pesquisa",
+      "tool": "gemini",
+      "title": "Mapear concorrentes diretos e indiretos",
+      "prompt": "Faça uma pesquisa rápida de concorrentes pro seguinte produto.\n\nPRODUTO: [descrição em 1-2 frases]\nMERCADO: [Brasil / global]\n\nMe entregue:\n1. 10 concorrentes diretos (mesma proposta de valor)\n2. 5 concorrentes indiretos (resolvem a mesma dor de outra forma)\n3. 3 produtos adjacentes (mercado próximo)\n\nPara cada um: URL, proposta de valor em 1 frase, preço mensal, ponto forte, ponto fraco.\n\nUse busca. Cite fontes. Priorize empresas com presença real (site funcional, última atualização recente)."
+    },
+    {
+      "id": 7,
+      "category": "pesquisa",
+      "tool": "gemini",
+      "title": "Identificar tendências do nicho",
+      "prompt": "Quais são as tendências dos últimos 12 meses no nicho de [SEU NICHO]?\n\nQuero:\n1. 5 tendências fortes com evidência (artigo, reporte, dado)\n2. 3 tendências em declínio (o que não funciona mais)\n3. Previsão pros próximos 12 meses\n4. Implicações pra quem vai lançar um produto novo no nicho\n\nPriorize fontes de: Gartner, McKinsey, relatórios setoriais, TechCrunch, 10-K de empresas do nicho, boletins setoriais. Cite todas as fontes com link."
+    },
+    {
+      "id": 8,
+      "category": "pesquisa",
+      "tool": "manus",
+      "title": "Pesquisa profunda com relatório PDF",
+      "prompt": "Faça uma pesquisa de mercado completa e entregue um relatório estruturado em PDF.\n\nNICHO: [descrição em 1-2 frases]\nREGIÃO: [Brasil / LATAM / Global]\nMEU PRODUTO: [1 parágrafo]\n\nEntrega esperada — relatório de 15-25 páginas com:\n1. Tamanho de mercado atual e projetado (com fontes)\n2. Mapa de 30-50 concorrentes com URL, preço, proposta\n3. Matriz SWOT consolidada dos 5 principais\n4. 5 tendências relevantes com evidências dos últimos 12 meses\n5. 3 lacunas de mercado não atendidas\n6. 5 ângulos de posicionamento diferenciado\n7. Apêndice com todas as fontes linkadas\n\nRequisitos:\n- Todas as afirmações com fonte linkada\n- Priorizar dados primários (Statista, 10-K, reports)\n- Tabelas markdown pra dados comparativos\n- Tom executivo, sem floreio"
+    },
+    {
+      "id": 9,
+      "category": "pesquisa",
+      "tool": "gemini",
+      "title": "Validar disposição de pagar",
+      "prompt": "Me ajude a estimar a disposição de pagar do meu público-alvo.\n\nPRODUTO: [descrição + proposta de valor]\nPÚBLICO: [persona]\nFAIXA DE PREÇO QUE ESTOU CONSIDERANDO: R$ [X] a R$ [Y] / mês\n\nEntregue:\n1. 5 concorrentes similares e o que cobram\n2. Análise se meu público aceita esse ticket hoje\n3. Ferramentas adjacentes que esse público já paga\n4. Recomendação de ticket com justificativa\n5. Estratégia de posicionamento em relação ao preço (barato, premium, meio)\n\nSeja realista. Se o ticket está desajustado, me avise."
+    },
+    {
+      "id": 10,
+      "category": "arquitetura",
+      "tool": "claude",
+      "title": "Escrever PRD completo",
+      "prompt": "Atue como Product Manager sênior. Gere um PRD completo para o seguinte projeto.\n\nPROJETO: [nome + 1 parágrafo]\nPROBLEMA: [dor resolvida]\nUSUÁRIO-ALVO: [persona]\nSTACK: Lovable (React/TS) + Supabase + Stripe + Resend\n\nEstrutura do PRD:\n1. Visão e objetivo\n2. Problema e contexto\n3. Personas detalhadas\n4. Proposta de valor\n5. Escopo do MVP (ENTRA e FICA DE FORA)\n6. Fluxos principais de usuário\n7. Schema de banco (tabelas + relações em SQL)\n8. Autenticação e segurança (RLS)\n9. Integrações externas\n10. Métricas de sucesso\n11. Riscos e mitigações\n\nSeja específico. Liste em vez de parafrasear. Onde houver decisão, recomende UMA opção com 1 frase de justificativa."
+    },
+    {
+      "id": 11,
+      "category": "arquitetura",
+      "tool": "claude",
+      "title": "Projetar schema Supabase completo",
+      "prompt": "Projete o schema Supabase completo pro seguinte produto.\n\nPRODUTO: [descrição + funcionalidades principais]\n\nEntregue:\n1. SQL completo CREATE TABLE com tipos corretos.\n2. Índices nos campos que serão consultados frequentemente.\n3. Relações com foreign keys.\n4. RLS ativo em TODAS as tabelas com dados de usuário.\n5. Policies mínimas (select, insert, update, delete).\n6. Triggers onde fizer sentido (ex: updated_at automático, novo profile ao cadastrar).\n7. Função helper pra checar assinatura ativa.\n\nInclua comentários explicando decisões. Priorize segurança — assuma que será produção com dados sensíveis."
+    },
+    {
+      "id": 12,
+      "category": "arquitetura",
+      "tool": "claude",
+      "title": "Definir estrutura de pastas do projeto",
+      "prompt": "Sugira uma estrutura de pastas pro meu projeto React/TS.\n\nPROJETO: [descrição]\nFEATURES PRINCIPAIS: [lista]\n\nQuero estrutura:\n- Escalável (aguenta 3x o tamanho atual sem ficar bagunçado)\n- Fácil de navegar (nomenclatura clara)\n- Compatível com convenções modernas (Next.js App Router ou Vite + React Router)\n\nEntregue:\n1. Árvore de pastas visual\n2. Justificativa de cada pasta\n3. Exemplo de 3 arquivos que morariam em cada uma\n4. Convenções de nomenclatura (PascalCase, kebab-case, etc)"
+    },
+    {
+      "id": 13,
+      "category": "arquitetura",
+      "tool": "claude",
+      "title": "Decidir stack com base em requisitos",
+      "prompt": "Me ajude a decidir o stack ideal pro meu produto.\n\nREQUISITOS:\n- [requisito 1]\n- [requisito 2]\n- [requisito 3]\n\nRESTRIÇÕES:\n- Orçamento mensal pra infra: R$ [X]\n- Não sou dev (preciso usar IA pra construir)\n- Quero poder escalar sem migrar em 2 anos\n\nCompare 3 opções de stack, com vantagens e desvantagens pra cada uma no meu contexto. Recomende UMA com justificativa clara."
+    },
+    {
+      "id": 14,
+      "category": "arquitetura",
+      "tool": "claude",
+      "title": "Diagrama de fluxo de autenticação",
+      "prompt": "Desenhe (em markdown/ASCII ou Mermaid) o fluxo completo de autenticação do meu app.\n\nPROVEDORES: email/senha + Google OAuth\nPLATAFORMA: Supabase Auth\nFRONTEND: React + TypeScript\n\nCubra:\n1. Signup (cadastro + email de confirmação)\n2. Login via email\n3. Login via Google\n4. Recuperação de senha\n5. Logout\n6. Sessão expirando\n7. Rota protegida tentando ser acessada sem login\n\nInclua decisões de roteamento em cada cenário (pra onde redirecionar)."
+    },
+    {
+      "id": 15,
+      "category": "design",
+      "tool": "claude",
+      "title": "Definir design system minimalista",
+      "prompt": "Defina um design system mínimo mas profissional pro meu produto.\n\nPRODUTO: [descrição + público]\nSENSAÇÃO DESEJADA: [ex: dark minimal, editorial, premium]\n\nEntregue:\n1. Paleta (fundo, texto, accent, mute, error, success) com hex\n2. Tipografia (fonte de título + corpo + mono se aplicável)\n3. Espaçamentos (escala de 4 a 128px)\n4. Border radius padrão\n5. Tamanhos de botão (small, default, large)\n6. Três exemplos de referência visual (marcas reais)\n7. O que EVITAR (ex: gradientes, ícones infantis)\n\nMantenha simples. Nada de 12 cores. 4-5 bastam."
+    },
+    {
+      "id": 16,
+      "category": "design",
+      "tool": "gpt",
+      "title": "Gerar ilustração hero pra landing",
+      "prompt": "Gere uma ilustração hero pra landing de um produto chamado [NOME].\n\nESTILO: [isométrico / flat / 3D / minimalista]\nPALETA: [cores principais]\nASSUNTO: [o que aparece na cena]\nUSO: banner hero, dimensão 16:9, sem texto\nREFERÊNCIA VISUAL: [cite 1-2 marcas]\nEVITAR: rostos humanos realistas, texto, clichês de SaaS (gráfico subindo, foguete)"
+    },
+    {
+      "id": 17,
+      "category": "design",
+      "tool": "gpt",
+      "title": "Gerar 3 ícones pra as features principais",
+      "prompt": "Gere 3 ícones minimalistas pra representar as seguintes features do meu produto.\n\nFEATURE 1: [nome + 1 linha]\nFEATURE 2: [nome + 1 linha]\nFEATURE 3: [nome + 1 linha]\n\nESTILO: linha fina, monocromático, quadrado 1:1, fundo transparente\nPALETA: preto/branco só (vou tintar depois)\nTAMANHO: 512x512\nINSPIRAÇÃO: Lucide icons, Phosphor icons"
+    },
+    {
+      "id": 18,
+      "category": "design",
+      "tool": "claude",
+      "title": "Revisar UI de uma tela",
+      "prompt": "Vou descrever (ou anexar screenshot de) uma tela do meu app. Faça review de UX/UI e aponte 7 melhorias, em ordem de impacto.\n\nCritérios: clareza visual, hierarquia, acessibilidade, conforto em dispositivos diferentes, call to action claro, consistência com o resto do produto.\n\nPra cada melhoria: problema → solução concreta → por que importa.\n\nNão elogie. Aponte só o que precisa mudar.\n\n[descrição ou imagem da tela]"
+    },
+    {
+      "id": 19,
+      "category": "design",
+      "tool": "claude",
+      "title": "Criar copy de empty states",
+      "prompt": "Escreva 5 empty states pro meu produto.\n\nCONTEXTO: [ex: 'usuário abre o dashboard e ainda não criou nada']\n\nPra cada empty state, entregue:\n- Headline curta (máx 8 palavras)\n- Subtexto explicando\n- CTA em 1 linha\n- Sugestão de ilustração/ícone simples\n\nTom: encorajador mas não cafona. Nada de 'Oh não, está vazio!' — prefira 'Comece criando sua primeira nota'.\n\nEMPTY STATES A COBRIR:\n1. Dashboard vazio (primeiro login)\n2. Busca sem resultados\n3. Feed sem notificações\n4. Lista de [items] vazia\n5. Erro de conexão"
+    },
+    {
+      "id": 20,
+      "category": "desenvolvimento",
+      "tool": "lovable",
+      "title": "Scaffold inicial premium (1 prompt)",
+      "prompt": "Crie um aplicativo web com as seguintes especificações.\n\nNOME: [nome]\nDESCRIÇÃO: [1 frase]\nSTACK: React + TypeScript + Tailwind + shadcn/ui + Supabase\n\nTELAS:\n1. Landing pública (hero, features, pricing, footer)\n2. Login/Signup com Supabase Auth (email + Google)\n3. /app — dashboard protegido\n4. [tela principal 1]\n5. [tela principal 2]\n\nSCHEMA SUPABASE:\n[cole o schema completo]\n\nESTÉTICA: [3 palavras — ex: 'dark minimal sóbria']\nINSPIRAÇÃO: [1-2 marcas — ex: 'Linear, Arc']\n\nConfigure Supabase Auth, proteja /app/*, integre schema. DEPOIS vou mover pro GitHub e editar via Claude Code."
+    },
+    {
+      "id": 21,
+      "category": "desenvolvimento",
+      "tool": "claude-code",
+      "title": "Adicionar feature completa",
+      "prompt": "Preciso adicionar a feature [NOME] ao projeto.\n\nCOMPORTAMENTO ESPERADO:\n1. [passo 1 do fluxo]\n2. [passo 2]\n3. [passo 3]\n4. [resultado]\n\nCONSIDERAÇÕES:\n- Precisa de [permissões/auth]\n- Deve persistir em [tabela X]\n- Integra com [serviço externo, se houver]\n\nAntes de editar, liste os arquivos que vai mexer e peça aprovação. Depois implemente e me mostre o diff."
+    },
+    {
+      "id": 22,
+      "category": "desenvolvimento",
+      "tool": "claude-code",
+      "title": "Refatorar código duplicado",
+      "prompt": "A lógica [X] está duplicada em [N] arquivos. Extraia pra [um hook customizado / uma função utilitária / um componente reutilizável] em [pasta sugerida].\n\nMantenha o comportamento idêntico. Atualize todos os imports. Teste que nada quebrou.\n\nMostre antes e depois em cada arquivo tocado."
+    },
+    {
+      "id": 23,
+      "category": "desenvolvimento",
+      "tool": "claude-code",
+      "title": "Criar hook customizado",
+      "prompt": "Crie um hook customizado chamado use[Nome] que encapsula [funcionalidade].\n\nAPI ESPERADA:\n```\nconst { data, loading, error, [actions] } = use[Nome]([params])\n```\n\nCOMPORTAMENTO:\n- [descreva o que o hook faz]\n- [estado inicial]\n- [efeitos colaterais]\n\nInclua tipagem TypeScript completa. Salve em /hooks/use[Nome].ts."
+    },
+    {
+      "id": 24,
+      "category": "desenvolvimento",
+      "tool": "claude-code",
+      "title": "Migrar componente pra server component",
+      "prompt": "Este componente é client-side mas não precisa ser. Converta pra server component do Next.js App Router.\n\nCRITÉRIOS:\n- Remove 'use client'\n- Queries ao banco acontecem no servidor\n- Estado interativo (se houver) vai pra sub-componente client separado\n\nArquivo: [caminho]\n\nExplique a estrutura final em 2 bullets."
+    },
+    {
+      "id": 25,
+      "category": "desenvolvimento",
+      "tool": "claude-code",
+      "title": "Melhorar acessibilidade de uma tela",
+      "prompt": "Audite a acessibilidade da tela [X] e aplique correções.\n\nCRITÉRIOS:\n- ARIA labels onde necessário\n- Contraste WCAG AA\n- Navegação por teclado completa\n- Focus states visíveis\n- Semântica HTML correta (button vs div clicável, etc)\n- Alt text em imagens\n\nMostre o que foi mudado arquivo por arquivo."
+    },
+    {
+      "id": 26,
+      "category": "desenvolvimento",
+      "tool": "claude-code",
+      "title": "Implementar dark mode",
+      "prompt": "Implemente dark mode no projeto.\n\nREQUISITOS:\n- Toggle na interface (header ou menu)\n- Preferência salva em localStorage\n- Respeita prefers-color-scheme do SO no primeiro load\n- Todas as cores via CSS variables (evitar hex hardcoded)\n- Transição suave entre modos\n\nMostre as mudanças em: tailwind.config, CSS global, componente de toggle, e exemplo de aplicação em 1-2 componentes."
+    },
+    {
+      "id": 27,
+      "category": "desenvolvimento",
+      "tool": "claude-code",
+      "title": "Adicionar loading states em toda app",
+      "prompt": "Toda ação assíncrona no meu app hoje não mostra feedback de loading. Percorra todos os hooks/queries e adicione loading states consistentes.\n\nPADRÃO A SEGUIR:\n- Skeleton em listas\n- Spinner em botões de ação (desabilitar durante loading)\n- Placeholder em textos aguardando dados\n- Toast 'Carregando...' em ações que demoram >1s\n\nListe os arquivos tocados ao final."
+    },
+    {
+      "id": 28,
+      "category": "desenvolvimento",
+      "tool": "claude-code",
+      "title": "Implementar error boundary React",
+      "prompt": "Adicione ErrorBoundary pro meu app React.\n\nREQUISITOS:\n- ErrorBoundary no topo da árvore (envolve /app)\n- Fallback UI amigável ('Algo deu errado. Tente novamente.')\n- Botão 'Recarregar página'\n- Logar erro pra console (em dev) e pra serviço externo (em prod)\n- Permitir ErrorBoundary aninhado em rotas específicas se necessário\n\nMostre o componente e como usar."
+    },
+    {
+      "id": 29,
+      "category": "desenvolvimento",
+      "tool": "claude-code",
+      "title": "Otimizar performance de lista grande",
+      "prompt": "A página [X] mostra uma lista de potencialmente milhares de itens e está lenta. Otimize a renderização.\n\nTÉCNICAS A APLICAR:\n- Virtualização (react-window ou tanstack virtual)\n- Paginação ou infinite scroll\n- Memoização de itens da lista\n- Query do banco com limit + offset (não buscar tudo de uma vez)\n- Debounce em filtros/busca\n\nExplique o que foi aplicado e o ganho esperado."
+    },
+    {
+      "id": 30,
+      "category": "integracao",
+      "tool": "gemini",
+      "title": "Configurar Supabase (modo tutor)",
+      "prompt": "Sou iniciante absoluto. Nunca configurei banco de dados na vida.\n\nPreciso: criar projeto Supabase do zero com as tabelas [liste], configurar RLS em todas, habilitar Google OAuth.\n\nStack: React + TypeScript + Supabase.\n\nMe guie passo a passo. Regras:\n- Pergunte antes de assumir\n- Valide cada etapa comigo\n- Vou mandar print quando travar\n- Evite jargão (se usar, defina em 1 frase)\n- Ao final de cada etapa, pergunte 'confirmado?' antes de seguir\n\nVamos começar pela etapa 1."
+    },
+    {
+      "id": 31,
+      "category": "integracao",
+      "tool": "gemini",
+      "title": "Configurar DNS e domínio (modo tutor)",
+      "prompt": "Sou iniciante. Nunca configurei DNS.\n\nPreciso apontar [domínio] comprado em [Registro.br / outro] pro site hospedado em Vercel.\n\nMe guie passo a passo. Regras do modo tutor (pergunte, valide, sem jargão).\n\nAntes de começar, explique em 2 frases: o que é DNS, diferença entre registros A e CNAME, tempo de propagação."
+    },
+    {
+      "id": 32,
+      "category": "integracao",
+      "tool": "gemini",
+      "title": "Configurar Stripe webhook (modo tutor)",
+      "prompt": "Sou iniciante em webhook. Configurar Stripe pra SaaS de assinatura.\n\nStack: Supabase Edge Functions pra endpoint.\nEventos: checkout.session.completed, customer.subscription.updated, customer.subscription.deleted, invoice.payment_failed.\n\nMe guie passo a passo. Modo tutor.\n\nAntes de começar: explique webhook em 2 frases, por que precisa validar stripe-signature, diferença entre test e live."
+    },
+    {
+      "id": 33,
+      "category": "integracao",
+      "tool": "gemini",
+      "title": "Configurar Google OAuth (modo tutor)",
+      "prompt": "Sou iniciante no Google Cloud Console. Configurar Sign in with Google integrado ao Supabase Auth.\n\nDomínio produção: [X]\nDev: localhost:3000\n\nMe guie passo a passo. Modo tutor.\n\nExplique antes: OAuth em 2 frases, diferença entre Consent Screen e Credentials, por que redirect URI é onde 90% erra."
+    },
+    {
+      "id": 34,
+      "category": "integracao",
+      "tool": "gemini",
+      "title": "Deploy no Vercel + leitura de log (modo tutor)",
+      "prompt": "Primeiro deploy no Vercel. Sou iniciante.\n\nRepo no GitHub, variáveis de ambiente: [liste].\nDomínio: [X] (se tiver).\n\nMe guie passo a passo. Modo tutor.\n\nExplique antes: o que é deploy, diferença Preview vs Production, por que VITE_ e NEXT_PUBLIC_ vazam pro frontend.\n\nSe build falhar, vou colar log inteiro — você explica e corrige."
+    },
+    {
+      "id": 35,
+      "category": "integracao",
+      "tool": "claude-code",
+      "title": "Implementar Edge Function de webhook Stripe",
+      "prompt": "Crie uma Edge Function do Supabase pra receber webhooks do Stripe.\n\nEVENTOS A TRATAR:\n- checkout.session.completed → cria/atualiza subscription\n- customer.subscription.updated → atualiza status\n- customer.subscription.deleted → marca como canceled\n- invoice.payment_failed → marca past_due\n\nREQUISITOS:\n- Validar stripe-signature no início (SEMPRE)\n- Usar STRIPE_WEBHOOK_SECRET de variável de ambiente\n- Salvar log de todo evento recebido na tabela stripe_webhook_logs\n- Responder 200 rápido, processar assíncrono se precisar\n\nEntregue o arquivo completo /functions/stripe-webhook/index.ts com comentários."
+    },
+    {
+      "id": 36,
+      "category": "integracao",
+      "tool": "claude-code",
+      "title": "Implementar Checkout Session Stripe",
+      "prompt": "Crie o fluxo de Checkout Session do Stripe pro meu app.\n\nCOMPORTAMENTO:\n1. Usuário clica em 'Assinar' na UI\n2. Frontend chama Edge Function /create-checkout\n3. Edge Function cria Checkout Session com dados do usuário\n4. Retorna URL do checkout\n5. Frontend redireciona pra essa URL\n6. Após pagamento, Stripe redireciona pra /app?checkout=success\n\nPriceID: [seu_price_id]\nMode: subscription\nSuccess URL: /app?checkout=success\nCancel URL: /app?checkout=canceled\n\nEntregue: Edge Function + componente do botão + handler do redirect."
+    },
+    {
+      "id": 37,
+      "category": "integracao",
+      "tool": "claude-code",
+      "title": "Integrar envio de email transacional (Resend)",
+      "prompt": "Integre envio de email transacional via Resend.\n\nEMAILS A IMPLEMENTAR:\n1. Welcome (após cadastro confirmado)\n2. Subscription confirmed (após webhook checkout.session.completed)\n3. Subscription canceled\n4. Payment failed\n\nREQUISITOS:\n- Usar RESEND_API_KEY de variável de ambiente\n- From: 'contato@[seudominio.com]' (assumir domínio verificado)\n- Templates em arquivos separados em /emails\n- HTML simples mas responsivo\n- Fallback em texto puro\n\nEntregue templates + função de envio reutilizável."
+    },
+    {
+      "id": 38,
+      "category": "integracao",
+      "tool": "claude-code",
+      "title": "Integrar API da Anthropic",
+      "prompt": "Integre chamadas à API da Anthropic (Claude) no meu app.\n\nCASO DE USO: [descreva, ex: 'destilar nota em resumo']\n\nREQUISITOS:\n- API key em ANTHROPIC_API_KEY (Edge Function, NUNCA no frontend)\n- Edge Function recebe payload, chama Anthropic, retorna resposta\n- Frontend chama a Edge Function (não a Anthropic direto)\n- Tratamento de erro robusto (timeouts, rate limits)\n- Modelo: claude-sonnet-4-6\n\nEntregue: Edge Function + hook customizado useClaude + exemplo de uso."
+    },
+    {
+      "id": 39,
+      "category": "integracao",
+      "tool": "claude-code",
+      "title": "Adicionar tracking com Plausible",
+      "prompt": "Adicione Plausible Analytics ao meu app.\n\nEVENTOS CUSTOM A TRACKAR:\n- signup (com método: email ou google)\n- subscription_started (com plan)\n- subscription_canceled\n- [evento principal do produto]\n\nREQUISITOS:\n- Script só em produção (não em dev/preview)\n- Privacy-friendly (sem cookies)\n- Respeitar Do Not Track\n\nEntregue: script no layout + helpers pra disparar eventos custom."
+    },
+    {
+      "id": 40,
+      "category": "auditoria",
+      "tool": "claude",
+      "title": "Auditoria 4 níveis do código",
+      "prompt": "Vou colar um trecho de código. Faça auditoria em 4 níveis:\n\n1. BUGS: o que vai quebrar\n2. SEGURANÇA: RLS, chaves expostas, validação\n3. PERFORMANCE: N+1, re-renders, indexes\n4. MANUTENIBILIDADE: duplicação, nomes ruins\n\nPra cada achado: gravidade (crítico/médio/baixo), linha específica, correção em código.\n\nOrdene do mais grave ao menor. Nada de elogiar.\n\n[código]"
+    },
+    {
+      "id": 41,
+      "category": "auditoria",
+      "tool": "claude",
+      "title": "Revisar RLS policies",
+      "prompt": "Vou colar as policies de RLS do meu Supabase. Audite quanto a:\n\n1. Alguma tabela sem RLS ativo?\n2. Alguma policy com USING mal construída (permitindo acesso indevido)?\n3. Alguma operação (SELECT/INSERT/UPDATE/DELETE) sem policy quando deveria ter?\n4. Uso de auth.uid() em todos os lugares certos?\n5. Policies de INSERT usam WITH CHECK (não USING)?\n\nPra cada problema: tabela, tipo de operação, o que está errado, SQL corrigido.\n\n[policies]"
+    },
+    {
+      "id": 42,
+      "category": "auditoria",
+      "tool": "claude",
+      "title": "Auditoria pré-produção",
+      "prompt": "Vou te dar uma visão geral do meu app. Faça auditoria pré-produção completa antes de eu aceitar pagamento real.\n\nSTACK: [descreva]\nFEATURES: [liste]\nINTEGRAÇÕES: [liste]\n\nPontos a auditar:\n1. Segurança (RLS, chaves, validação, XSS, CSRF)\n2. Fluxo de pagamento (Stripe, webhook, validação de assinatura)\n3. Tratamento de erro (o que acontece se Supabase cai? E se Stripe cai?)\n4. UX em casos extremos (sem rede, sessão expirada, rate limit)\n5. LGPD (consentimento, remoção de conta, export de dados)\n6. Observabilidade (como sei que algo quebrou em produção?)\n\nEntregue checklist de itens obrigatórios antes de live mode."
+    },
+    {
+      "id": 43,
+      "category": "auditoria",
+      "tool": "claude",
+      "title": "Revisar UX de formulário",
+      "prompt": "Vou descrever um formulário do meu app. Audite quanto a UX.\n\nFORMULÁRIO: [descreva ou anexe screenshot]\nFINALIDADE: [ex: cadastro, checkout]\n\nAudite:\n1. Quantos campos são realmente necessários?\n2. Labels estão claros?\n3. Mensagens de erro são específicas?\n4. Validação acontece no momento certo (inline, on blur, on submit)?\n5. Botão principal está claro?\n6. Opção de cancelar/voltar existe?\n7. Autofill de navegador está funcionando?\n8. Mobile é confortável?\n\nRanqueie os 5 principais problemas por impacto."
+    },
+    {
+      "id": 44,
+      "category": "debug",
+      "tool": "gemini",
+      "title": "Debug de erro por screenshot",
+      "prompt": "[anexar print da tela com erro]\n\nO que está acontecendo nesse erro?\n\nContexto:\n- Tentando fazer [X]\n- Stack: [React + Supabase + etc]\n- Começou a acontecer [sempre / após mudança Y]\n\nMe explique:\n1. O que o erro significa em português simples\n2. As 3 causas mais prováveis, em ordem\n3. Como verificar qual é a causa real\n4. A correção pra cada causa"
+    },
+    {
+      "id": 45,
+      "category": "debug",
+      "tool": "claude-code",
+      "title": "Investigar bug reportado por usuário",
+      "prompt": "Um usuário relatou o seguinte bug: [descrição exata do que ele relatou]\n\nInvestigue seguindo este método:\n1. Reproduza mentalmente o fluxo que o usuário descreveu\n2. Identifique os arquivos envolvidos\n3. Encontre a causa raiz (não o sintoma)\n4. Proponha correção com código antes de aplicar\n5. Depois de aprovar, aplique e crie teste que previne regressão\n\nDetalhe cada passo. Não pule pro código direto."
+    },
+    {
+      "id": 46,
+      "category": "debug",
+      "tool": "gemini",
+      "title": "Interpretar log de build falho",
+      "prompt": "Meu build no [Vercel / Netlify / outro] falhou. Vou colar o log completo abaixo. Me explique em português:\n\n1. O que aconteceu\n2. Qual o erro específico\n3. Causa provável\n4. 3 soluções possíveis em ordem de probabilidade\n5. Como prevenir no futuro\n\nSe precisar de mais contexto (como meu package.json ou configuração), me peça.\n\n[cole o log aqui]"
+    },
+    {
+      "id": 47,
+      "category": "debug",
+      "tool": "claude-code",
+      "title": "Resolver bug de race condition",
+      "prompt": "Acho que tem race condition no fluxo [X]. Sintoma: [descreva].\n\nInvestigue esse código, identifique se há race, e conserte.\n\nTÉCNICAS QUE PODEM AJUDAR:\n- AbortController em requests concorrentes\n- Locks simples em estado\n- Debounce em ações rápidas\n- Optimistic UI com rollback\n\nExplique por que o bug acontece antes de aplicar correção."
+    },
+    {
+      "id": 48,
+      "category": "debug",
+      "tool": "gemini",
+      "title": "Validar por que sources não casam",
+      "prompt": "Tenho uma discrepância entre o que meu backend diz e o que meu frontend exibe.\n\nBACKEND (query ou resposta de API): [cole]\nFRONTEND (o que aparece na tela): [cole]\n\nInvestigue por que não casam. Possíveis causas:\n- Transformação de dados no meio do caminho\n- Cache antigo\n- Tipagem errada\n- Timezone\n- Formatação de número/moeda\n\nAponte o mais provável com justificativa."
+    },
+    {
+      "id": 49,
+      "category": "conteudo",
+      "tool": "manus",
+      "title": "Produzir batch de conteúdo (posts/reels/emails)",
+      "prompt": "Produza um batch de conteúdo.\n\nFORMATO: [posts de blog / roteiros de reel / threads X / emails / carrosséis LinkedIn]\nQUANTIDADE: [10 / 20 / 30]\nNICHO: [seu nicho]\nAUDIÊNCIA: [persona]\nTOM: [direto brasileiro anti-hype / acadêmico / descontraído]\n\nPra cada peça: gancho, corpo completo, CTA, 3 variações de thumbnail/capa (se aplicável), hashtags.\n\nDIRETRIZES:\n- Evitar: [clichês que você odeia]\n- Incluir: [bordões, posicionamento]\n- Priorizar: [listas / histórias pessoais / contraintuitivo]\n\nENTREGÁVEL: markdown ou planilha com peças numeradas prontas pra publicação."
+    },
+    {
+      "id": 50,
+      "category": "conteudo",
+      "tool": "gpt",
+      "title": "Criar 10 ganchos de conteúdo viral",
+      "prompt": "Me dê 10 ganchos (hooks) de conteúdo pro meu nicho.\n\nNICHO: [X]\nFORMATO: [Reels / Shorts / Threads X]\nOBJETIVO: gerar curiosidade forte nos primeiros 3 segundos\n\nCategorias de gancho (2 cada):\n1. Contraintuitivo ('Pare de fazer X')\n2. Confissão ('Eu também já fazia Y e estava errado')\n3. Número específico ('Os 7 sinais de Z')\n4. Pergunta provocativa ('Por que você ainda...?')\n5. Promessa específica ('Como dobrei X em 30 dias')\n\nCada gancho deve ter no máximo 10 palavras. Não use emojis."
+    },
+    {
+      "id": 51,
+      "category": "conteudo",
+      "tool": "gpt",
+      "title": "Transformar capítulo de ebook em 3 reels",
+      "prompt": "Vou colar um capítulo do meu ebook abaixo. Transforme em 3 roteiros de reel de 60 segundos pra vender o ebook/curso.\n\nESTRUTURA PADRÃO DE CADA REEL:\n- Segundos 0-3: gancho forte (pergunta, estatística, contraintuitivo)\n- Segundos 3-10: problema/contexto\n- Segundos 10-40: conteúdo de valor real (prática, específico)\n- Segundos 40-50: insight/conclusão\n- Segundos 50-60: CTA pro link do ebook\n\nCada reel deve ser diferente em ângulo. Entregue:\n1. Roteiro (texto falado)\n2. Descrição de corte/plano visual a cada 5s\n3. 3 opções de legenda\n4. 5 hashtags\n\n[cole o capítulo]"
+    },
+    {
+      "id": 52,
+      "category": "conteudo",
+      "tool": "claude",
+      "title": "Artigo de blog SEO-friendly (800-1200 palavras)",
+      "prompt": "Escreva um artigo de blog.\n\nTÍTULO: [título]\nKEYWORD PRINCIPAL: [ex: 'como criar SaaS com IA']\nKEYWORDS SECUNDÁRIAS: [liste 3-5]\nAUDIÊNCIA: [quem lê]\nINTENTO DE BUSCA: [informacional / transacional / navegacional]\nTAMANHO: 800-1200 palavras\n\nESTRUTURA:\n- H1 com keyword\n- Introdução (100-150 palavras) com gancho\n- 3-5 H2s com subseções\n- Pelo menos 1 lista numerada\n- Pelo menos 1 tabela\n- FAQ no final com 3-4 perguntas\n- Conclusão com CTA\n\nTOM: autoridade + acessível. Zero fofura.\nSEO: keyword no H1, primeiro parágrafo, pelo menos 1 H2, alt text sugerido pra 2 imagens."
+    },
+    {
+      "id": 53,
+      "category": "conteudo",
+      "tool": "gpt",
+      "title": "50 opções de título/headline",
+      "prompt": "Me dê 50 títulos pra [conteúdo: artigo / ebook / curso / vídeo].\n\nTEMA: [sobre o que é]\nPÚBLICO: [quem consome]\nOBJETIVO: [curiosidade / conversão / autoridade]\n\nDivida em 5 categorias (10 cada):\n1. How-to ('Como fazer X sem Y')\n2. Número ('7 formas de X')\n3. Pergunta ('Por que X acontece?')\n4. Contraintuitivo ('X é overrated')\n5. Promessa específica ('Dobre X em Z dias')\n\nNo final, marque os 5 que mais se destacam e diga por quê."
+    },
+    {
+      "id": 54,
+      "category": "conteudo",
+      "tool": "claude",
+      "title": "Thread de X/Twitter com 10 tweets",
+      "prompt": "Escreva uma thread de 10 tweets.\n\nTEMA: [sobre o que]\nTIPO: [ensino prático / storytelling / contraintuitivo / listicle]\nPÚBLICO: [quem]\n\nESTRUTURA:\n- Tweet 1: gancho + promessa (máx 250 caracteres, negrito mental)\n- Tweets 2-9: desenvolvimento com 1 insight por tweet (cada até 270 caracteres)\n- Tweet 10: CTA (pro meu perfil, curso, newsletter — [especifique])\n\nREGRAS:\n- Cada tweet vale por si só\n- Use parágrafos curtos e quebras de linha\n- Zero emoji (ou só 1 muito pontual)\n- Português brasileiro casual"
+    },
+    {
+      "id": 55,
+      "category": "conteudo",
+      "tool": "claude",
+      "title": "Newsletter semanal (formato consistente)",
+      "prompt": "Escreva 1 edição da minha newsletter.\n\nNICHO: [X]\nPÚBLICO: [quem assina]\nTOM: [direto brasileiro / técnico / filosófico]\nFREQUÊNCIA: semanal\n\nFORMATO PADRÃO (reutilizável):\n1. Abertura pessoal (1 parágrafo, toque humano)\n2. Insight principal da semana (3-5 parágrafos)\n3. 'Pra ler': 2-3 links relevantes da web com 1 frase por link\n4. 'Pra pensar': 1 pergunta provocativa\n5. Fecho com CTA sutil (link pro meu produto ou próxima edição)\n\nTEMA DESSA EDIÇÃO: [X]\n\nExtensão total: 400-700 palavras."
+    },
+    {
+      "id": 56,
+      "category": "marketing",
+      "tool": "gpt",
+      "title": "15 variações de anúncio (Meta/TikTok)",
+      "prompt": "Gere 15 variações de ad pro [Meta Ads / TikTok Ads].\n\nPRODUTO: [1 frase]\nPÚBLICO: [persona]\nPROMESSA: [resultado prometido]\nPREÇO: [R$ X]\nFORMATO: [imagem+texto / vídeo+texto / carrossel]\n\nPra cada ad:\n- GANCHO (3-6 palavras, impacto)\n- CORPO (3-4 linhas, escaneável)\n- CTA (1 linha)\n\nVARIE OS ÂNGULOS:\n- 5 ads focados em DOR (o que perde sem)\n- 5 ads focados em DESEJO (o que ganha com)\n- 5 ads focados em PROVA (caso, número, bastidor)\n\nPortuguês brasileiro casual. Zero 'revolucionário' ou 'transforme sua vida'."
+    },
+    {
+      "id": 57,
+      "category": "marketing",
+      "tool": "claude",
+      "title": "Estrutura de funil de lançamento",
+      "prompt": "Projete um funil de lançamento pra infoproduto digital.\n\nPRODUTO: [descrição + preço]\nDIAS DE LANÇAMENTO: 14\nCANAIS DISPONÍVEIS: [ex: Instagram, YouTube, newsletter, X]\nBUDGET PRA ADS: R$ [X]\n\nENTREGUE:\n1. Cronograma dia a dia dos 14 dias (o que faço em cada dia)\n2. Conteúdo necessário por canal por dia\n3. Sequência de emails de lançamento (5-7 emails)\n4. Estratégia de ads (criativos, públicos, orçamento)\n5. Escassez real a usar (vagas, bônus, lote)\n6. Métricas a monitorar cada dia\n\nSeja específico. Nada de 'faça conteúdo de qualidade'."
+    },
+    {
+      "id": 58,
+      "category": "marketing",
+      "tool": "gpt",
+      "title": "Copy pra landing page de vendas",
+      "prompt": "Escreva o copy completo de uma landing page de vendas.\n\nPRODUTO: [nome + 1 frase]\nPROMESSA PRINCIPAL: [resultado prometido]\nPÚBLICO: [quem]\nDOR: [o que sente hoje]\nOBJEÇÕES TOP 3: [liste]\nPREÇO: [R$ X]\n\nESTRUTURA:\n1. Headline (máx 12 palavras)\n2. Subheadline (1-2 frases)\n3. 'O problema' (3 parágrafos curtos)\n4. 'A solução' (3 bullets)\n5. 'O que você leva' (lista entregáveis)\n6. 'Pra quem é / Pra quem NÃO é' (2 listas)\n7. Objeções (Q&A, 3 pares)\n8. CTA final com urgência real\n\nTOM: direto, brasileiro, anti-hype. Sem 'mude sua vida'."
+    },
+    {
+      "id": 59,
+      "category": "marketing",
+      "tool": "gpt",
+      "title": "Lead magnet que converte",
+      "prompt": "Me ajude a criar um lead magnet que converte.\n\nMEU PRODUTO FINAL: [descrição]\nAUDIÊNCIA ALVO: [quem]\nPROBLEMA QUE O LEAD MAGNET RESOLVE: [pequeno problema específico]\n\nSUGIRA:\n1. 3 opções de formato (PDF, checklist, template, workshop, etc)\n2. Título irresistível pra cada opção (com promessa específica)\n3. Estrutura de conteúdo (o que vai dentro)\n4. Como entregar (email automático via ferramenta X)\n5. Conexão com o produto principal (bridge natural pra upsell)\n\nCRITÉRIO: resolve a dor pequena em 10-15 min de consumo. Não é amostra do produto — é valor completo pra dor específica."
+    },
+    {
+      "id": 60,
+      "category": "marketing",
+      "tool": "claude",
+      "title": "Persuasion framework — AIDA aplicado",
+      "prompt": "Aplique o framework AIDA (Atenção, Interesse, Desejo, Ação) pra escrever um texto persuasivo sobre [PRODUTO].\n\nPra cada etapa:\n1. ATENÇÃO: 3 ganchos diferentes em 1 linha cada\n2. INTERESSE: 2 parágrafos (um pela dor, um pela solução)\n3. DESEJO: 3 bullets de benefícios concretos + 1 prova social\n4. AÇÃO: CTA forte com urgência real\n\nTAMANHO FINAL: 300-400 palavras\nTOM: [direto brasileiro]"
+    },
+    {
+      "id": 61,
+      "category": "marketing",
+      "tool": "gpt",
+      "title": "Nome e tagline pro produto",
+      "prompt": "Gere 30 nomes pro meu produto.\n\nPRODUTO: [descrição]\nPÚBLICO: [quem]\nSENSAÇÃO: [tecnológica / premium / jovem / sóbria]\n\nCATEGORIAS (6 cada):\n1. Nomes inventados (tipo Uber, Kavak, Stripe)\n2. Combinações de palavras (DigitalOcean, FreshBooks)\n3. Metáforas poéticas (Orbit, Linear, Arc)\n4. Nomes em PT que não soam brega\n5. Siglas ou abreviações curtas\n\nPra cada, marque se o .com provavelmente está disponível.\n\nDepois, pegue os 3 finalistas e escreva 3 taglines cada."
+    },
+    {
+      "id": 62,
+      "category": "marketing",
+      "tool": "claude",
+      "title": "Estratégia de pricing",
+      "prompt": "Me ajude a definir o pricing do meu produto.\n\nPRODUTO: [descrição + proposta de valor]\nCUSTO MENSAL DE SERVIR CADA CLIENTE: R$ [X]\nCONCORRENTES DIRETOS E PREÇOS: [liste]\nPÚBLICO: [persona + ticket médio que aceita]\n\nENTREGUE:\n1. Análise competitiva do mercado (onde estou na régua)\n2. 3 opções de modelo de cobrança (monthly, annual, one-time, freemium)\n3. Recomendação de tiers (Basic/Pro/Business ou similar) se aplicável\n4. Preços sugeridos com racional\n5. Estratégia de gatilho pra aumentar ticket ao longo do tempo\n6. Cálculo de LTV estimado em cada cenário"
+    },
+    {
+      "id": 63,
+      "category": "marketing",
+      "tool": "claude",
+      "title": "Análise de concorrente e diferenciação",
+      "prompt": "Vou descrever meu produto + 3 concorrentes principais. Me ajude a encontrar posicionamento diferenciado.\n\nMEU PRODUTO: [descrição]\nCONCORRENTE 1: [nome + proposta]\nCONCORRENTE 2: [nome + proposta]\nCONCORRENTE 3: [nome + proposta]\n\nENTREGUE:\n1. Mapa de posicionamento (2 eixos que diferenciam o mercado)\n2. Onde cada concorrente está no mapa\n3. Espaços não ocupados\n4. 3 ângulos de posicionamento pro meu produto ocupar esses espaços\n5. Headline e tagline pra cada ângulo\n6. Recomendação de qual ângulo perseguir e por quê"
+    },
+    {
+      "id": 64,
+      "category": "emails",
+      "tool": "claude",
+      "title": "Sequência de 5 emails de lançamento",
+      "prompt": "Escreva sequência de 5 emails pra lançamento de infoproduto.\n\nCENÁRIO: lead baixou [lead magnet], recebe emails nos próximos 5 dias antes do carrinho abrir.\n\nPRODUTO FINAL: [nome + 1 frase + preço]\nPÚBLICO: [persona]\nTOM: próximo, humano, sem gurismo.\n\nESTRUTURA:\n1. Boas-vindas + entrega do lead magnet + história pessoal\n2. A DOR com empatia + caso de alguém que passou por isso\n3. A SOLUÇÃO (sem vender) + 1 insight forte de autoridade\n4. ABRE CARRINHO + oferta clara + primeira chamada\n5. ÚLTIMO DIA + objeções + urgência real\n\nPra cada email:\n- 2 opções de assunto\n- Pré-header\n- Corpo (4-8 parágrafos curtos)\n- CTA claro\n\nEscreva como ser humano, não infoproduto."
+    },
+    {
+      "id": 65,
+      "category": "emails",
+      "tool": "claude",
+      "title": "Email de abandono de carrinho",
+      "prompt": "Escreva 2 emails de abandono de carrinho.\n\nPRODUTO: [X]\nCENÁRIO: pessoa chegou no checkout, não finalizou.\n\nEMAIL 1 (2h depois): abordagem suave, lembrete + FAQ das 2 maiores objeções.\nEMAIL 2 (24h depois): último aviso + bônus opcional + escassez real.\n\nPra cada: assunto (2 opções), pré-header, corpo (3-5 parágrafos), CTA.\n\nTom: amigo lembrando, não vendedor desesperado."
+    },
+    {
+      "id": 66,
+      "category": "emails",
+      "tool": "claude",
+      "title": "Email de onboarding pós-cadastro",
+      "prompt": "Escreva 3 emails de onboarding pra novo usuário.\n\nPRODUTO: [X + funcionalidade central]\nCADASTRO: [free trial / freemium / paid]\n\nEMAIL 1 (imediato): boas-vindas + primeiro passo concreto (ação clara pra completar em 2min).\nEMAIL 2 (+2 dias): checando progresso + segunda feature valiosa.\nEMAIL 3 (+5 dias): caso de uso avançado + convite pra comunidade/suporte.\n\nObjetivo: ativação — fazer o usuário tirar valor real do produto nos primeiros 7 dias.\n\nCada email: assunto, corpo curto (3-4 parágrafos), 1 CTA."
+    },
+    {
+      "id": 67,
+      "category": "emails",
+      "tool": "claude",
+      "title": "Email de reengajamento (usuário inativo)",
+      "prompt": "Escreva email pra usuário que se cadastrou mas não voltou em 14+ dias.\n\nPRODUTO: [X]\nHIPÓTESE DE POR QUE SUMIU: [escolha 1: não entendeu valor / teve fricção / testou e não serviu]\n\nEstrutura:\n- Assunto pessoal (2 opções)\n- Abertura curta perguntando se está tudo bem\n- 1 caso prático mostrando valor (ex: 'sabe que o Fulano usa pra X?')\n- CTA suave voltando pra ação específica\n- P.S. oferecendo ajuda direta\n\nTom: amigo preocupado, não cobrança de vendedor."
+    },
+    {
+      "id": 68,
+      "category": "emails",
+      "tool": "claude",
+      "title": "Cold email pra parceria ou imprensa",
+      "prompt": "Escreva cold email pra [jornalista / influencer / empresa parceira].\n\nDESTINATÁRIO: [quem + o que faz]\nRELAÇÃO ATUAL: [nenhuma / já nos seguimos / fulano indicou]\nMEU PEDIDO: [parceria / pauta / collab / feedback]\nO QUE EU OFEREÇO EM TROCA: [concreto]\n\nESTRUTURA:\n- Assunto: específico, 6-10 palavras\n- Linha 1: gancho pessoal (algo que ele(a) fez que você admira — específico)\n- Linha 2: quem você é em 1 frase\n- Linha 3: por que está escrevendo\n- Linha 4: o que propõe (curto, concreto)\n- Linha 5: CTA fácil (aceita call 15min? quer que mande mais?)\n\nTamanho total: 100-150 palavras. Zero formalidade exagerada."
+    },
+    {
+      "id": 69,
+      "category": "vendas",
+      "tool": "claude",
+      "title": "Script de call de vendas (SaaS B2B)",
+      "prompt": "Escreva um script pra call de 30 minutos de venda do meu SaaS pra B2B.\n\nPRODUTO: [X + ticket médio]\nCLIENTE IDEAL: [descreva]\nDESCOBERTA PRINCIPAL NA CALL: [o que preciso descobrir sobre o cliente]\n\nESTRUTURA:\n- Minutos 0-5: rapport + agenda da call\n- Minutos 5-15: descoberta (10 perguntas que fazem o cliente falar sobre a dor)\n- Minutos 15-22: apresentação (conectando dor descoberta com solução)\n- Minutos 22-27: objeções previstas + respostas\n- Minutos 27-30: próximos passos claros\n\nEntregue perguntas literais + frases prontas pra momentos críticos."
+    },
+    {
+      "id": 70,
+      "category": "vendas",
+      "tool": "claude",
+      "title": "Respostas pras 10 objeções mais comuns",
+      "prompt": "Liste as 10 objeções mais comuns que alguém teria pra comprar meu produto, e escreva a resposta ideal pra cada.\n\nPRODUTO: [descrição + preço]\nAUDIÊNCIA: [persona]\n\nPra cada objeção:\n- A objeção em palavras do cliente\n- Por que ele pensa isso (contexto emocional)\n- Resposta ideal (150-200 palavras, empatia primeiro, contraponto depois)\n- Prova que apoia (caso, número, social proof)\n\nTom: confiante mas sem confronto. Ajudar o cliente a enxergar, não empurrar."
+    },
+    {
+      "id": 71,
+      "category": "vendas",
+      "tool": "claude",
+      "title": "Proposta comercial formal (PDF)",
+      "prompt": "Monte proposta comercial formal pra fechar cliente.\n\nMEU SERVIÇO/PRODUTO: [X]\nCLIENTE: [empresa ou pessoa]\nVALOR DO CONTRATO: R$ [Y]\nDURAÇÃO: [X meses]\nESCOPO ACORDADO: [liste]\n\nESTRUTURA DA PROPOSTA (formato PDF executivo):\n1. Capa + dados\n2. Sumário executivo (1 página)\n3. Entendimento do problema do cliente\n4. Nossa solução proposta\n5. Escopo detalhado (entregáveis + prazos + SLA)\n6. Fora do escopo (o que NÃO inclui)\n7. Investimento (breakdown se fizer sentido)\n8. Forma de pagamento\n9. Próximos passos pra fechar\n10. Termos e condições resumidos\n\nTom profissional mas caloroso. Nada burocrático demais."
+    },
+    {
+      "id": 72,
+      "category": "vendas",
+      "tool": "claude",
+      "title": "Follow-up pós primeira reunião",
+      "prompt": "Escreva email de follow-up depois de uma primeira reunião com potencial cliente.\n\nCONTEXTO DA REUNIÃO:\n- Participantes: [nomes]\n- Principais tópicos discutidos: [liste]\n- Próximos passos acordados: [liste]\n- Dor específica deles que ficou clara: [descreva]\n\nESTRUTURA:\n1. Abertura agradecendo tempo (1 frase, específica)\n2. Resumo em 3 bullets do que foi discutido\n3. Próximos passos (quem faz o quê, quando)\n4. Material em anexo (se aplicável)\n5. Fecho com CTA claro (marcar próxima call / aguardar aprovação / etc)\n\nTamanho: 150-200 palavras. Tom: profissional mas humano."
+    },
+    {
+      "id": 73,
+      "category": "ops",
+      "tool": "claude",
+      "title": "Processo de onboarding de cliente",
+      "prompt": "Desenhe o processo de onboarding de um novo cliente do meu SaaS.\n\nPRODUTO: [X]\nCOMPLEXIDADE DE SETUP: [simples / médio / alto]\nTEMPO MÉDIO ATÉ 'AHA MOMENT': [quanto tempo o usuário leva pra perceber valor]\n\nENTREGUE:\n1. Jornada em etapas (dia 0 → dia 7 → dia 30)\n2. Touchpoints automáticos (emails, in-app messages, notificações)\n3. Touchpoints humanos (se houver — ex: call de kick-off)\n4. Métricas de sucesso em cada etapa\n5. Pontos de fricção prováveis e como mitigar\n6. O que o cliente deve estar FAZENDO no fim de cada etapa\n\nFoque em ativação, não em apresentação de features."
+    },
+    {
+      "id": 74,
+      "category": "ops",
+      "tool": "claude",
+      "title": "Política de reembolso e cancelamento",
+      "prompt": "Redija a política de reembolso e cancelamento pro meu SaaS BR.\n\nPRODUTO: [X + modelo de cobrança]\nPOSICIONAMENTO DESEJADO: [generoso / padrão / restritivo]\n\nCOBRIR:\n1. Condições pra reembolso (prazo, motivos aceitos)\n2. Como solicitar (canal, informações necessárias)\n3. Prazo de devolução (regulatório BR: mínimo 7 dias arrependimento)\n4. Cancelamento de assinatura recorrente (quando para de cobrar)\n5. Casos especiais (uso fraudulento, violação de termos)\n6. Retenção de dados pós-cancelamento\n\nLinguagem: clara, sem juridiquês excessivo. Alinhar ao CDC + LGPD BR."
+    },
+    {
+      "id": 75,
+      "category": "ops",
+      "tool": "claude",
+      "title": "Template de bug report interno",
+      "prompt": "Crie template de bug report pra equipe pequena.\n\nCAMPOS MÍNIMOS:\n1. Título descritivo\n2. Passos pra reproduzir (numerados)\n3. Comportamento esperado vs. observado\n4. Screenshots / vídeo\n5. Ambiente (prod, staging, browser, OS)\n6. Severidade (crítico / alto / médio / baixo) com critério objetivo\n7. Usuários afetados (estimativa)\n8. Workaround temporário (se houver)\n\nEntregue o template em Markdown pronto pra copiar."
+    },
+    {
+      "id": 76,
+      "category": "ops",
+      "tool": "manus",
+      "title": "Due diligence técnica de ferramenta",
+      "prompt": "Faça due diligence técnica completa da ferramenta.\n\nFERRAMENTA: [nome]\nCONTEXTO DE USO: [pra que vou usar]\nSTACK ATUAL: [o que já uso]\nCRITÉRIOS: preço, escalabilidade, suporte, curva de aprendizado, lock-in\n\nEntregue parecer de 5-8 páginas:\n1. O que é, versão atual, tempo de mercado\n2. Modelo de preço detalhado com cenário real (meu volume)\n3. Top 3 concorrentes com comparativo objetivo\n4. Riscos: lock-in, licença, estabilidade da empresa\n5. Opinião da comunidade (Reddit, HN, X, GitHub issues — com links e datas)\n6. Compatibilidade com meu stack\n7. Veredito final: adotar/esperar/descartar com justificativa\n\nSeja cético, não apologista. Cite todas fontes."
+    },
+    {
+      "id": 77,
+      "category": "ops",
+      "tool": "claude",
+      "title": "Calendário editorial de 30 dias",
+      "prompt": "Crie calendário editorial de 30 dias pros meus canais.\n\nCANAIS: [Instagram / YouTube / newsletter / X]\nNICHO: [X]\nOBJETIVO: [crescimento / vendas / autoridade]\nFREQUÊNCIA ALVO POR CANAL: [ex: IG 5x/semana, YT 2x/mês]\n\nENTREGUE:\n1. Tabela dia a dia do mês com: dia, canal, tipo de conteúdo, tema, gancho em 1 linha\n2. 4 temas-pilares rotativos que aparecem ao longo do mês\n3. 3 'ganchos de ouro' (conteúdo de maior potencial viral)\n4. Dia da semana que publica em cada canal (ritmo)\n5. Datas de lançamento/ação comercial (se aplicável)"
+    },
+    {
+      "id": 78,
+      "category": "ops",
+      "tool": "claude",
+      "title": "Playbook de respostas no suporte",
+      "prompt": "Crie playbook de respostas padrão pro suporte do meu produto.\n\nPRODUTO: [X]\nTOP 10 DÚVIDAS/PROBLEMAS QUE CHEGAM:\n[liste ou deixe vazio pra eu preencher depois]\n\nPRA CADA, ENTREGUE:\n1. Resposta padrão (3-4 frases)\n2. Variações conforme contexto (cliente novo / cliente bravo / cliente curioso)\n3. Quando escalonar pro humano (critério claro)\n4. Assunto do ticket recomendado pra classificar\n\nTOM: empático mas eficiente. Zero 'prezado cliente'."
+    },
+    {
+      "id": 79,
+      "category": "ops",
+      "tool": "gemini",
+      "title": "Checklist de LGPD pra SaaS BR",
+      "prompt": "Faça checklist objetivo pra garantir que meu SaaS está em conformidade com LGPD.\n\nPRODUTO: [descrição]\nDADOS COLETADOS: [liste]\nPÚBLICO: [B2C / B2B / misto]\n\nENTREGUE CHECKLIST COM:\n1. Dados essenciais a coletar consentimento\n2. Base legal apropriada pra cada tipo de dado\n3. Política de Privacidade — seções obrigatórias\n4. Termos de Uso — cláusulas críticas\n5. Fluxo de solicitação de remoção/export (portabilidade)\n6. Encarregado de dados (DPO) — precisa ter?\n7. Minimum viable compliance pra MVP (o que é OK postergar)\n\nSeja prático. Aponte fontes (ANPD, CDC, LGPD)."
+    },
+    {
+      "id": 80,
+      "category": "ops",
+      "tool": "claude",
+      "title": "Plano de backup e disaster recovery",
+      "prompt": "Desenhe plano simples de backup e recuperação pro meu SaaS.\n\nSTACK: [Supabase + Vercel + Stripe]\nVOLUME DE DADOS ESTIMADO 1º ANO: [pequeno / médio]\nCRITICIDADE: [média / alta]\n\nENTREGUE:\n1. O que deve ter backup (banco, arquivos, configs)\n2. Frequência recomendada de cada tipo\n3. Onde guardar (Supabase + copia externa? S3?)\n4. Retenção (1 semana? 30 dias? 1 ano?)\n5. Plano de recuperação: como voltar ao ar em caso de desastre\n6. Teste de recuperação: com que frequência validar que o backup funciona\n7. RPO (quanto dado posso perder?) e RTO (quanto tempo posso ficar fora?)\n\nNível esperado: pragmático pra MVP. Nada de enterprise pesado."
+    },
+    {
+      "id": 81,
+      "category": "skills",
+      "tool": "claude",
+      "title": "Entender o que é uma Skill do Claude",
+      "prompt": "Me explique como se eu fosse iniciante:\n1. O que é uma Skill do Claude em 3 parágrafos simples\n2. Diferença entre Skill, Prompt solto e Project\n3. O que faz uma Skill BOA vs. uma ruim (princípios)\n4. Anatomia técnica: SKILL.md, campos name/description, arquivos auxiliares\n5. Por que DESCRIÇÃO é o componente mais importante — é o gatilho de ativação\n6. 5 casos reais onde Skill vale (análise de contrato, voz de marca, revisão de PRD, etc)\n\nFeche com: 'qual é a primeira Skill que faz sentido você criar dado seu dia a dia?'"
+    },
+    {
+      "id": 82,
+      "category": "skills",
+      "tool": "claude",
+      "title": "Criar minha primeira Skill do Claude",
+      "prompt": "Vou criar minha primeira Skill. Me guie do zero.\n\nMEU CASO DE USO: [descreva, ex: 'escrever PRDs no meu padrão']\n\nMe ajude a:\n1. Validar se vale uma Skill (ou se prompt resolve)\n2. Escrever o CAMPO DESCRIPTION ideal — REGRAS:\n   - Descreva QUANDO ativar (não o que faz)\n   - Use exemplos de triggers concretos\n   - Inclua sinônimos e contextos relacionados\n3. Escrever o corpo do SKILL.md:\n   - Contexto e objetivo\n   - Metodologia / checklist de execução\n   - Formato do output\n   - Exemplos bom e ruim\n4. Identificar arquivos auxiliares (templates, referências)\n5. Cenários de teste: 3 que DEVEM ativar, 2 que NÃO devem\n\nSeja cirúrgico na descrição. É 80% do sucesso."
+    },
+    {
+      "id": 83,
+      "category": "skills",
+      "tool": "claude",
+      "title": "Biblioteca de Skills pra construtores",
+      "prompt": "Projete biblioteca de Skills base pra quem constrói SaaS com IA.\n\nMEU CONTEXTO: [stack, nicho, tipo de produto]\n\nProjete 8 Skills. Pra cada:\n1. Nome\n2. Descrição de ativação (seguindo as regras de design de skill)\n3. O que faz (1 parágrafo)\n4. Quando ativa (3 exemplos de mensagem do usuário)\n5. Quando NÃO ativa (2 falsos positivos a evitar)\n6. Prioridade (alta/média/baixa)\n\nSUGESTÕES OBRIGATÓRIAS:\n- Escrever PRD no padrão da casa\n- Auditar código gerado\n- Criar schema Supabase seguro\n- Escrever prompt de scaffold Lovable\n- Revisar copy no meu tom\n- Checklist de deploy\n\nAo final, diga qual criar PRIMEIRO e por quê."
+    },
+    {
+      "id": 84,
+      "category": "skills",
+      "tool": "claude",
+      "title": "Testar se uma Skill ativa corretamente",
+      "prompt": "Vou te dar a DESCRIÇÃO de uma skill que criei. Me ajude a validar se ela vai ativar no momento certo.\n\nDESCRIÇÃO DA SKILL:\n[cole a descrição]\n\nPRA CADA UM DESTES 8 CENÁRIOS, responda com 'SIM, vai ativar' ou 'NÃO, não ativa' + justificativa:\n\n1. [cenário 1]\n2. [cenário 2]\n3. [cenário 3]\n4. [cenário 4]\n5. [cenário 5]\n6. [cenário 6]\n7. [cenário 7]\n8. [cenário 8]\n\nAo final, sugira ajustes específicos na descrição pra resolver falsos positivos ou falsos negativos."
+    },
+    {
+      "id": 85,
+      "category": "skills",
+      "tool": "claude",
+      "title": "Transformar prompt repetitivo em Skill",
+      "prompt": "Percebi que uso muito o mesmo prompt pra [ATIVIDADE]. Quero transformar em Skill do Claude.\n\nPROMPT ATUAL QUE USO:\n[cole]\n\nAJUDE:\n1. Extrair o CORE do que a skill precisa fazer\n2. Identificar variáveis (partes que mudam a cada uso)\n3. Escrever descrição de ativação (gatilho)\n4. Escrever o corpo do SKILL.md limpo e estruturado\n5. Sugerir exemplos bom/ruim pra incluir no skill\n6. Apontar se algum arquivo auxiliar faria a skill muito melhor\n\nO produto final deve ser mais útil do que copiar/colar o prompt atual."
+    },
+    {
+      "id": 86,
+      "category": "skills",
+      "tool": "claude",
+      "title": "Refinar descrição de Skill que não ativa",
+      "prompt": "Criei uma Skill mas ela raramente ativa quando deveria.\n\nDESCRIÇÃO ATUAL:\n[cole]\n\nCENÁRIOS EM QUE DEVERIA ATIVAR MAS NÃO ATIVOU:\n1. [cenário 1 — mensagem exata do usuário]\n2. [cenário 2]\n3. [cenário 3]\n\nAUDITE:\n1. Por que cada cenário não ativou?\n2. Quais palavras-chave estão faltando?\n3. A descrição está focada em 'o que faz' em vez de 'quando ativar'? (erro comum)\n4. Reescreva a descrição completa, corrigindo esses problemas\n5. Valide a nova descrição contra os 3 cenários"
+    },
+    {
+      "id": 87,
+      "category": "arquitetura",
+      "tool": "claude",
+      "title": "Escolher entre serverless vs servidor dedicado",
+      "prompt": "Me ajude a decidir: serverless (Vercel/Supabase Edge Functions) OU servidor dedicado (VPS, AWS EC2) pro meu backend.\n\nMEU APP: [descrição + funcionalidades]\nVOLUME ESPERADO ANO 1: [baixo/médio/alto]\nCASO DE USO MAIS PESADO: [ex: processamento de vídeo, IA, real-time]\nORÇAMENTO MENSAL: R$ [X]\nEXPERIÊNCIA MINHA COM DevOps: [iniciante]\n\nCOMPARE:\n1. Custo estimado em cada cenário\n2. Complexidade operacional\n3. Escalabilidade automática\n4. Latência\n5. Manutenção necessária\n\nRECOMENDE uma com justificativa objetiva. E diga quando eu deveria reconsiderar."
+    },
+    {
+      "id": 88,
+      "category": "desenvolvimento",
+      "tool": "claude-code",
+      "title": "Implementar rate limiting",
+      "prompt": "Implemente rate limiting pro meu app.\n\nENDPOINTS A PROTEGER:\n- [endpoint 1]: [limite sugerido]\n- [endpoint 2]: [limite sugerido]\n\nTÉCNICA RECOMENDADA: [por IP / por user_id / combinação]\nSTORAGE DO CONTADOR: [memória (simples) / Redis / Supabase]\n\nCASOS A TRATAR:\n- Rate limit excedido: retornar 429 com header Retry-After\n- Usuário autenticado: contar por user_id (mais justo)\n- Usuário anônimo: contar por IP\n- Whitelist de IPs (opcional)\n\nEntregue código + exemplo de aplicação em 1 endpoint."
+    },
+    {
+      "id": 89,
+      "category": "desenvolvimento",
+      "tool": "claude-code",
+      "title": "Adicionar busca full-text",
+      "prompt": "Implemente busca full-text na tabela [X].\n\nCAMPOS BUSCÁVEIS: [liste]\nREQUISITOS:\n- Portuguese dictionary (ignora acento, stemming)\n- Ranking por relevância\n- Highlight dos termos encontrados\n- Debounce de 300ms no frontend\n- RLS respeitado (só retorna resultados do próprio usuário)\n\nUSE Postgres built-in tsvector + tsquery (Supabase suporta).\n\nEntregue: migration SQL, função de busca, hook customizado no frontend."
+    },
+    {
+      "id": 90,
+      "category": "desenvolvimento",
+      "tool": "claude-code",
+      "title": "Implementar upload de arquivo com preview",
+      "prompt": "Implemente upload de arquivo com preview antes do envio.\n\nTIPOS ACEITOS: [imagem / PDF / áudio]\nTAMANHO MÁXIMO: [X MB]\nDESTINO: Supabase Storage bucket '[nome]'\n\nCOMPORTAMENTO:\n1. Usuário seleciona/arrasta arquivo\n2. Preview imediato (pra imagem: thumbnail; pra PDF: primeira página; pra áudio: player)\n3. Validação: tipo, tamanho\n4. Botão 'Upload' envia\n5. Progress bar durante upload\n6. Sucesso: URL retornada + limpa preview\n7. Falha: toast de erro descritivo\n\nUse drag-and-drop com react-dropzone. Entregue componente reutilizável."
+    },
+    {
+      "id": 91,
+      "category": "integracao",
+      "tool": "claude-code",
+      "title": "Webhook receiver genérico (qualquer provedor)",
+      "prompt": "Crie um Edge Function genérico pra receber webhook de qualquer provedor (Stripe, Resend, etc).\n\nCOMPORTAMENTO:\n1. Endpoint único em /webhooks/[provider]\n2. Valida assinatura cripto conforme o provider\n3. Salva payload cru na tabela webhook_logs (pra debug)\n4. Roteia pra handler específico baseado no provider + event_type\n5. Responde 200 imediatamente\n6. Processamento pesado acontece async\n\nENTREGUE:\n- Estrutura de pastas\n- Handler base\n- Exemplo concreto pra Stripe e Resend\n- Testes mínimos"
+    },
+    {
+      "id": 92,
+      "category": "integracao",
+      "tool": "claude-code",
+      "title": "Configurar Sentry pra captura de erro",
+      "prompt": "Integre Sentry pra captura de erros em produção.\n\nAMBIENTE: [React frontend + Supabase Edge Functions]\n\nREQUISITOS:\n- Sentry DSN em variável de ambiente\n- Ativar só em produção (não em dev)\n- Capturar erros não tratados automaticamente\n- Permitir captura manual: Sentry.captureException()\n- Adicionar user context após login\n- Breadcrumbs de navegação\n- Source maps pra stack trace legível\n\nEntregue: setup no frontend + Edge Function middleware + exemplo de uso."
+    },
+    {
+      "id": 93,
+      "category": "marketing",
+      "tool": "gpt",
+      "title": "Pilar de conteúdo pra 30 posts",
+      "prompt": "Me ajude a criar 1 pilar de conteúdo que gere 30 posts.\n\nNICHO: [X]\nPILAR PRINCIPAL: [escolha um: ex: 'vibe coding', 'automação com IA', 'produtividade de criadores']\n\nENTREGUE:\n1. Subtemas do pilar (5-7)\n2. Pra cada subtema, 5-6 ideias de post com:\n   - Gancho\n   - Ângulo (tutorial / storytelling / listicle / contraintuitivo)\n   - Formato ideal (reel curto / carrossel / post estático / thread)\n3. Cronograma de publicação (qual post em qual semana)\n4. 3 ganchos 'âncora' que você repete em variações pra reforçar posicionamento\n\nQuero material pra 30 dias de publicação."
+    },
+    {
+      "id": 94,
+      "category": "vendas",
+      "tool": "claude",
+      "title": "Automatizar atendimento pré-venda com FAQ",
+      "prompt": "Crie automação de atendimento pré-venda com FAQ inteligente.\n\nCANAL: [WhatsApp / chatbot no site / email]\nPRODUTO: [X + preço]\n\nCUBRA AS 15 PERGUNTAS MAIS COMUNS DE PRÉ-VENDA:\n- Preço + formas de pagamento\n- O que está incluído\n- Prazo de entrega\n- Política de reembolso\n- Diferenças entre planos (se houver)\n- Pra quem é / não é\n- Tempo de aprendizado esperado\n- Suporte disponível\n- Bônus\n- Garantia\n\nPra cada pergunta: resposta pronta (3-4 frases), variação pra WhatsApp (mais curta), e 'sinal de compra' que indica hora de escalar pro humano."
+    },
+    {
+      "id": 95,
+      "category": "auditoria",
+      "tool": "claude",
+      "title": "Revisar landing antes de publicar",
+      "prompt": "Vou te dar o copy da minha landing. Revise quanto a:\n\n1. HEADLINE: tem promessa clara e específica? (teste: 5 segundos, eu entendo?)\n2. ABOVE THE FOLD: CTA óbvio? Cliente sabe o próximo passo?\n3. PROVA SOCIAL: onde? é crível?\n4. COPY: tem jargão? redundâncias? paragrafões?\n5. PREÇO: está visível? ou obscurecido?\n6. OBJEÇÕES: as 3 principais estão tratadas?\n7. CTA FINAL: urgência real? ou FOMO falso?\n8. MOBILE: layout aguenta tela pequena?\n\nPRA CADA PONTO: status (bom / aceitável / precisa melhorar) + correção concreta.\n\n[cole o copy]"
+    },
+    {
+      "id": 96,
+      "category": "ops",
+      "tool": "manus",
+      "title": "Auditoria SEO técnica + keywords",
+      "prompt": "Faça auditoria SEO completa do meu site e entregue relatório.\n\nURL: [seudominio.com.br]\nNICHO: [X]\nPÚBLICO: [persona]\n\nCOBRIR:\n1. Technical SEO: velocidade, mobile-friendly, sitemap, robots.txt, meta tags\n2. On-page: estrutura H1-H6, densidade keyword, alt text, internal linking\n3. 20 keywords mais relevantes pro nicho (com volume e dificuldade)\n4. Gap analysis: o que concorrentes rankeiam e eu não\n5. Quick wins (5 coisas pra fazer nos próximos 7 dias)\n6. Plano de conteúdo (10 artigos pra rankear)\n\nENTREGÁVEL: PDF de 10-15 páginas, formatado, com fontes (Ahrefs, SEMrush, Google search console se aplicável)."
+    },
+    {
+      "id": 97,
+      "category": "planejamento",
+      "tool": "claude",
+      "title": "Plano de features pra V2 pós-lançamento",
+      "prompt": "Meu MVP está no ar faz [X semanas]. Me ajude a planejar features da V2.\n\nFEEDBACK RECEBIDO DOS PRIMEIROS CLIENTES:\n[cole feedback consolidado]\n\nMÉTRICAS ATUAIS:\n- Cadastros: [X]\n- Conversão: [Y%]\n- Churn mensal: [Z%]\n- Pedido mais comum: [liste]\n\nENTREGUE:\n1. Priorize features usando RICE framework (Reach, Impact, Confidence, Effort)\n2. Top 5 pra V2 em ordem\n3. Top 3 que você NÃO deveria construir mesmo tendo pedido (explique por quê)\n4. Prazo realista pra cada uma\n5. Features que resolveriam objeções de compra (não só delight de atual)"
+    },
+    {
+      "id": 98,
+      "category": "vendas",
+      "tool": "claude",
+      "title": "Criar oferta irrecusável (pricing + bônus)",
+      "prompt": "Me ajude a montar uma oferta irrecusável.\n\nPRODUTO PRINCIPAL: [X + preço base]\nMEU PÚBLICO: [persona]\nMOMENTO: [lançamento / relançamento / BF / campanha específica]\n\nENTREGUE:\n1. Estrutura da oferta (produto principal + bônus)\n2. 5 bônus de alto valor percebido e baixo custo pra você entregar\n3. Cálculo do 'valor percebido' vs. preço cobrado (regra 10:1)\n4. Garantia que elimina risco (condicional ou incondicional)\n5. Escassez real (vagas limitadas? prazo?)\n6. Script pra apresentar a oferta (em landing, vídeo, call)\n\nA oferta deve ser tão boa que 'seria estúpido não aceitar'."
+    },
+    {
+      "id": 99,
+      "category": "planejamento",
+      "tool": "claude",
+      "title": "Roadmap trimestral do produto",
+      "prompt": "Desenhe roadmap trimestral (próximos 90 dias) pro meu produto.\n\nSITUAÇÃO ATUAL:\n- Usuários: [X]\n- MRR: R$ [Y]\n- Churn: [Z%]\n- Features: [liste principais]\n\nOBJETIVOS DO TRIMESTRE (priorizados):\n1. [objetivo 1 — ex: dobrar MRR]\n2. [objetivo 2 — ex: reduzir churn]\n3. [objetivo 3]\n\nENTREGUE:\n1. Macro-iniciativas pra cada objetivo (3-4 por objetivo)\n2. Cronograma semana a semana\n3. Métricas pra validar sucesso de cada iniciativa\n4. Dependências e riscos\n5. 'Não vou fazer' list (o que recusar pra manter foco)\n\nSeja rigoroso. Se o roadmap tem 30 itens, você vai entregar 5. Foque em menos com mais peso."
+    },
+    {
+      "id": 100,
+      "category": "planejamento",
+      "tool": "claude",
+      "title": "Retrospectiva dos 30 dias da trilha",
+      "prompt": "Estou terminando a trilha Do Zero ao SaaS (30 dias). Me ajude a fazer retrospectiva.\n\nONDE CHEGUEI:\n- Produto no ar: [sim/não, URL se sim]\n- Primeiras vendas: [quantidade]\n- MRR: R$ [X]\n- O que funcionou MUITO: [liste]\n- O que NÃO funcionou: [liste]\n- O que mudaria se refizesse: [liste]\n\nENTREGUE:\n1. Análise objetiva do que aconteceu (celebrar vitórias reais, sem inflar)\n2. 5 lições centrais pra memorizar\n3. Próximos 30 dias: 3 prioridades em ordem\n4. O que parar de fazer (importante tanto quanto o que começar)\n5. Habilidades a aprofundar nos próximos 90 dias\n\nTom: mentor honesto, não torcida cega."
+    }
+  ]
+}
