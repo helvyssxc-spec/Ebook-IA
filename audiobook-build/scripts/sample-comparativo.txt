@@ -1,0 +1,13 @@
+Olha. Antes de você abrir qualquer outro arquivo desse curso. Para tudo, e me escuta um minuto.
+
+Você acabou de comprar uma coisa que tem nome esquisito: Do Zero ao SaaS.
+
+Pode parecer mais um curso de IA. Sabe esses que te prometem fazer milhão em trinta dias? Não é.
+
+É um método. Tipo, um caminho passo a passo, pra você sair do ponto onde você só tem ideia na cabeça. E chegar no ponto onde existe um produto seu rodando na internet. Aceitando pagamento de verdade no Stripe.
+
+Dá pra fazer? Dá. Sem saber programar.
+
+Não é mágica. É só ordem.
+
+Vamos lá.
