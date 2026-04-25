@@ -832,15 +832,68 @@
     <p class="hero-sub">
       Pare de queimar <strong>R$300/mês em Lovable</strong> que trava e estoura crédito. Você não precisa da ferramenta cara — precisa do <strong>método</strong> que orquestra Claude + Cursor + Gemini (quase de graça) pra construir SaaS de verdade.
     </p>
-    <div class="hero-ctas">
-      <a href="#oferta" class="btn-primary">Quero começar por R$ 147</a>
-      <a href="#como-funciona" class="btn-secondary">Como funciona</a>
-    </div>
+    <!-- LEAD CAPTURE pré-lançamento (CTA principal) -->
+    <form id="leadForm" class="lead-form" onsubmit="return submitLead(event)">
+      <input type="email" id="leadEmail" name="email" placeholder="seu@email.com" required>
+      <button type="submit" class="btn-primary" id="leadBtn">Quero o Pulo do Gato grátis →</button>
+      <div class="lead-msg" id="leadMsg"></div>
+    </form>
     <div class="hero-microcopy">
-      <span>Acesso vitalício</span>
-      <span>Atualizações por 12 meses</span>
-      <span>Garantia de 7 dias</span>
+      <span>Avise-me no lançamento</span>
+      <span>+ 1 capítulo grátis agora</span>
+      <span>Sem spam</span>
     </div>
+
+    <style>
+      .lead-form { display: flex; gap: 10px; flex-wrap: wrap; max-width: 540px; margin: 28px 0 16px; }
+      .lead-form input { flex: 1; min-width: 220px; padding: 16px 18px; font-size: 15px; border: 1px solid var(--border, #d4d4d8); border-radius: 10px; font-family: inherit; }
+      .lead-form input:focus { outline: 2px solid var(--accent, #6b8cff); outline-offset: 1px; }
+      .lead-form .btn-primary { padding: 16px 24px; font-size: 15px; cursor: pointer; }
+      .lead-form .btn-primary:disabled { opacity: 0.5; cursor: wait; }
+      .lead-msg { width: 100%; font-size: 14px; min-height: 18px; }
+      .lead-msg.ok { color: #16a34a; }
+      .lead-msg.err { color: #dc2626; }
+    </style>
+    <script>
+      async function submitLead(e) {
+        e.preventDefault();
+        const btn = document.getElementById('leadBtn');
+        const msg = document.getElementById('leadMsg');
+        const email = document.getElementById('leadEmail').value.trim();
+        if (!email) return false;
+        btn.disabled = true;
+        btn.textContent = 'enviando...';
+        msg.className = 'lead-msg';
+        msg.textContent = '';
+        try {
+          const params = new URLSearchParams(location.search);
+          const r = await fetch('https://chat.dozeroaosaas.com.br/api/lead-capture', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({
+              email,
+              source: 'landing-prelaunch',
+              utm_source: params.get('utm_source') || null,
+              utm_medium: params.get('utm_medium') || null,
+              utm_campaign: params.get('utm_campaign') || null,
+            }),
+          });
+          const j = await r.json();
+          if (!r.ok) throw new Error(j.error || 'erro_desconhecido');
+          msg.className = 'lead-msg ok';
+          msg.textContent = j.is_new
+            ? '✅ Pronto. Cheque seu email — chega em segundos (olha o spam se não vier).'
+            : '✅ Você já estava na lista. Reenviei o material agora.';
+          btn.textContent = 'Enviado ✓';
+        } catch (err) {
+          msg.className = 'lead-msg err';
+          msg.textContent = '⚠ Algo deu errado: ' + (err.message || 'tente de novo em alguns minutos');
+          btn.disabled = false;
+          btn.textContent = 'Quero o Pulo do Gato grátis →';
+        }
+        return false;
+      }
+    </script>
 
     <div class="stats-bar">
       <div class="stat">
