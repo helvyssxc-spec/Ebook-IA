@@ -1,0 +1,88 @@
+============================================================
+TEMPLATES DO ZERO AO SAAS - COMO USAR
+============================================================
+
+Os arquivos terminam com .md (chamado Markdown).
+NAO E UM TIPO ESTRANHO. E SO TEXTO PURO QUE QUALQUER PROGRAMA ABRE.
+
+------------------------------------------------------------
+COMO ABRIR (3 OPCOES, ESCOLHE UMA)
+------------------------------------------------------------
+
+OPCAO 1 - SO QUERO LER (mais facil)
+  - Clica DUAS VEZES no arquivo
+  - Vai abrir no Bloco de Notas (Windows) ou TextEdit (Mac)
+  - Pronto. Le como qualquer texto.
+
+OPCAO 2 - QUERO COPIAR PRA UM EDITOR BONITO
+  - Notion (notion.so) - gratuito, bonito, online
+    1. Cria conta gratis no Notion
+    2. Abre o arquivo no Bloco de Notas
+    3. Copia tudo (Ctrl+A, Ctrl+C)
+    4. Cola no Notion (Ctrl+V) - ele formata sozinho
+  - Obsidian (obsidian.md) - gratuito, instala no PC
+    1. Baixa Obsidian, cria um "vault"
+    2. Arrasta o arquivo .md pra dentro
+  - Google Docs - copia o texto e cola, simples assim
+
+OPCAO 3 - VOU USAR PRA CODAR (ja tem o Cursor)
+  - Abre o Cursor
+  - File > Open Folder > escolhe a pasta dos templates
+  - Clica em qualquer arquivo .md - abre formatado
+
+------------------------------------------------------------
+O QUE TEM EM CADA ARQUIVO
+------------------------------------------------------------
+
+01-template-prd.md
+   Modelo pronto pra escrever o "PRD" (especificacao do
+   seu produto). Capitulo 8 do ebook explica.
+
+02-schema-supabase.md
+   Estrutura inicial do banco de dados. Capitulo 9.
+
+03-checklist-producao.md
+   100+ itens pra revisar antes de publicar. Capitulo 13.
+
+04-briefings-gemini-tutor.md
+   5 briefings prontos pra Gemini te ensinar passo a passo.
+   Capitulo 11 (Pulo do Gato #1).
+
+05-fluxo-github-claude-code.md
+   Como integrar Lovable + GitHub + Claude Code.
+   Capitulo 12 (Pulo do Gato #2).
+
+06-prompt-scaffold-premium.md
+   Mega prompt pra usar no Lovable pra gerar projeto pronto.
+   Capitulo 7.
+
+07-manual-do-produto.md
+   Modelo do Manual quando VOCE for criar seu proprio produto.
+
+08-plano-trabalho-semanal.md
+   Planilha de 4 semanas dia-a-dia pra organizar voce.
+
+------------------------------------------------------------
+COMO PREENCHER OS PLACEHOLDERS
+------------------------------------------------------------
+
+Os templates tem coisas tipo [SEU PRODUTO] ou [DESCRICAO AQUI].
+Sao "campos pra preencher". Substitua pelo que faz sentido
+no seu projeto.
+
+Exemplo:
+  ANTES:  Nome do produto: [SEU PRODUTO]
+  DEPOIS: Nome do produto: AppDeFinancas
+
+------------------------------------------------------------
+TRAVOU EM ALGO?
+------------------------------------------------------------
+
+Pergunta no Chat IA: https://chat.dozeroaosaas.com.br
+(Ele responde 24h, sabe tudo do curso.)
+
+Email: suporte@dozeroaosaas.com.br
+
+============================================================
+Do Zero ao SaaS - Templates v1.0
+============================================================

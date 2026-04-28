@@ -1,0 +1,90 @@
+============================================================
+BIBLIOTECA DE 100+ PROMPTS - COMO USAR
+============================================================
+
+Esse pacote tem DOIS arquivos:
+
+  biblioteca-100-prompts.md     <- versao pra LER e copiar
+  biblioteca-100-prompts.json   <- versao pra IMPORTAR em ferramentas
+
+Voce so precisa de UM dos dois. Use o .md se nao souber.
+
+------------------------------------------------------------
+COMO ABRIR O .md (MAIS FACIL)
+------------------------------------------------------------
+
+1. Clica DUAS VEZES no arquivo biblioteca-100-prompts.md
+2. Vai abrir no Bloco de Notas (Windows) ou TextEdit (Mac)
+3. Use Ctrl+F pra buscar o tema (ex: "supabase" ou "debug")
+4. Copia o prompt e cola no Claude/ChatGPT
+
+------------------------------------------------------------
+COMO ABRIR MAIS BONITO (OPCIONAL)
+------------------------------------------------------------
+
+Notion (gratis, online):
+  1. Cria conta gratis em notion.so
+  2. Cria pagina nova
+  3. Copia tudo do .md (Ctrl+A, Ctrl+C)
+  4. Cola no Notion (Ctrl+V) - formata sozinho
+
+Cursor (pra quem ja instalou):
+  1. File > Open File > seleciona o .md
+  2. Aperta Ctrl+P pra busca rapida
+  3. Digita uma palavra-chave (ex: "auth")
+  4. Pula direto pro prompt certo
+
+------------------------------------------------------------
+QUANDO USAR O .json (AVANCADO)
+------------------------------------------------------------
+
+Se voce usa:
+  - PromptBase (importacao em massa)
+  - Notion Database (pra criar tabela de prompts)
+  - Algum app proprio com IA
+
+Esses programas leem JSON. Cada prompt vira uma linha
+com: titulo, texto, categoria, ferramenta.
+
+Se nao sabe o que e isso, ignora o .json. So use o .md.
+
+------------------------------------------------------------
+ESTRUTURA DOS PROMPTS
+------------------------------------------------------------
+
+Os 100+ prompts estao categorizados por uso:
+
+  IDEACAO       - validar ideia, criar persona, definir MVP
+  ARQUITETURA   - banco de dados, fluxos, diagramas
+  CODIGO        - componentes, queries, integracoes
+  DEBUG         - resolver erros por print/log
+  COPY          - landing, email, anuncio
+  LANCAMENTO    - planejamento, metricas, fechamento
+
+Cada prompt tem:
+  - Quando usar
+  - Texto pronto pra colar
+  - Variavel a substituir (entre [colchetes])
+  - Ferramenta recomendada (Claude, Gemini, etc.)
+
+------------------------------------------------------------
+EXEMPLO DE USO
+------------------------------------------------------------
+
+1. Voce esta na fase de validar uma ideia
+2. Abre o .md e busca "validacao" (Ctrl+F)
+3. Encontra "Prompt 003 - Validacao em 5 minutos"
+4. Copia o texto, substitui [SUA IDEIA] pela sua
+5. Cola no Claude/ChatGPT
+6. Le a resposta, ajusta sua ideia, segue em frente
+
+------------------------------------------------------------
+TRAVOU EM ALGO?
+------------------------------------------------------------
+
+Pergunta no Chat IA: https://chat.dozeroaosaas.com.br
+Email: suporte@dozeroaosaas.com.br
+
+============================================================
+Do Zero ao SaaS - Biblioteca v1.0
+============================================================
