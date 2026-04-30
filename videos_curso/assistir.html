@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Galeria de gravações — Do Zero ao SaaS</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #0a0a0a; color: #eee; }
+  header { max-width: 1200px; margin: 0 auto 24px; }
+  h1 { margin: 0 0 8px 0; font-size: 22px; }
+  p.lead { margin: 0; color: #888; font-size: 14px; }
+  .filters { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .filters button { background: #1a1a1a; color: #ccc; border: 1px solid #2a2a2a; padding: 6px 14px; border-radius: 16px; cursor: pointer; font-size: 12px; }
+  .filters button:hover, .filters button.active { background: #2c5282; border-color: #2c5282; color: #fff; }
+  main { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; }
+  .card { background: #111; border: 1px solid #222; border-radius: 8px; overflow: hidden; }
+  .card-head { padding: 12px 16px; border-bottom: 1px solid #1f1f1f; display: flex; justify-content: space-between; align-items: center; }
+  .card-name { font-size: 13px; font-weight: 600; color: #ddd; word-break: break-all; }
+  .card-size { font-size: 11px; color: #888; flex-shrink: 0; margin-left: 12px; }
+  .card-img-wrap { background: #000; min-height: 200px; display: flex; align-items: center; justify-content: center; }
+  .card-img-wrap img { max-width: 100%; height: auto; display: block; }
+  .card-foot { padding: 8px 16px; font-size: 11px; color: #666; display: flex; gap: 12px; border-top: 1px solid #1f1f1f; }
+  .card-foot a { color: #4a90e2; text-decoration: none; }
+  .card-foot a:hover { text-decoration: underline; }
+  .empty-msg { grid-column: 1 / -1; text-align: center; padding: 40px; color: #666; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Galeria de gravações — Do Zero ao SaaS</h1>
+  <p class="lead">25 webp animados. Clique em "abrir solo" pra ver em tela cheia, ou em "baixar" pra salvar.</p>
+  <div class="filters">
+    <button class="active" data-f="all">Todas (25)</button>
+    <button data-f="v0">Fase 0 (3)</button>
+    <button data-f="v1">Fase 1 (4)</button>
+    <button data-f="v2">Fase 2 (2)</button>
+    <button data-f="v3">Fase 3 (3)</button>
+    <button data-f="v4">Fase 4 (3)</button>
+    <button data-f="v5">Fase 5 (2)</button>
+    <button data-f="v6">Fase 6 (1)</button>
+    <button data-f="v7">Fase 7 (3)</button>
+    <button data-f="video">Extras (5)</button>
+  </div>
+</header>
+
+<main id="grid"></main>
+
+<script>
+  const files = [
+    { name: "v0_1_criando_contas_1777476236575.webp", size: "10.8 MB", group: "v0" },
+    { name: "v0_2_terminal_installs_1777495371148.webp", size: "20 KB", group: "v0" },
+    { name: "v0_2_terminal_installs_1777495497521.webp", size: "7.0 MB", group: "v0" },
+    { name: "v1_1_validacao_claude_1777480867243.webp", size: "12.0 MB", group: "v1" },
+    { name: "v1_2_pesquisa_gemini_1777481194449.webp", size: "12 KB", group: "v1" },
+    { name: "v1_3_pesquisa_manus_1777488170738.webp", size: "10.8 MB", group: "v1" },
+    { name: "v1_3_pesquisa_manus_1777493911212.webp", size: "10.3 MB", group: "v1" },
+    { name: "v2_1_prd_claude_1777481326105.webp", size: "20.2 MB", group: "v2" },
+    { name: "v2_2_schema_gemini_1777481882096.webp", size: "12 KB", group: "v2" },
+    { name: "v3_1_scaffold_lovable_1777486879034.webp", size: "12 KB", group: "v3" },
+    { name: "v3_1_scaffold_lovable_1777491302171.webp", size: "29.3 MB", group: "v3" },
+    { name: "v3_2_lovable_github_1777487756282.webp", size: "12 KB", group: "v3" },
+    { name: "v4_1_supabase_setup_1777482689633.webp", size: "2.0 MB", group: "v4" },
+    { name: "v4_3_stripe_integrar_1777482838747.webp", size: "7.0 MB", group: "v4" },
+    { name: "v4_5_deploy_vercel_1777483072420.webp", size: "3.0 MB", group: "v4" },
+    { name: "v5_1_auditoria_claude_1777483206083.webp", size: "6.5 MB", group: "v5" },
+    { name: "v5_2_assets_chatgpt_1777483381780.webp", size: "4.2 MB", group: "v5" },
+    { name: "v6_1_troubleshooting_1777483531029.webp", size: "3.3 MB", group: "v6" },
+    { name: "v7_1_copy_chatgpt_1777483698571.webp", size: "7.6 MB", group: "v7" },
+    { name: "v7_2_batch_manus_1777488389356.webp", size: "12 KB", group: "v7" },
+    { name: "v7_2_batch_manus_1777494067964.webp", size: "12 KB", group: "v7" },
+    { name: "video1_gemini_validacao_1777474525799.webp", size: "3.1 MB", group: "video" },
+    { name: "video2_supabase_setup_1777474667617.webp", size: "2.1 MB", group: "video" },
+    { name: "video3_vercel_deploy_1777474795652.webp", size: "3.5 MB", group: "video" },
+    { name: "video4_stripe_pagamento_1777474945525.webp", size: "5.5 MB", group: "video" },
+    { name: "video5_fluxo_completo_1777475139632.webp", size: "5.2 MB", group: "video" }
+  ];
+
+  const grid = document.getElementById('grid');
+
+  function render(filter) {
+    const list = filter === 'all' ? files : files.filter(f => f.group === filter);
+    if (list.length === 0) {
+      grid.innerHTML = '<div class="empty-msg">Nenhum arquivo nessa fase.</div>';
+      return;
+    }
+    grid.innerHTML = list.map(f => `
+      <div class="card">
+        <div class="card-head">
+          <div class="card-name">${f.name}</div>
+          <div class="card-size">${f.size}</div>
+        </div>
+        <div class="card-img-wrap">
+          <img src="${f.name}" alt="${f.name}" loading="lazy">
+        </div>
+        <div class="card-foot">
+          <a href="${f.name}" target="_blank">abrir solo ↗</a>
+          <a href="${f.name}" download>baixar ⤓</a>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  document.querySelectorAll('.filters button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.f);
+    });
+  });
+
+  render('all');
+</script>
+
+</body>
+</html>
