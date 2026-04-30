@@ -1,198 +1,169 @@
 # Plano de Reposicionamento — Vibe Coding com Método
 
-> **Status:** Opção B aprovada em 2026-04-29. Aguardando execução.
-> **Quem retoma:** Helvys (provavelmente da máquina Itanna).
+> **Status:** ✅ Reposicionamento aplicado · 🚀 Produto lançado em 2026-04-30
+>
+> Este arquivo agora é **registro histórico + status final**, não mais checklist em aberto.
 
 ---
 
-## 🎯 Tese do reposicionamento
+## 🎯 Tese (registrada pra referência futura)
 
-A landing e o Kiwify hoje vendem "Do Zero ao SaaS / Sem saber programar". O termo **"vibe coding"** está em pico de busca no Brasil (2026), mas o mercado tá saturado de cursos rasos do tipo "manda no Lovable e reza".
+A landing e o Kiwify vendiam "Do Zero ao SaaS / Sem saber programar". O termo **"vibe coding"** estava em pico de busca no Brasil (2026), mas o mercado tava saturado de cursos rasos do tipo "manda no Lovable e reza".
 
-**O ângulo:** posicionar o produto como **vibe coding feito direito** — versão séria, com método, prompts, auditoria de código. O público chega pelo termo da moda e descobre algo mais profundo (orquestração de 5 IAs).
-
-**Como foi descoberto:** o ebook já é, de fato, um curso de vibe coding centrado em **Lovable + Claude + Supabase** (106 + 61 + 57 menções no `pdf-build/ebook-completo.md`). Falta só alinhar a comunicação externa.
+**Ângulo escolhido (Opção B aprovada 2026-04-29):** posicionar o produto como **vibe coding feito direito** — versão séria, com método, prompts, auditoria. Manter o "método/orquestração" como espinha dorsal e usar "vibe coding" como isca de SEO + identificação inicial.
 
 ---
 
-## ✅ Já feito (29/04/2026)
+## ✅ Status final (2026-04-30)
 
-Aplicado em `deploy-landing/index-novo.html` (cópia de preview, **NÃO no index.html real**):
+### Landing pública (`https://dozeroaosaas.com.br`)
 
-- [x] [1] `<title>` reescrito com termo "vibe coding"
-- [x] [2] `<meta name="description">` reescrita com "vibe coding" + 5 IAs corretas
-- [x] [3] `hero-tag` (linha 826): "Do Zero ao SaaS · 30 dias" → "Vibe coding com método · 30 dias"
-- [x] [4] sub-headline (linha 833): "Claude + Cursor + Gemini" → "5 IAs (Claude, Gemini, GPT, Lovable e Manus)"
-- [x] [5] card Problema 01 (linha 879): "Cursor" → "Manus" (correção factual)
-- [x] Criado `comparar.html` pra visualizar lado a lado
+Repo: `landing-dozeroaosaas` (separado do Ebook-IA desde 2026-04-29)
 
-**Importante:** essas 5 mudanças são pequenas/cosméticas. Helvys identificou que só a hero-tag é visualmente perceptível. Por isso aprovou a **Opção B** abaixo.
+- [x] `<title>` com "Vibe Coding com Método" no início
+- [x] `<meta name="description">` reescrita com "vibe coding" + 5 IAs corretas
+- [x] OG tags atualizadas
+- [x] Hero reposicionado com termo
+- [x] Tools-row já listava as 5 IAs corretas (Claude, Gemini, GPT, Lovable, Manus)
+- [x] Vercel Analytics ativado (commit `02d9a65`, 2026-04-30)
+- [x] Discord placeholder substituído por mailto seguro (mesmo commit)
 
----
+### Kiwify
 
-## 🟡 A executar — Opção B (aprovada)
+- [x] Copy completa preparada em [copy-kiwify.md](copy-kiwify.md):
+  - Subtítulo
+  - Descrição longa
+  - Renomeação dos 5 módulos
+  - Email de boas-vindas
+  - Sugestão de banner (`og-image.png`)
+- 🟡 **Aplicação manual pendente** — só Helvys, no painel Kiwify. Tudo pronto pra colar.
 
-### Etapa 1 — Landing: reforço visível (~45 min)
+### Dashboard (`dashboard.dozeroaosaas.com.br`)
 
-Editar `deploy-landing/index-novo.html` (e depois replicar no `index.html` + `produto-orquestra/landing/index.html`):
+- [x] Vercel Analytics ativado no source (commit `f149fdc`, 2026-04-30)
+- [x] `deploy-dashboard/` está no GitHub, pronto pra Vercel importar
+- [x] `vercel.json` configurado com noindex/nofollow + cleanUrls
+- 🟡 **Deploy + DNS pendente** — só Helvys, browsers (Vercel + Registro.br)
 
-1. **H1 do hero** (linhas 827-831)
-   - Trocar `<s>Sem saber programar.</s>` por algo com **"Vibe coding com método"** em destaque colorido
-   - Adicionar **badge "VIBE CODING"** acima do H1 com cor de destaque (algo tipo amarelo/dourado pra puxar olho)
-   - Resultado esperado: visitante vê "vibe coding" ~3 vezes na primeira dobra
+### Decisões fiscais
 
-2. **Renomear seção "O método"** (linha ~899)
-   - Atual: `Você não toca instrumento. Você rege a orquestra.`
-   - Proposto: `Vibe coding feito direito: você não programa, você orquestra.`
-
-3. **Adicionar 1 pergunta nova no FAQ**
-   - Pergunta: *"Isso é só mais um curso de vibe coding?"*
-   - Resposta deve posicionar como **versão séria** (com método, prompts, auditoria) vs **versão "manda no Lovable e reza"** que é o que tá no mercado
-   - Inserir antes ou depois das perguntas atuais — escolher onde encaixa melhor narrativamente
-
-### Etapa 2 — Replicar para produção
-
-Depois de aprovar a versão final do `index-novo.html`:
-
-```bash
-# Substituir o index.html real
-cp deploy-landing/index-novo.html deploy-landing/index.html
-
-# Replicar para a outra cópia do repo
-cp deploy-landing/index.html produto-orquestra/landing/index.html
-
-# Apagar o preview e o comparar (já cumpriram a função)
-rm deploy-landing/index-novo.html deploy-landing/comparar.html
-
-# Commit + push (usar --author pra não cair no bug do git config)
-cd "C:/Users/HelvysCastro/Ebook Saas/Ebook-IA"
-git add deploy-landing/ produto-orquestra/landing/
-git commit --author "Helvys Xavier <helvyssxc@gmail.com>" -m "Reposicionamento: vibe coding com método (Opção B)"
-git push origin main
-```
-
-Vercel deploy automático ao push. Validar em `dozeroaosaas.com.br` em ~2 min.
-
-### Etapa 3 — Kiwify (~15-20 min, painel web)
-
-Como o produto está em **rascunho** (não ativado por causa do CNAE pendente) e arquivos ainda **não fizeram upload**, é o momento ideal — risco zero.
-
-**Essencial:**
-
-1. **Subtítulo do produto** (página principal do produto no Kiwify)
-
-   ```
-   ANTES:
-   Publique e venda seu primeiro SaaS em 30 dias orquestrando 5 IAs.
-   Sem saber programar.
-
-   DEPOIS:
-   Vibe coding com método: publique seu primeiro SaaS em 30 dias
-   orquestrando 5 IAs. Sem saber programar.
-   ```
-
-2. **Descrição longa do produto** (área "Sobre o produto" na página de venda)
-   - Reescrever os 2-3 primeiros parágrafos com a mesma tese da landing
-   - Pedir pra Claude gerar copy alinhada com a landing nova
-
-3. **Imagem/banner do produto** (se já tem cover)
-   - Se tiver headline antiga, trocar por uma com termo "vibe coding"
-
-**Opcional mas recomendado:**
-
-4. **Renomear módulos** (substituir os atuais "Modulo" sem acento por nomes mais fortes):
-
-   | Módulo atual | Proposto |
-   |---|---|
-   | Comece aqui | Boas-vindas: o que é vibe coding com método |
-   | Ebook completo | Manual: orquestrando as 5 IAs |
-   | Templates práticos | Templates: PRDs, schemas e prompts prontos |
-   | Biblioteca de prompts | Biblioteca de 100+ prompts (por ferramenta) |
-   | Dashboard interativo | (manter) |
-
-5. **Email de boas-vindas automático** (se já configurado)
-   - Ajustar assunto e primeiro parágrafo pra mencionar "vibe coding"
-
-### Etapa 4 — Pedir pra Claude preparar copy completa
-
-Antes de abrir o painel Kiwify, pedir pra Claude gerar um arquivo `copy-kiwify.md` com **todos os textos prontos pra colar**:
-- Subtítulo (1 versão final)
-- Descrição longa (3-5 parágrafos)
-- Nomes de módulos finalizados
-- Assunto e corpo do email de boas-vindas
+- [x] **CPF no 1º lançamento** (decisão 2026-04-30) — não esperar CNAE.
+- 🟡 CNAE no CNPJ continua em andamento com o contador, mas **não bloqueia mais** o lançamento. Vira otimização tributária pra fase posterior.
 
 ---
 
-## 🚫 Não mexer
+## 🟡 Pendências manuais (só Helvys, browsers)
 
-- **Preço R$ 147** — travado pro 1º lançamento
-- **Arquivos PDF do ebook** — já são coerentes com a tese (não precisa regerar)
-- **Estrutura de 5 módulos no Kiwify** — formato tá certo, só nome muda
-- **Tools-row da landing** (linhas 909-940) — já lista as 5 IAs corretas (Claude, Gemini, GPT, Lovable, Manus)
-- **Trilha de 7 fases** — já alinhada com método
-- **Pulo do Gato** — diferencial forte e único
+Em ordem de prioridade pra começar a vender hoje:
+
+### 1. Deploy do Dashboard no Vercel (~15 min)
+
+1. [vercel.com/dashboard](https://vercel.com/dashboard) → Add New → Project
+2. Importar `helvyssxc-spec/Ebook-IA`
+3. Configure: Framework `Other`, Root Directory `deploy-dashboard`
+4. Deploy
+5. Settings → Domains → adicionar `dashboard.dozeroaosaas.com.br`
+6. Vercel mostra valor CNAME — copiar
+7. [registro.br](https://registro.br) → DNS de `dozeroaosaas.com.br` → adicionar registro CNAME `dashboard` apontando pra `cname.vercel-dns.com.`
+8. Aguardar 5-15min DNS propagar
+9. Habilitar Web Analytics na aba Analytics do projeto
+
+### 2. Aplicar copy no Kiwify (~25 min)
+
+Abrir [copy-kiwify.md](copy-kiwify.md) e [dashboard.kiwify.com.br](https://dashboard.kiwify.com.br) lado a lado:
+
+- A1 — Subtítulo (aba Geral)
+- A2 — Descrição longa (aba Geral)
+- A3 — Renomear 5 módulos (aba Área de membros)
+- A4 — Email pós-compra (Configurações)
+- A5 — Cover/banner (upload `og-image.png` que está em `~/landing-dozeroaosaas/og-image.png`)
+
+### 3. Upload dos arquivos no Kiwify (~15 min)
+
+Em cada módulo da área de membros, arrastar:
+
+| Módulo | Arquivo |
+|---|---|
+| 1 — Boas-vindas | `pdf-build/Do-Zero-ao-SaaS-Manual.pdf` |
+| 2 — Manual | `pdf-build/Do-Zero-ao-SaaS-Ebook.pdf` |
+| 3 — Dashboard interativo | link `https://dashboard.dozeroaosaas.com.br` |
+| 4 — Templates | `pdf-build/templates-Do-Zero-ao-SaaS.zip` |
+| 5 — Biblioteca | `pdf-build/biblioteca-Do-Zero-ao-SaaS.zip` |
+
+### 4. Habilitar Vercel Analytics na landing (~30s)
+
+[vercel.com/dashboard](https://vercel.com/dashboard) → projeto `landing-dozeroaosaas` → Analytics → Enable.
+
+### 5. Ativar produto no Kiwify (~1 min)
+
+Painel Kiwify → produto → botão **Ativar**.
+
+### 6. Divulgar
+
+Compartilhar `https://dozeroaosaas.com.br` em todos os canais (WhatsApp, IG, LinkedIn, X).
 
 ---
 
-## 🔒 Bloqueio que permanece
+## 🟢 Pode esperar (não bloqueia vendas)
 
-**NÃO ativar o produto no Kiwify até o CNAE sair.** Contador adicionando:
-- 8599-6/04 (treinamento)
-- 6202-3/00 (SaaS)
-- 6201-5/01 (software encomenda)
-
-Tudo desse plano pode ser feito **em rascunho** agora. Quando o CNAE liberar, basta clicar "Ativar".
+| Tarefa | Quando |
+|---|---|
+| Criar Discord + link real (substituir mailto que está hoje em `obrigado.html:364`) | Quando 1ª venda chegar |
+| Email Zoho `suporte@dozeroaosaas.com.br` | Esta semana |
+| Pixel Meta + Ads pagos | Quando quiser escalar com tráfego pago |
+| Vídeos do curso editados/publicados | Próximas 2 semanas |
+| CNAE no CNPJ + migrar fiscal de CPF pra CNPJ | Quando contador entregar |
 
 ---
 
-## 📁 Arquivos relevantes (para retomar em outra máquina)
+## 🔍 Auditoria de funcionamento (2026-04-30)
 
-```bash
-# Clonar o repo se ainda não estiver na máquina:
-git clone https://github.com/helvyssxc-spec/Ebook-IA.git
-cd Ebook-IA
+Auditoria full feita após o reposicionamento. Resultado:
 
-# Configurar autor pra evitar o bug do git config:
-git config user.email helvyssxc@gmail.com
-git config user.name "Helvys Xavier"
+| Item | Status |
+|---|---|
+| Domínio + SSL + redirect www | ✅ |
+| Landing pública renderiza | ✅ |
+| 3 botões de checkout apontam pra `pay.kiwify.com.br/bpadvLg` | ✅ |
+| Vercel Analytics no HTML deployado | ✅ |
+| Title + meta description + OG tags | ✅ atualizados |
+| Páginas legais (`/termos`, `/privacidade`, `/obrigado`) | ✅ 200 |
+| `robots.txt` + `sitemap.xml` | ✅ |
+| OG image servida | ✅ |
+| Pixel Meta dentro de comentário HTML (não executa) | ✅ inerte |
+| Form de captura de email no hero | ✅ existe |
+| Chat bônus (`chat.dozeroaosaas.com.br`) | ✅ 200 |
+| **Dashboard (`dashboard.dozeroaosaas.com.br`)** | 🔴 **DNS não configurado — deploy pendente** |
+| PDFs e ZIPs prontos localmente pra upload Kiwify | ✅ todos |
 
-# Ler o estado atual:
-cat PLANO-VIBE-CODING.md          # este arquivo
-cat PLANEJAMENTO-PUBLICACAO.md    # plano mestre maior
-```
+---
+
+## 📁 Arquivos relevantes
 
 | Arquivo | O que é |
 |---|---|
-| `deploy-landing/index.html` | Landing atual (no ar em `dozeroaosaas.com.br`) — **intacto** |
-| `deploy-landing/index-novo.html` | Preview com 5 mudanças cosméticas aplicadas |
-| `deploy-landing/comparar.html` | Comparador lado a lado (abre no browser) |
-| `produto-orquestra/landing/index.html` | Cópia do repo principal — também precisa ser atualizada |
-| `pdf-build/ebook-completo.md` | Source do ebook (já alinhado com a tese, não precisa mexer) |
-| `PLANEJAMENTO-PUBLICACAO.md` | Plano mestre fase 1-8 (contexto maior) |
+| `PLANO-VIBE-CODING.md` | Este arquivo |
+| `copy-kiwify.md` | 5 blocos de copy prontos pra colar no Kiwify |
+| `LANDING.md` | Aponta pro repo separado da landing |
+| `DEPLOY.md` | Instruções de deploy Vercel (landing + dashboard) |
+| `pdf-build/*.pdf`, `*.zip` | Arquivos do produto pra upload no Kiwify |
+| `deploy-dashboard/index.html` | Source do dashboard, pronto pra Vercel |
+| `videos_curso/` | Roteiros e gravações brutas (pendente edição) |
+| `produto-orquestra/` | Sources markdown do produto |
+
+Repos relacionados:
+- `helvyssxc-spec/Ebook-IA` (este, conteúdo + dashboard)
+- `helvyssxc-spec/landing-dozeroaosaas` (landing pública)
+- `helvyssxc-spec/chat-dozeroaosaas` (chat bônus, em produção)
 
 ---
 
-## ▶️ Como retomar do zero (mensagem pra Claude)
+## 📌 Notas de retomada
 
-> "Quero retomar o plano de reposicionamento vibe coding. Lê o arquivo `PLANO-VIBE-CODING.md` na raiz do repo Ebook-IA. Comece pela Etapa 1 (mudanças no H1, badge e seção O método). Antes de aplicar, me mostre as 3 mudanças propostas em formato diff e espere minha aprovação."
+Se outro Claude precisar continuar este projeto:
 
-Claude deve:
-1. Ler este arquivo
-2. Ler `deploy-landing/index-novo.html` pra ver onde aplicar
-3. Propor as mudanças visuais da Etapa 1 em formato diff
-4. Esperar aprovação antes de editar
-5. Depois passar pra Etapa 2 (replicar) e 3 (Kiwify)
-
----
-
-## 📌 Decisões em aberto
-
-Coisas que ficaram pra discutir quando retomar:
-
-1. **Cor do badge "VIBE CODING":** dourado, amarelo, gradiente? (escolher 1 que case com a paleta atual)
-2. **Posição do badge:** acima do H1 ou na hero-tag?
-3. **Onde encaixar a pergunta do FAQ:** primeira pergunta (impacto) ou meio (orgânico)?
-4. **Headline alternativa do H1:**
-   - Opção A: "Do zero ao SaaS faturando em 30 dias. **Vibe coding com método.**"
-   - Opção B: "**Vibe coding com método**: do zero ao SaaS faturando em 30 dias."
-   - Opção C: manter H1 atual e só adicionar o badge acima
+1. Ler este arquivo + `copy-kiwify.md` + `LANDING.md`
+2. Verificar git: `cd Ebook-IA && git fetch origin && git log -5` — Helvys trabalha em múltiplas máquinas (memória `feedback_multiple_machines.md`)
+3. Verificar se dashboard subiu: `curl -sI https://dashboard.dozeroaosaas.com.br`
+4. Se ainda 🔴 — instruir Helvys conforme seção "Pendências manuais" acima
+5. Se ✅ — partir pra próximas frentes (Discord real, Pixel Meta, vídeos)
