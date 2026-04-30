@@ -1,8 +1,75 @@
 # Plano de Reposicionamento — Vibe Coding com Método
 
-> **Status:** ✅ Reposicionamento aplicado · 🚀 Produto lançado em 2026-04-30
+> **Status:** ✅ Reposicionamento aplicado · 🚀 Produto lançado e infra completa em 2026-04-30
 >
-> Este arquivo agora é **registro histórico + status final**, não mais checklist em aberto.
+> Este arquivo agora é **registro histórico + status final + playbook de retomada**, não mais checklist em aberto.
+
+---
+
+## ▶️ Como retomar (em qualquer máquina)
+
+Quando Helvys retomar o projeto, ela vai dizer algo tipo *"retomar Do Zero ao SaaS"*. Faz isso na ordem:
+
+```bash
+# 1. Sincronizar o repo (Helvys trabalha em múltiplas máquinas)
+cd "Ebook Saas/Ebook-IA"  # ou onde estiver o repo
+git fetch origin && git pull --ff-only
+
+# 2. Configurar autor pra evitar bug do RelatorioFlow (se for primeira vez nessa máquina)
+git config user.email helvyssxc@gmail.com
+git config user.name "Helvys Xavier"
+
+# 3. Ler estado atual e validar uptime
+cat PLANO-VIBE-CODING.md
+curl -sI https://dozeroaosaas.com.br
+curl -sI https://dashboard.dozeroaosaas.com.br
+curl -sI https://chat.dozeroaosaas.com.br
+```
+
+Depois, perguntar à Helvys **uma única coisa**:
+
+> *"Olha, vi que o ecossistema tá no ar. Já houveram vendas? Quer focar em (a) divulgação/Ads, (b) Discord/comunidade, (c) vídeos do curso, (d) outra coisa?"*
+
+Com a resposta dela, abre a seção correspondente abaixo.
+
+---
+
+## 📊 Próximos passos esperados (por frente)
+
+### 🔵 (a) Divulgação / Ads pagos
+- Ativar Pixel Meta na landing (descomentar `index.html:36-54` e substituir `SEU_PIXEL_ID_AQUI` pelo ID real que ela vai criar em [business.facebook.com](https://business.facebook.com))
+- Configurar evento `Purchase` no Pixel via Kiwify (Kiwify tem integração nativa)
+- Criar campanhas Meta Ads / Google Ads (lookalikes a partir dos compradores)
+- Verificar Vercel Analytics em [vercel.com](https://vercel.com) — se tem visitantes mas zero conversão, otimizar copy/CTA
+- **Se ainda tem 0 vendas:** focar primeiro em divulgação orgânica (LinkedIn longo, IG stories, WhatsApp) antes de gastar em Ads
+
+### 🟣 (b) Discord / comunidade
+- Criar servidor Discord "Do Zero ao SaaS"
+- Canais por fase: `#fase-1-idear` ... `#fase-7-vender` + `#mostre-seu-saas` + `#regras` + `#avisos`
+- Gerar **link de convite permanente** (sem expiração, sem limite de usos)
+- Atualizar [obrigado.html:364](../landing-dozeroaosaas/obrigado.html#L364) — substituir o `mailto:suporte@...` pelo link real do Discord
+- Commit + push em `landing-dozeroaosaas`
+
+### 🟢 (c) Vídeos do curso
+- 25 gravações `.webp` em `videos_curso/` (~157 MB, gravadas em 2026-04-29)
+- Roteiros: `videos_curso/roteiro_completo.md` + `relatorio_e_scripts.md`
+- **Decisão pendente:** editar e publicar onde?
+  - Opção A: Vimeo unlisted + linkar no Kiwify (recomendado — não infla repo)
+  - Opção B: Subir direto pro Kiwify (módulos Manual/Ebook viram vídeos)
+  - Opção C: Git LFS (overhead pra clones)
+- Galeria pra revisar webp localmente: `videos_curso/assistir.html`
+
+### 🟡 (d) Outras frentes possíveis
+- **CNAE no CNPJ** — quando contador entregar, migrar fiscal de CPF pra CNPJ pra otimizar tributação
+- **Email Zoho/profissional** — substituir ImprovMX por Zoho Mail Free (se voltarem a oferecer) ou plano pago, pra ter inbox dedicada
+- **Subir preço pra R$ 197** — se >= 10 vendas com prova social
+- **Pixel + UTM tracking refinado** — atribuição de canais
+
+---
+
+## 🔧 Bug histórico já resolvido (não esquecer)
+
+**Vercel + Sensitive env vars + paste com `\n`:** quando se cola valor de secret no painel da Vercel marcada como Sensitive, o `<textarea>` preserva quebra de linha. O código backend precisa fazer `.trim()` em ambos os lados da comparação. **Já aplicado em `chat-dozeroaosaas` em 2026-04-30 (commit `b322258`).** Se outras secrets futuras apresentarem comportamento estranho, suspeitar disso primeiro e aplicar `trim()`.
 
 ---
 
