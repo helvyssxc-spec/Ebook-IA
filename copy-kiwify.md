@@ -66,7 +66,7 @@ Em 30 dias com 1-2h/dia, você sai da ideia e chega na primeira venda real.
 
 ---
 
-## 3️⃣ Nomes dos 5 módulos (área de membros)
+## 3️⃣ Nomes dos 6 módulos (área de membros)
 
 **Onde:** aba **Área de membros** → editar título de cada módulo
 
@@ -77,6 +77,32 @@ Em 30 dias com 1-2h/dia, você sai da ideia e chega na primeira venda real.
 | 3 | Dashboard interativo | (manter) **Dashboard interativo** |
 | 4 | Templates | **Templates: PRDs, schemas e prompts prontos** |
 | 5 | Biblioteca de Prompts | **Biblioteca de 100+ prompts (por ferramenta)** |
+| 6 | (novo módulo) | **🤖 Acessar Chat IA 24/7** |
+
+### Configuração do módulo 6 — Acessar Chat IA 24/7
+
+**Adicionar como novo módulo (último da lista):**
+- **Nome:** `🤖 Acessar Chat IA 24/7`
+- **Descrição (do módulo):** `Seu professor particular treinado no método. Pergunte qualquer coisa sobre o curso, 24h por dia.`
+
+**Adicionar 1 aula dentro:**
+- **Tipo:** Link externo (ou URL/Web)
+- **Título:** `Abrir Chat IA`
+- **URL:** `https://chat.dozeroaosaas.com.br/acesso`
+- **Descrição da aula (HTML pra colar no editor):**
+
+```html
+<p><strong>Acesse o Chat IA em 1 clique.</strong></p>
+<p>Clique em "Abrir Chat IA" abaixo e cole o <strong>email da compra</strong>. O sistema reconhece automaticamente, gera seu token e entra logado direto no chat — sem precisar copiar nada.</p>
+<p><strong>O Chat IA pode:</strong></p>
+<ul>
+  <li>Responder qualquer dúvida sobre o método, ebook, templates ou prompts</li>
+  <li>Pesquisar na web quando a pergunta foge do escopo do curso</li>
+  <li>Adaptar prompts da biblioteca pro seu projeto específico</li>
+  <li>Te ajudar a destravar quando travar com Claude/Cursor/Lovable</li>
+</ul>
+<p><strong>⚠ Importante:</strong> use o mesmo email da compra do Kiwify. Se digitou diferente, não vai encontrar — mande um email pra <code>suporte@dozeroaosaas.com.br</code> que ajusto.</p>
+```
 
 ---
 
