@@ -547,6 +547,17 @@ relatórios de empresas listadas). Nada de blog genérico.
 <li>Como ganha dinheiro.</li>
 </ul>
 <p>Se você não consegue condensar sua ideia em 5 frases, você não tem ideia ainda — tem desejo. Volta pro Claude e pressiona mais.</p>
+<p><strong>Prompt-padrão (cole no Claude):</strong></p>
+<pre><code>Aja como um investidor cético e rigoroso. Vou descrever uma ideia
+de SaaS. Sua tarefa: listar os 5 maiores riscos em ordem de gravidade,
+identificar 3 suposições que estou assumindo como verdade, e sugerir
+o menor experimento possível para validar a #1. Se a ideia for fraca,
+fale sem rodeios.
+
+IDEIA: [descreva em 2-3 frases]
+PÚBLICO: [quem usaria]
+MODELO: [como ganha dinheiro]
+</code></pre>
 <hr>
 <h3>Passo 2 — PESQUISA (Gemini ou Manus)</h3>
 <p><strong>Objetivo:</strong> descobrir o que já existe, o que o mercado precisa e o que falta.</p>
@@ -561,6 +572,30 @@ relatórios de empresas listadas). Nada de blog genérico.
 <p><strong>Por que Claude:</strong> porque plano bom precisa de coerência interna e raciocínio técnico. É onde Claude mais brilha.</p>
 <p><strong>Entregável:</strong> três documentos — PRD preenchido, schema Supabase em SQL, e lista das 10-15 tarefas principais pra construir o MVP em ordem de execução.</p>
 <p><strong>Regra:</strong> você não passa pro passo 4 sem os três documentos prontos. Construir sem plano é construir em círculos. Vai gastar dinheiro, queimar crédito e não chegar em lugar nenhum.</p>
+<p><strong>Prompt-padrão (cole no Claude, dentro do Project do produto):</strong></p>
+<pre><code>Atue como Product Manager sênior. Gere um PRD completo pro projeto.
+
+PROJETO: [nome + 1 parágrafo do que é]
+PROBLEMA: [dor que resolve]
+USUÁRIO-ALVO: [persona principal]
+STACK: Lovable (React/TS) + Supabase + Stripe + Resend
+
+Estrutura do PRD:
+1. Visão e objetivo
+2. Problema e contexto
+3. Personas detalhadas
+4. Proposta de valor
+5. Escopo do MVP (ENTRA e FICA DE FORA)
+6. Fluxos principais de usuário
+7. Schema de banco (tabelas + relações em SQL)
+8. Autenticação e segurança (RLS)
+9. Integrações externas
+10. Métricas de sucesso
+11. Riscos e mitigações
+
+Seja específico. Liste em vez de parafrasear. Onde houver decisão,
+recomende UMA opção com 1 frase de justificativa.
+</code></pre>
 <hr>
 <h3>Passo 4 — EXECUÇÃO (Lovable + Claude Code + GPT)</h3>
 <p><strong>Objetivo:</strong> transformar o plano em código rodando.</p>
@@ -579,6 +614,21 @@ relatórios de empresas listadas). Nada de blog genérico.
 <p><strong>Por que Claude:</strong> porque auditoria exige olhar crítico, identificar bug sutil, encontrar brecha de segurança, apontar código duplicado. Claude enxerga esses problemas que o iniciante não vê.</p>
 <p><strong>Entregável:</strong> lista de achados em 4 categorias (bugs / segurança / performance / manutenibilidade), com correções sugeridas. Depois: versão corrigida.</p>
 <p><strong>Regra:</strong> nenhum código vai pra produção sem passar por este passo. É inegociável. Se você pular, vai ter brecha de RLS, senha exposta, bug no fluxo de pagamento. E aí você processa reembolso.</p>
+<p><strong>Prompt-padrão (cole no Claude com o código anexado):</strong></p>
+<pre><code>Vou colar um trecho de código. Faça auditoria em 4 níveis:
+
+1. BUGS: o que vai quebrar
+2. SEGURANÇA: RLS, chaves expostas, validação
+3. PERFORMANCE: N+1, re-renders, indexes
+4. MANUTENIBILIDADE: duplicação, nomes ruins
+
+Pra cada achado: gravidade (crítico/médio/baixo), linha específica,
+correção em código.
+
+Ordene do mais grave ao menor. Nada de elogiar.
+
+[código]
+</code></pre>
 <hr>
 <h3>O ciclo dentro da trilha</h3>
 <p>Este ciclo de 5 passos se repete em cada fase da trilha. Nem sempre você passa pelos 5 — às vezes a fase só precisa de Execução + Auditoria (ex: Fase 6 Publicar). Mas o padrão está sempre ali.</p>

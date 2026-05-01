@@ -743,6 +743,20 @@ Vou explicar um a um.
 
 Se você não consegue condensar sua ideia em 5 frases, você não tem ideia ainda — tem desejo. Volta pro Claude e pressiona mais.
 
+**Prompt-padrão (cole no Claude):**
+
+```
+Aja como um investidor cético e rigoroso. Vou descrever uma ideia
+de SaaS. Sua tarefa: listar os 5 maiores riscos em ordem de gravidade,
+identificar 3 suposições que estou assumindo como verdade, e sugerir
+o menor experimento possível para validar a #1. Se a ideia for fraca,
+fale sem rodeios.
+
+IDEIA: [descreva em 2-3 frases]
+PÚBLICO: [quem usaria]
+MODELO: [como ganha dinheiro]
+```
+
 ---
 
 ### Passo 2 — PESQUISA (Gemini ou Manus)
@@ -770,6 +784,33 @@ Se você não consegue condensar sua ideia em 5 frases, você não tem ideia ain
 **Entregável:** três documentos — PRD preenchido, schema Supabase em SQL, e lista das 10-15 tarefas principais pra construir o MVP em ordem de execução.
 
 **Regra:** você não passa pro passo 4 sem os três documentos prontos. Construir sem plano é construir em círculos. Vai gastar dinheiro, queimar crédito e não chegar em lugar nenhum.
+
+**Prompt-padrão (cole no Claude, dentro do Project do produto):**
+
+```
+Atue como Product Manager sênior. Gere um PRD completo pro projeto.
+
+PROJETO: [nome + 1 parágrafo do que é]
+PROBLEMA: [dor que resolve]
+USUÁRIO-ALVO: [persona principal]
+STACK: Lovable (React/TS) + Supabase + Stripe + Resend
+
+Estrutura do PRD:
+1. Visão e objetivo
+2. Problema e contexto
+3. Personas detalhadas
+4. Proposta de valor
+5. Escopo do MVP (ENTRA e FICA DE FORA)
+6. Fluxos principais de usuário
+7. Schema de banco (tabelas + relações em SQL)
+8. Autenticação e segurança (RLS)
+9. Integrações externas
+10. Métricas de sucesso
+11. Riscos e mitigações
+
+Seja específico. Liste em vez de parafrasear. Onde houver decisão,
+recomende UMA opção com 1 frase de justificativa.
+```
 
 ---
 
@@ -799,6 +840,24 @@ Se você não consegue condensar sua ideia em 5 frases, você não tem ideia ain
 **Entregável:** lista de achados em 4 categorias (bugs / segurança / performance / manutenibilidade), com correções sugeridas. Depois: versão corrigida.
 
 **Regra:** nenhum código vai pra produção sem passar por este passo. É inegociável. Se você pular, vai ter brecha de RLS, senha exposta, bug no fluxo de pagamento. E aí você processa reembolso.
+
+**Prompt-padrão (cole no Claude com o código anexado):**
+
+```
+Vou colar um trecho de código. Faça auditoria em 4 níveis:
+
+1. BUGS: o que vai quebrar
+2. SEGURANÇA: RLS, chaves expostas, validação
+3. PERFORMANCE: N+1, re-renders, indexes
+4. MANUTENIBILIDADE: duplicação, nomes ruins
+
+Pra cada achado: gravidade (crítico/médio/baixo), linha específica,
+correção em código.
+
+Ordene do mais grave ao menor. Nada de elogiar.
+
+[código]
+```
 
 ---
 
