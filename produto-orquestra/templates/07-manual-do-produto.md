@@ -191,7 +191,7 @@ Dia 3 é o pior. Semana 2, dia 10, também. Semana 3 (quando integração de pag
 
 ---
 
-## 💬 Chat IA 24/7 — Onde pedir ajuda
+## 💬 Chat IA — Onde pedir ajuda
 
 Você tem acesso **vitalício** ao **Chat IA do Do Zero ao SaaS** — um assistente treinado no conteúdo completo do curso (ebook, 100 prompts, templates) e com capacidade de pesquisar na web quando sua pergunta foge do escopo.
 
@@ -199,7 +199,7 @@ Você tem acesso **vitalício** ao **Chat IA do Do Zero ao SaaS** — um assiste
 
 1. Abre o chat em **https://chat.dozeroaosaas.com.br**
 2. Cola o **token de acesso** que você recebeu no email de boas-vindas logo após a compra
-3. Pronto — pergunte qualquer coisa, 24 horas por dia
+3. Pronto — pergunte o que quiser dentro do limite diário (30 perguntas/24h, suficiente pro uso típico)
 
 **Quando o chat brilha:**
 

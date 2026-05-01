@@ -39,7 +39,7 @@ PRD, schema Supabase, checklist de 100 itens pra produção, briefings do Gemini
 📚 **Biblioteca de 100+ prompts**
 Categorizados por uso: ideação, arquitetura, código, debug, copy, lançamento. Markdown pra colar e JSON pra importar.
 
-🤖 **Chat IA 24/7 (exclusivo)**
+🤖 **Chat IA do curso (exclusivo)**
 Assistente treinado em todo o conteúdo do curso, pesquisa web quando precisa, responde em segundos. **Inclui acesso vitalício.**
 
 ---
@@ -77,12 +77,12 @@ Em 30 dias com 1-2h/dia, você sai da ideia e chega na primeira venda real.
 | 3 | Dashboard interativo | (manter) **Dashboard interativo** |
 | 4 | Templates | **Templates: PRDs, schemas e prompts prontos** |
 | 5 | Biblioteca de Prompts | **Biblioteca de 100+ prompts (por ferramenta)** |
-| 6 | (novo módulo) | **🤖 Acessar Chat IA 24/7** |
+| 6 | (novo módulo) | **🤖 Acessar Chat IA** |
 
-### Configuração do módulo 6 — Acessar Chat IA 24/7
+### Configuração do módulo 6 — Acessar Chat IA
 
 **Adicionar como novo módulo (último da lista):**
-- **Nome:** `🤖 Acessar Chat IA 24/7`
+- **Nome:** `🤖 Acessar Chat IA`
 - **Descrição (do módulo):** `Seu professor particular treinado no método. Pergunte qualquer coisa sobre o curso, 24h por dia.`
 
 **Adicionar 1 aula dentro:**
@@ -128,7 +128,7 @@ Você acabou de garantir acesso vitalício ao único método de "vibe coding fei
 🎯 Próximos 5 minutos:
 
 1) Acessa a área de membros (link abaixo) e baixa o Manual do Produto (módulo 1)
-2) Em paralelo, fica de olho no email — vou te mandar SEPARADO o token de acesso ao Chat IA 24/7 (de chat@dozeroaosaas.com.br)
+2) Em paralelo, fica de olho no email — vou te mandar SEPARADO o token de acesso ao Chat IA (de chat@dozeroaosaas.com.br)
 3) Lê o Manual em 10 min — ele te diz o que fazer no dia 1, dia 7 e dia 30
 
 Importante: não pula direto pro ebook. O Manual é o mapa.
